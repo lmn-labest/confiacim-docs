@@ -311,14 +311,14 @@
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Src
+          Fontes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Src
+          Fontes
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -355,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="src/form/correlations/" class="md-nav__link">
+      <a href="fontes/form/correlations/" class="md-nav__link">
         Correlations
       </a>
     </li>
@@ -369,7 +369,49 @@
   
   
     <li class="md-nav__item">
-      <a href="src/form/models/" class="md-nav__link">
+      <a href="fontes/form/iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fontes/form/mainloop/" class="md-nav__link">
+        Mainloop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fontes/form/math_utils/" class="md-nav__link">
+        Math utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fontes/form/models/" class="md-nav__link">
         Models
       </a>
     </li>
@@ -469,45 +511,56 @@
 
 
 <h1 id="guia-rapido">Guia rápido</h1>
+<p>Necessário ter pelo menos o python 3.10.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+</div>
+<blockquote>
+<p>O tencim1D utilizado tem o valor de abertura da interface de <code>1e-08</code>.</p>
+</blockquote>
 <h2 id="1-instalacao">1) Instalação</h2>
-<p>Para instalar essa versão básica basta utilizar o .whl:</p>
-<pre><code class="language-bash">python -m venv .venv --upgrade-deps
-source .venv/bin/activate
-pip install confiacim-x.y.z-py3-none-any.whl[&quot;plot&quot;]
-</code></pre>
+<p>Para instalar essa versão básica basta utilizar o <code>.whl</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl<span class="o">[</span><span class="s2">&quot;plot&quot;</span><span class="o">]</span>
+</code></pre></div></td></tr></table></div>
 <p>Para verificar a instalação basta:</p>
-<pre><code class="language-bash">confiacim --version
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>--version
 
-Confiacim 0.1.0
-</code></pre>
+Confiacim<span class="w"> </span><span class="m">0</span>.1.0
+</code></pre></div></td></tr></table></div>
 <h2 id="2-uso">2) Uso</h2>
 <p>Inicializando o diretório de simulação</p>
-<pre><code class="language-bash">confiacim init
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>init
+</code></pre></div></td></tr></table></div>
 <p>Na pasta <code>simulation/input</code> já temos um caso simples chamado <code>caso 1</code> e nãao pasta <code>bin</code> o excutavel do <code>tencim</code>.</p>
 <h3 id="21-analise-deterministica">2.1) Análise deterministica</h3>
 <p>Para roda a análise deterministica:</p>
-<pre><code class="language-bash">confiacim deterministic run simulation/input/case1 simulation/output/case1
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/input/case1<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
 <p>Plotando o resultado da simulação deterministica:</p>
-<pre><code class="language-bash">confiacim deterministic plot simulation/output/case1
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
 <p>Para modificar <code>case.dat</code> para ter apenas <code>20</code> passos de tempo pode-se usar o <code>deterministic</code>. Esse comando irá criar uma cópia do <code>case.dat</code> como o nome <code>case_original.dat</code> e depois modificar <code>case.dat</code>:</p>
-<pre><code class="language-bash">confiacim deterministic new_last_step 20 simulation/input/case1/case.dat
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">20</span><span class="w"> </span>simulation/input/case1/case.dat
+</code></pre></div></td></tr></table></div>
 <p>Caso seja necessario novamente modificar <code>case.dat</code> pode-se usar o <code>case_original.dat</code>:</p>
-<pre><code class="language-bash">confiacim deterministic new_last_step 30 simulation/input/case1/case_original.dat
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">30</span><span class="w"> </span>simulation/input/case1/case_original.dat
+</code></pre></div></td></tr></table></div>
 <h3 id="21-analise-determistica-com-o-form">2.1) Análise determistica com o form</h3>
 <p>Agora para rodar a análise Para rodar o método <code>form</code>:</p>
-<pre><code class="language-bash">confiacim form run simulation/input/case1 simulation/output/case1
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/input/case1<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
 <p>Vizualizando todos os resultados:</p>
-<pre><code class="language-bash">confiacim form plot all simulation/output/case1
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
 <p>Vizualizando os resultados da iteração <code>3</code>:</p>
-<pre><code class="language-bash">confiacim form plot it 3 simulation/output/case1
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
 
 
 

@@ -199,9 +199,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Uso detalhado da CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Uso detalhado da CLI
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-estrutura-inicial-do-projeto" class="md-nav__link">
+    1) Estrutura inicial do projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-analise-probablistica-com-form" class="md-nav__link">
+    2) Análise probablística com FORM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-analise-deterministica" class="md-nav__link">
+    3) Análise deterministica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuracoes" class="md-nav__link">
+    4) Configurações
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -255,14 +307,14 @@
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Src
+          Fontes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Src
+          Fontes
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -299,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../src/form/correlations/" class="md-nav__link">
+      <a href="../fontes/form/correlations/" class="md-nav__link">
         Correlations
       </a>
     </li>
@@ -313,7 +365,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../src/form/models/" class="md-nav__link">
+      <a href="../fontes/form/iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/mainloop/" class="md-nav__link">
+        Mainloop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/math_utils/" class="md-nav__link">
+        Math utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/models/" class="md-nav__link">
         Models
       </a>
     </li>
@@ -354,6 +448,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-estrutura-inicial-do-projeto" class="md-nav__link">
+    1) Estrutura inicial do projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-analise-probablistica-com-form" class="md-nav__link">
+    2) Análise probablística com FORM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-analise-deterministica" class="md-nav__link">
+    3) Análise deterministica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuracoes" class="md-nav__link">
+    4) Configurações
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -371,6 +501,256 @@
 
 
 <h1 id="uso-detalhado-da-cli">Uso detalhado da CLI</h1>
+<h2 id="1-estrutura-inicial-do-projeto">1) Estrutura inicial do projeto</h2>
+<p>O comando <code>confiacim init</code> gera a seguinte estrutura:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>├── bin
+│   └── TENCIM1D.exe
+└── simulation
+    └── input
+        ├── case.dat
+        ├── case.yml
+        ├── mesh.dat
+        └── templates
+            ├── initialtemperature.jinja
+            ├── loads.jinja
+            └── materials.jinja
+├── simulation/output
+</code></pre></div></td></tr></table></div>
+<p>O executavel do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>input</code> deve ficar os arquivos de entrada. Na caso já temos um exemplo simples na pasta. Na pasta <code>output</code> é onde serão salvos os resultados. Exitem alguns conjutos de arquivos de entrada na pasta <code>tests/files/input</code> que podem ser usados como base para novos casos.</p>
+<p>Os arquivos de entradas são os arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>*.yaml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter o sufixo <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variaval na lista. No campo <code>correlations</code>são definidas as correlações entre as variáveis, este campo é <code>opcional</code>. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E</span>
+<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
+<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.19e10</span>
+<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poisson</span>
+<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
+<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.18</span>
+<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cohesion</span>
+<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">normal</span>
+<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.97e07</span>
+<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">friction_angle</span>
+<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
+<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9.200e00</span>
+<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thermal_expansion</span>
+<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
+<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.400e-06</span>
+<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+
+<span class="nt">correlations</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">E, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thermal_expansion, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle, thermal_expansion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.4</span>
+
+<span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+</code></pre></div></td></tr></table></div>
+<p>Para verificar se as configuração da simulção foram lidas corretamente temos o comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/input/case1/
+</code></pre></div></td></tr></table></div>
+<h2 id="2-analise-probablistica-com-form">2) Análise probablística com FORM</h2>
+<p>Para rodar basta fazer</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1/
+</code></pre></div></td></tr></table></div>
+<p>Para uma saida mais verbosa basta utilizar a opção <code>--verbose</code> ou <code>-v</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>--verbose<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1/
+</code></pre></div></td></tr></table></div>
+<p>Após rodar a estrutura de diretórios deve ser:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>└── simulation
+    ├── input
+    │   ├── case.dat
+    │   ├── case.yml
+    │   ├── mesh.dat
+    │   └── templates
+    │       ├── initialtemperature.jinja
+    │       ├── loads.jinja
+    │       └── materials.jinja
+    └── output
+        ├── it_0001
+        │   ├── base
+        │   ├── cohesion
+        │   ├── E
+        │   ├── external_temperature
+        │   ├── friction_angle
+        │   ├── initial_temp
+        │   ├── internal_pressure
+        │   ├── internal_temperature
+        │   ├── poisson
+        │   └── thermal_expansion
+        ├── it_0002
+        │   ├── base
+        │   ├── cohesion
+        │   ├── E
+        │   ├── external_temperature
+        │   ├── friction_angle
+        │   ├── initial_temp
+        │   ├── internal_pressure
+        │   ├── internal_temperature
+        │   ├── poisson
+        │   └── thermal_expansion
+        ├── results.txt
+</code></pre></div></td></tr></table></div>
+<p>Na pasta <code>output</code> estão salvos os resultados desejados do <code>confiacim</code> para cada amostra em cada iteração. Por exemplo, na pasta <code>it_0001</code> estão os resultados da iteração <code>1</code> do <code>form</code>.</p>
+<p>Comando parar o <code>confiacim</code> plotar todos os resultados de <code>RC</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><img alt="RC" src="../assets/img/all_RC.png" /></p>
+<p>Fig1 - Série histórica do valor do RC agrupados por iterações.</p>
+</blockquote>
+<p>Para plotar os resultados de <code>RC</code> de uma iteração específica:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">1</span><span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><img alt="RC" src="../assets/img/it_0001_RC.png" /></p>
+<p>Fig2 - Serie histórica do valor do RC da iteração 1.</p>
+</blockquote>
+<p>Para salvar os gráficos pode-se usar a opção <code>-s</code> ou <code>--save</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>-s<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<p>Os gráficos serão salvos na pasta <code>simulation/output/case1/graphs</code>.</p>
+<p>Para um gráfico mais iterativo existe a possibilidade de usar o <code>plotly</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plotly<span class="w"> </span>all<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<h2 id="3-analise-deterministica">3) Análise deterministica</h2>
+<p>Para rodar a análise determinítica base:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1
+<span class="w">               </span>Minimal<span class="w"> </span>RCs
+┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃<span class="w"> </span>Name<span class="w">         </span>┃<span class="w"> </span>istep<span class="w"> </span>┃<span class="w">   </span>t<span class="w">    </span>┃<span class="w">  </span>RC<span class="w">   </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│<span class="w"> </span>Mhor<span class="w"> </span>Coulomb<span class="w"> </span>│<span class="w">  </span><span class="m">174</span><span class="w">  </span>│<span class="w"> </span><span class="m">1200</span>.0<span class="w"> </span>│<span class="w"> </span><span class="m">10</span>.59<span class="w"> </span>│
+│<span class="w"> </span>Rankine<span class="w">      </span>│<span class="w">  </span><span class="m">139</span><span class="w">  </span>│<span class="w"> </span><span class="m">850</span>.0<span class="w">  </span>│<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span>│
+└──────────────┴───────┴────────┴───────
+</code></pre></div></td></tr></table></div>
+<p>Para plotar os RCs da análise deterministica:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<p>Para truncar a analise em <code>174</code> basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">174</span><span class="w"> </span>simulation/input/case1/case.dat
+</code></pre></div></td></tr></table></div>
+<p>Será gerado um o novo <code>case.dat</code>. E caso não exita será criado um <code>case_original.dat</code> com o conteudo original do arquivo <code>case.dat</code>.</p>
+<p>Caso se queira agora truncar a análise em <code>139</code> você poded usar o <code>case_original.dat</code>, ou seja:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">139</span><span class="w"> </span>simulation/input/case1/case_original.dat
+</code></pre></div></td></tr></table></div>
+<p>Para voltar para o original basta usar step maior que o original, por exemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">10000</span><span class="w"> </span>simulation/input/case1/case_original.dat
+</code></pre></div></td></tr></table></div>
+<h2 id="4-configuracoes">4) Configurações</h2>
+<p>Algumas configurações extras podem ser feitas através do arquivo <code>.env</code>. Este arquivo deve estar na raiz do projeto, porem ele é completamente <code>opcional</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">CONFIACIM_EXEC_TENCIM_BIN</span><span class="o">=</span><span class="s1">&#39;TENCIM1D.exe&#39;</span>
+<span class="nv">CONFIACIM_EXEC_TENCIM_DIR</span><span class="o">=</span><span class="s1">&#39;bin/&#39;</span>
+<span class="nv">CONFIACIM_EXEC_TENCIM_MODE</span><span class="o">=</span><span class="s1">&#39;SEQUENTIAL&#39;</span>
+<span class="nv">CONFIACIM_LOG_LEVEL</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span>
+<span class="nv">CONFIACIM_HIDRPROP_FILE_NAME</span><span class="o">=</span><span class="s1">&#39;hidrationprop.dat&#39;</span>
+<span class="nv">CONFIACIM_MATERIALS_FILE_NAME</span><span class="o">=</span><span class="s1">&#39;materials.dat&#39;</span>
+<span class="nv">CONFIACIM_INITIAL_TEMP_FILE_NAME</span><span class="o">=</span><span class="s1">&#39;initialtemperature.dat&#39;</span>
+<span class="nv">CONFIACIM_LOADS_FILE_NAME</span><span class="o">=</span><span class="s1">&#39;loads.dat&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>A variável de ambiente <code>CONFIACIM_LOG_LEVEL</code> irá definir o nivel de informações que serão escritos no aquivo <code>form.log</code> para cada iteração do <code>form</code>. Temos dois niveis atualmente <code>ERROR</code> e <code>DEBUG</code>. No nível <code>ERROR</code> só teremos informações caso haja algum problema numérico como <code>Inf</code> ou <code>divisão por zero</code>. No nível <code>DEBUG</code> todas as variaveis usadas no <code>form</code> serão escritas no arquivo em todas as iterações.</p>
+<p>A váriavel <code>CONFIACIM_EXEC_TENCIM_MODE</code> define o modelo de excução do <code>Tencim1D</code>. As opções são: <code>SEQUENTIAL</code>parar rodar o <code>tencim1D</code> em sequencial; <code>MULTIPROC</code>para rodar utilizando multiprocessos. O valor padrão é o <code>MULTIPROC</code>. O número de processos será o menor valor entre <code>número de variaveis + 1</code> e o número de <code>n</code>. Onde <code>CPUS</code> retornado pelo função <code>os.cpu_count()</code> dividido por <code>2</code>.</p>
+<p>Outra forma de alterar os valores configurações é passando elas na hora de executar o <code>confiacim</code>. Por exemplo para mudar o nivel do log pode-se fazer:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>form<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/input/case1<span class="w">  </span>simulation/output/case1
+</code></pre></div></td></tr></table></div>
+<p>Nessa caso a variável passada na linha de comando irá prevalecer sobre a variável que está no arquivo <code>.env</code>.</p>
 
 
 

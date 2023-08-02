@@ -12,7 +12,7 @@
         <link rel="prev" href="../02_Templates/">
       
       
-        <link rel="next" href="../src/form/correlations/">
+        <link rel="next" href="../fontes/form/correlations/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -361,14 +361,14 @@
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Src
+          Fontes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Src
+          Fontes
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -405,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../src/form/correlations/" class="md-nav__link">
+      <a href="../fontes/form/correlations/" class="md-nav__link">
         Correlations
       </a>
     </li>
@@ -419,7 +419,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../src/form/models/" class="md-nav__link">
+      <a href="../fontes/form/iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/mainloop/" class="md-nav__link">
+        Mainloop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/math_utils/" class="md-nav__link">
+        Math utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/form/models/" class="md-nav__link">
         Models
       </a>
     </li>
@@ -571,66 +613,75 @@
 <p>É bom ter o <a href="https://github.com/pyenv/pyenv">pyenv</a> instalando para configurar as versões do python.</p>
 <h3 id="11-instalando-o-ambiente-python-para-o-desenvolvimento">1.1) Instalando o ambiente python para o desenvolvimento</h3>
 <p>Caso vc queria contribuir para o projeto os comandos para a instalação do ambiente de desenvolvimento são:</p>
-<pre><code class="language-bash">python -m venv .venv --upgrade-deps
-source .venv/bin/activate
-pip install pip-tools
-pip install -e &quot;.[dev]&quot;
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>pip-tools
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Parar verificar a instação:</p>
-<pre><code class="language-bash">pip show confiacim
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>show<span class="w"> </span>confiacim
+</code></pre></div></td></tr></table></div>
 <h3 id="12-rodando-os-testes">1.2) Rodando os testes</h3>
 <p>Par rodar os testes é preciso ter um executavel do <code>tencim</code> na basta <code>tests/files/bin</code>. Após verificar se o arquivo executavel existe basta executar:</p>
-<pre><code class="language-bash">pytest
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pytest
+</code></pre></div></td></tr></table></div>
 <p>Para mostar as cobertura de teste</p>
-<pre><code class="language-bash">pytest --cov=src/confiacim
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pytest<span class="w"> </span>--cov<span class="o">=</span>src/confiacim
+</code></pre></div></td></tr></table></div>
 <h3 id="14-gerenciamento-dos-pacotes-python">1.4) Gerenciamento dos pacotes python</h3>
 <p>Checar vunerabilidades em pacotes ptyhon</p>
-<pre><code class="language-bash">pip-audit
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip-audit
+</code></pre></div></td></tr></table></div>
 <p>Para checar update dos pacotes python</p>
-<pre><code class="language-bash">pip list --outdated
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>list<span class="w"> </span>--outdated
+</code></pre></div></td></tr></table></div>
 <h3 id="15-makefile">1.5) Makefile</h3>
 <p>No <code>makefile</code> existe algums comando uteis para o desenvolvimento. Para lista-los basta:</p>
-<pre><code class="language-bash">make help
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span><span class="nb">help</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="2-windows">2) Windows</h2>
 <p>Para ter ferramentas como <code>make</code> pode-se usar o <a href="https://www.msys2.org/">MSYS2</a>.</p>
 <h3 id="21-powershell-ou-cmd">2.1) Powershell ou CMD</h3>
 <p>Instalando o projeto:</p>
-<pre><code class="language-bash">python -m venv .venv --upgrade-deps
-.\.venv\Scripts\activate
-pip install pip-tools
-pip install -e &quot;.[dev]&quot;
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+pip<span class="w"> </span>install<span class="w"> </span>pip-tools
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Rodando os testes:</p>
-<pre><code class="language-bash">pytest
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pytest
+</code></pre></div></td></tr></table></div>
 <h2 id="22-wsl">2.2) WSL</h2>
 <p>Instalando o projeto:</p>
-<pre><code class="language-bash">python -m venv .venv --upgrade-deps
-source .venv/bin/activate
-pip install pip-tools
-pip install -e &quot;.[dev]&quot;
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>pip-tools
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p>Rondando os testes:</p>
-<pre><code class="language-bash">pytest
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pytest
+</code></pre></div></td></tr></table></div>
 <h2 id="3-precommit">3) Precommit</h2>
 <p>Instalando precommit</p>
-<pre><code class="language-bash">pre-commit install
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit<span class="w"> </span>install
+</code></pre></div></td></tr></table></div>
 <h2 id="4-linters-e-formatadores-de-codigo">4) Linters e formatadores de código</h2>
 <p>Foram usados o <code>black</code>, <code>mypy</code>, <code>isort</code> e <code>flake8</code></p>
 <p>Para rodar o <code>black</code>, <code>mypy</code> e <code>isort</code>:</p>
-<pre><code class="language-bash">make fmt
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span>fmt
+</code></pre></div></td></tr></table></div>
 <p>Para rodar o <code>flake8</code>:</p>
-<pre><code class="language-bash">make linter
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span>linter
+</code></pre></div></td></tr></table></div>
 
 
 
