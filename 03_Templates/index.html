@@ -937,7 +937,7 @@
 <p>O <code>jinja2</code> possui vários filtros uteis como pode se ver na <a href="https://tedboy.github.io/jinja2/templ14.html">documentação</a>. Nós utilizamos principalmente o filtro <code>format</code>.</p>
 </div>
 <h2 id="1-materials">1) Materials</h2>
-<p>Para gerar o aquivo <code>materials.dat</code> basta colocar criar um arquivo <code>materials.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
+<p>Para gerar o aquivo <code>materials.dat</code> basta criar um arquivo <code>materials.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -947,13 +947,13 @@
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">materials</span>
 <span class="x">  1 1 1.999e+11 0.3000 1.400e-05 0 0 4.292e+01 3.894e+06 0 0 0</span>
 <span class="x">  2 2 1.190e+10 0.1800 0 0 0 1.950e+00</span>
-<span class="x">  3 1 </span><span class="cp">{{</span><span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">E</span><span class="o">)</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="s2">&quot;%1.4f&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">poisson</span><span class="o">)</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="s2">&quot;%0.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">thermal_expansion</span><span class="o">)</span><span class="cp">}}</span><span class="x"> 0 0 1.950e+00 1.936e+06 0 1 0 4.708e+06 </span><span class="cp">{{</span><span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">friction_angle</span><span class="o">)</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">cohesion</span><span class="o">)</span><span class="cp">}}</span><span class="x"> 0 0 0 0 0 0 3 8 0</span>
+<span class="x">  3 1 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span> <span class="s2">&quot;%1.4f&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">poisson</span> <span class="o">*</span> <span class="m">0.18</span><span class="o">)</span> <span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span> <span class="s2">&quot;%0.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">thermal_expansion</span> <span class="o">*</span> <span class="m">6.400</span><span class="nv">e-06</span><span class="o">)</span> <span class="cp">}}</span><span class="x"> 0 0 1.950e+00 1.936e+06 0 1 0 4.708e+06 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">friction_angle</span> <span class="o">*</span> <span class="m">9.200</span><span class="nv">e00</span><span class="o">)</span> <span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">cohesion</span> <span class="o">*</span> <span class="m">1.97</span><span class="nv">e07</span><span class="o">)</span> <span class="cp">}}</span><span class="x"> 0 0 0 0 0 0 3 8 0</span>
 <span class="x">  4 1 3.000e+10 0.1500 3.900e-05 0 0 2.300e+00 4.032e+06 0 0 0</span>
 <span class="x">end materials</span>
 <span class="x">return</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="2-hidrationprop">2) Hidrationprop</h2>
-<p>Para gerar o aquivo <code>hidrationprop.dat</code> basta colocar criar um arquivo <code>hidrationprop.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
+<p>Para gerar o aquivo <code>hidrationprop.dat</code> basta criar um arquivo <code>hidrationprop.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -983,18 +983,18 @@
 <span class="normal">27</span>
 <span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">hidrprop</span>
 <span class="x">3 1 7</span>
-<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.007299</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.007299</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.045 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">7.221715</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.080 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.041058</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.200 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.083029</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.490 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">6.848540</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e</span><span class="o">+</span><span class="m">00</span> <span class="o">*</span> <span class="nv">E</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.007299</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.007299</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.045 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">7.221715</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.080 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.041058</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.200 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.083029</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.490 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">6.848540</span><span class="nv">e-01</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e</span><span class="o">+</span><span class="m">00</span> <span class="o">*</span> <span class="nv">E</span> <span class="o">*</span> <span class="m">1.19</span><span class="nv">e10</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">3 2 4</span>
-<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.149122</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.149122</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.080 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.149122</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span> <span class="o">*</span> <span class="m">0.18</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">2.149122</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span> <span class="o">*</span> <span class="m">0.18</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.080 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span> <span class="o">*</span> <span class="m">0.18</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e00</span> <span class="o">*</span> <span class="nv">poisson</span> <span class="o">*</span> <span class="m">0.18</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">3 7 3</span>
 <span class="x">0.000 2.337e+06</span>
 <span class="x">0.500 1.869e+06</span>
@@ -1004,14 +1004,14 @@
 <span class="x">0.040 8.000e+04</span>
 <span class="x">1.000 3.234e+06</span>
 <span class="x">3 13 3</span>
-<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.060913</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">cohesion</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.060913</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">cohesion</span><span class="o">)</span> <span class="cp">}}</span>
-<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e</span><span class="o">+</span><span class="m">00</span> <span class="o">*</span> <span class="nv">cohesion</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.060913</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">cohesion</span> <span class="o">*</span> <span class="m">1.97</span><span class="nv">e07</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">0.040 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">4.060913</span><span class="nv">e-02</span> <span class="o">*</span> <span class="nv">cohesion</span> <span class="o">*</span> <span class="m">1.97</span><span class="nv">e07</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">1.000 </span><span class="cp">{{</span> <span class="s2">&quot;%.3e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.000000</span><span class="nv">e</span><span class="o">+</span><span class="m">00</span> <span class="o">*</span> <span class="nv">cohesion</span> <span class="o">*</span> <span class="m">1.97</span><span class="nv">e07</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">end hidrprop</span>
 <span class="x">return</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="3-initialtemperature">3) Initialtemperature</h2>
-<p>Para gerar o aquivo <code>initialtemperature.dat</code> basta colocar criar um arquivo <code>initicaltemperature.jinja</code> e coloca-lo na pasta <code>templates</code>. O numero <code>5</code> deve ser substituido pelo pelo número por <code>nnode + 1</code>.</p>
+<p>Para gerar o aquivo <code>initialtemperature.dat</code> basta criar um arquivo <code>initicaltemperature.jinja</code> e coloca-lo na pasta <code>templates</code>. O numero <code>5</code> deve ser substituido pelo pelo número por <code>nnode + 1</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1020,69 +1020,14 @@
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">hidrprop</span>
 <span class="x">initialtemp</span>
-<span class="cp">{%</span><span class="k">for</span> <span class="nv">i</span> <span class="k">in</span> <span class="nv">range</span><span class="o">(</span><span class="m">1</span><span class="o">,</span> <span class="m">5</span><span class="o">)</span> -<span class="cp">%}</span>
-<span class="cp">{{</span><span class="nv">i</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">initial_temp</span><span class="cp">}}</span>
-<span class="cp">{%</span><span class="k">endfor</span>-<span class="cp">%}</span>
-<span class="x">end initialtemp</span>
-<span class="x">return</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">i</span> <span class="k">in</span> <span class="nv">range</span><span class="o">(</span><span class="m">1</span><span class="o">,</span> <span class="m">5</span><span class="o">)</span> <span class="o">-%</span> <span class="o">}</span>
+<span class="o">{{</span> <span class="nv">i</span> <span class="o">}}</span> <span class="o">{{</span> <span class="nv">initial_temp</span> <span class="o">*</span> <span class="m">291.639</span> <span class="o">}}</span>
+<span class="o">{%</span> <span class="nv">endfor-</span><span class="o">%</span> <span class="o">}</span>
+<span class="nv">end</span> <span class="nv">initialtemp</span>
+<span class="nv">return</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="4-loads">4) Loads</h2>
-<p>Para gerar o aquivo <code>loads.dat</code> basta colocar criar um arquivo <code>loads.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">constraindisp</span>
-<span class="x">83 1</span>
-<span class="x">end constraindisp</span>
-<span class="x">constraintemp</span>
-<span class="x">83 1</span>
-<span class="x">end constraintemp</span>
-<span class="x">nodalloads</span>
-<span class="x">1 1</span>
-<span class="x">end nodalloads</span>
-<span class="x">nodalthermloads</span>
-<span class="x">1 2</span>
-<span class="x">end nodalthermloads</span>
-<span class="x">nodalsources</span>
-<span class="x">83 </span><span class="cp">{{</span><span class="nv">external_temperature</span><span class="cp">}}</span>
-<span class="x">end nodalsources</span>
-<span class="x">loads</span>
-<span class="x">1 11 0.11123 4</span>
-<span class="x">0    0.0000e+00</span>
-<span class="x">600  0.0000e+00</span>
-<span class="x">1200 </span><span class="cp">{{</span><span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">internal_pressure</span><span class="o">)</span><span class="cp">}}</span>
-<span class="x">1800 </span><span class="cp">{{</span><span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">internal_pressure</span><span class="o">)</span><span class="cp">}}</span>
-<span class="x">2 4 3</span>
-<span class="x">600  0 </span><span class="cp">{{</span><span class="nv">internal_temperature</span><span class="cp">}}</span>
-<span class="x">1200 0 </span><span class="cp">{{</span><span class="nv">internal_temperature</span><span class="cp">}}</span>
-<span class="x">1800 0 </span><span class="cp">{{</span><span class="nv">internal_temperature</span><span class="cp">}}</span>
-<span class="x">end loads</span>
-<span class="x">return</span>
-</code></pre></div></td></tr></table></div>
-<p>Para o caso que temos um histórico de cargas pode-se fazer o seguinte procedimento:</p>
+<p>Para gerar o aquivo <code>loads.dat</code> basta criar um arquivo <code>loads.jinja</code> e coloca-lo na pasta <code>templates</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1120,37 +1065,18 @@
 <span class="x">1 2</span>
 <span class="x">end nodalthermloads</span>
 <span class="x">nodalsources</span>
-<span class="x">83 </span><span class="cp">{{</span><span class="nv">external_temperature</span><span class="cp">}}</span>
+<span class="x">83 </span><span class="cp">{{</span> <span class="nv">external_temperature</span> <span class="o">*</span> <span class="m">291.639</span> <span class="cp">}}</span>
 <span class="x">end nodalsources</span>
 <span class="x">loads</span>
 <span class="x">1 11 0.11123 4</span>
 <span class="x">0    0.0000e+00</span>
 <span class="x">600  0.0000e+00</span>
-<span class="x">1200 </span><span class="cp">{{</span><span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.5</span><span class="nv">e</span><span class="o">+</span><span class="m">07</span> <span class="o">*</span> <span class="nv">internal_pressure</span><span class="o">)</span><span class="cp">}}</span>
-<span class="x">1800 </span><span class="cp">{{</span><span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">3.0</span><span class="nv">e</span><span class="o">+</span><span class="m">07</span> <span class="o">*</span> <span class="nv">internal_pressure</span><span class="o">)</span><span class="cp">}}</span>
+<span class="x">1200 </span><span class="cp">{{</span> <span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">1.5</span><span class="nv">e</span><span class="o">+</span><span class="m">07</span> <span class="o">*</span> <span class="nv">internal_pressure</span><span class="o">)</span> <span class="cp">}}</span>
+<span class="x">1800 </span><span class="cp">{{</span> <span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="m">3.0</span><span class="nv">e</span><span class="o">+</span><span class="m">07</span> <span class="o">*</span> <span class="nv">internal_pressure</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">2 4 3</span>
-<span class="x">600  0 </span><span class="cp">{{</span><span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span> <span class="nv">internal_temperature</span><span class="o">)</span><span class="cp">}}</span>
+<span class="x">600  0 </span><span class="cp">{{</span> <span class="s2">&quot;%.4e&quot;</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span> <span class="nv">internal_temperature</span> <span class="o">*</span> <span class="m">291.639</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">end loads</span>
 <span class="x">return</span>
-</code></pre></div></td></tr></table></div>
-<p>No arquivo <code>case.yml</code>a média de <code>internal_pressure = 1.0</code>, ou seja:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal_pressure</span>
-<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
-<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal_temperature</span>
-<span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">331.622</span>
-<span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 </code></pre></div></td></tr></table></div>
 
 
