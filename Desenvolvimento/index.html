@@ -373,8 +373,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-linters-e-formatadores-de-codigo" class="md-nav__link">
-    4) Linters e formatadores de código
+  <a href="#4-ferramentas-de-descolvimento" class="md-nav__link">
+    4) Ferramentas de descolvimento
   </a>
   
 </li>
@@ -988,8 +988,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-linters-e-formatadores-de-codigo" class="md-nav__link">
-    4) Linters e formatadores de código
+  <a href="#4-ferramentas-de-descolvimento" class="md-nav__link">
+    4) Ferramentas de descolvimento
   </a>
   
 </li>
@@ -1078,13 +1078,12 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Instalando precommit</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pre-commit<span class="w"> </span>install
 </code></pre></div></td></tr></table></div>
-<h2 id="4-linters-e-formatadores-de-codigo">4) Linters e formatadores de código</h2>
-<p>Foram usados o <code>black</code>, <code>mypy</code>, <code>isort</code> e <code>flake8</code></p>
-<p>Para rodar o <code>black</code>, <code>mypy</code> e <code>isort</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span>fmt
+<h2 id="4-ferramentas-de-descolvimento">4) Ferramentas de descolvimento</h2>
+<p>Foi usado <code>taskipy</code> para facilitar o uso dasa ferramentas. Para listar as configurações:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>task<span class="w"> </span>-l
 </code></pre></div></td></tr></table></div>
-<p>Para rodar o <code>flake8</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>make<span class="w"> </span>linter
+<p>Por exemplo para rodar o <code>black</code> e <code>isort</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>task<span class="w"> </span>fmt
 </code></pre></div></td></tr></table></div>
 
 
