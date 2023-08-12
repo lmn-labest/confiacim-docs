@@ -952,7 +952,7 @@
 
 
 <h2 id="tencim.iteration.run_samples_iteration_i" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">ouput_dir</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1005,6 +1005,7 @@
         <tr>
           <td><code>output_dir</code></td>
           <td>
+                <code><span title="pathlib.Path">Path</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1170,7 +1171,7 @@
     <span class="o">*</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
-    <span class="n">ouput_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">RunnerClass</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">TencimRunner</span><span class="p">]</span> <span class="o">=</span> <span class="n">TencimRunner</span><span class="p">,</span>
     <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -1201,10 +1202,10 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">abs_path_input_dir</span> <span class="o">=</span> <span class="n">original_dir</span> <span class="o">/</span> <span class="n">input_dir</span>
 
-    <span class="k">if</span> <span class="n">ouput_dir</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">():</span>
-        <span class="n">abs_path_output_dir</span> <span class="o">=</span> <span class="n">ouput_dir</span>
+    <span class="k">if</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">():</span>
+        <span class="n">abs_path_output_dir</span> <span class="o">=</span> <span class="n">output_dir</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">abs_path_output_dir</span> <span class="o">=</span> <span class="n">original_dir</span> <span class="o">/</span> <span class="n">ouput_dir</span>
+        <span class="n">abs_path_output_dir</span> <span class="o">=</span> <span class="n">original_dir</span> <span class="o">/</span> <span class="n">output_dir</span>
 
     <span class="n">generator</span> <span class="o">=</span> <span class="n">Genarator</span><span class="p">(</span><span class="n">get_template_dir</span><span class="p">(</span><span class="n">abs_path_input_dir</span><span class="p">))</span>
 

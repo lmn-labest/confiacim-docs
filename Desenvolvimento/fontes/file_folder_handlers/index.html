@@ -1376,6 +1376,7 @@
         <tr>
           <td><code>files</code></td>
           <td>
+                <code>list[<span title="pathlib.Path">Path</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1399,7 +1400,7 @@
 <span class="normal">78</span>
 <span class="normal">79</span>
 <span class="normal">80</span>
-<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean_input_files_after_run</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean_input_files_after_run</span><span class="p">(</span><span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apaga uma lista de arquivos.</span>
 
@@ -1539,6 +1540,7 @@
         <tr>
           <td><code>src</code></td>
           <td>
+                <code><span title="pathlib.Path">Path</span> | str</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1552,6 +1554,7 @@
         <tr>
           <td><code>dest</code></td>
           <td>
+                <code><span title="pathlib.Path">Path</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1579,7 +1582,7 @@
 <span class="normal">109</span>
 <span class="normal">110</span>
 <span class="normal">111</span>
-<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy_file</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy_file</span><span class="p">(</span><span class="n">src</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dest</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Copia um arquivo de um local para outro.</span>
 
