@@ -916,21 +916,39 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>├── bin
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>├── bin
 │   └── TENCIM1D.exe
 └── simulation
     └── input
-        ├── case.dat
-        ├── case.yml
-        ├── mesh.dat
-        └── templates
-            ├── initialtemperature.jinja
-            ├── loads.jinja
-            └── materials.jinja
+        ├── case1a
+        │   ├── case.dat
+        │   ├── case.yml
+        │   ├── mesh.dat
+        │   └── templates
+        │       ├── initialtemperature.jinja
+        │       ├── loads.jinja
+        │       └── materials.jinja
+        ├── case1b
+        │   ├── case.dat
+        │   ├── case.yml
+        │   ├── mesh.dat
+        │   └── templates
+        │       ├── initialtemperature.jinja
+        │       ├── loads.jinja
+        │       └── materials.jinja
 ├── simulation/output
 </code></pre></div></td></tr></table></div>
-<p>O executavel do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>input</code> deve ficar os arquivos de entrada. Na caso já temos um exemplo simples na pasta. Na pasta <code>output</code> é onde serão salvos os resultados. Exitem alguns conjutos de arquivos de entrada na pasta <code>tests/files/input</code> que podem ser usados como base para novos casos.</p>
-<p>Os arquivos de entradas são os arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>*.yaml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter o sufixo <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variaval na lista. No campo <code>correlations</code>são definidas as correlações entre as variáveis, este campo é <code>opcional</code>. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
+<p>O executavel do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>output</code> é onde serão salvos os resultados. Na pasta <code>input</code> deve ficar os arquivos de entrada. Na caso já temos dois exemplos simples na pasta. Ambos são são a mesma simalução com arquivos de entradas diferentes. No <code>caso1a</code> a médias da variaveis são consideras unitárias. Os valores reais das médias estão nos arquivos de template. Já no <code>caso2a</code> as médias estão definidas direramente no arquivo <code>yml</code>.</p>
+<p>Os arquivos de entradas são os mesmo do arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>case.yml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter o sufixo <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variavel na lista. No campo <code>correlations</code> são definidas as correlações entre as variáveis, este campo é <code>opcional</code>, caso nãao seja fornecida matriz de correlação é a matriz identidade. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -959,31 +977,21 @@
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poisson</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cohesion</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">normal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">friction_angle</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thermal_expansion</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
-<span class="w">    </span><span class="nt">average</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 
 <span class="nt">correlations</span><span class="p">:</span>
@@ -999,8 +1007,8 @@
 <span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
 <span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
-<p>Para verificar se as configuração da simulção foram lidas corretamente temos o comando:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/input/case1/
+<p>Para verificar se as configuração da simulação foram lidas corretamente temos o comando:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/input/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Existe um conjuto de exemplos na apasta <code>tests/files/input</code> do repositório.</p>
 <h2 id="2-analise-probablistica-com-form">2) Análise probablística com FORM</h2>
