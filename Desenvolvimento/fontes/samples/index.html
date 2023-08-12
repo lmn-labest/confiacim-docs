@@ -1239,7 +1239,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">new_avg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="n">sp</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>  <span class="c1"># TODO: isso aqui está estranho. Refizer depois</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>  <span class="c1"># TODO: isso aqui está estranho. Refazer depois</span>
         <span class="n">sp</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span>
 
         <span class="k">return</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>
@@ -1449,7 +1449,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">new_avg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-    <span class="n">sp</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>  <span class="c1"># TODO: isso aqui está estranho. Refizer depois</span>
+    <span class="n">sp</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>  <span class="c1"># TODO: isso aqui está estranho. Refazer depois</span>
     <span class="n">sp</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span>
 
     <span class="k">return</span> <span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">var_name</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">new_avg</span><span class="p">)</span>
