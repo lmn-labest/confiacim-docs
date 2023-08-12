@@ -2403,7 +2403,10 @@
 <span class="normal">291</span>
 <span class="normal">292</span>
 <span class="normal">293</span>
-<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">variables_validation</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">variables_validation</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validação das informações da variaveis aleatorias da simulação.</span>
 
@@ -2429,7 +2432,7 @@
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">average</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">v</span><span class="p">[</span><span class="s2">&quot;average&quot;</span><span class="p">],</span>  <span class="c1"># TODO faze o average ser opcional</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;average&quot;</span><span class="p">),</span>  <span class="c1"># TODO faze o average ser opcional</span>
                 <span class="n">v</span><span class="p">[</span><span class="s2">&quot;cov&quot;</span><span class="p">],</span>
                 <span class="n">v</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
                 <span class="n">v</span><span class="p">[</span><span class="s2">&quot;dist&quot;</span><span class="p">],</span>
@@ -2444,10 +2447,13 @@
 
         <span class="n">dict_</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="n">dist</span><span class="p">)</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;average&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">average</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">SimulationConfigFileError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O campo média da variavel </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> no pode ser convertido.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ValueError</span>
+        <span class="k">if</span> <span class="n">average</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;average&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">average</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SimulationConfigFileError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;O campo média da variavel </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> no pode ser convertido.&quot;</span>
+                <span class="p">)</span> <span class="kn">from</span> <span class="nn">ValueError</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;cov&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span>
