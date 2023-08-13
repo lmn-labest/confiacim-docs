@@ -2347,7 +2347,7 @@ Novas distruibuições devem ser adicionandas aqui.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Cria uma dicionário com as respectivas distribuicões.</p>
+      <p>Cria uma dicionário com as respectivas distribuicões. As médias são sempre unitárias.</p>
 
 
 
@@ -2369,7 +2369,7 @@ Novas distruibuições devem ser adicionandas aqui.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Variaves aleatorias.</p>
+              <p>Variáves aleatórias.</p>
             </div>
           </td>
           <td>
@@ -2396,7 +2396,7 @@ Novas distruibuições devem ser adicionandas aqui.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Retorna um dicionário com as distruibuições com sua respectivamente <code>pdf</code>, <code>cdf</code>, <code>ppf</code>.</p>
+              <p>Retorna um dicionário com as distruibuições com sua respectivamente <code>pdf</code>, <code>cdf</code> e <code>ppf</code>.</p>
             </div>
           </td>
         </tr>
@@ -2434,15 +2434,16 @@ Novas distruibuições devem ser adicionandas aqui.</p>
 <span class="normal">242</span>
 <span class="normal">243</span>
 <span class="normal">244</span>
-<span class="normal">245</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">FormVariabel</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
+<span class="normal">245</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">FormVariabel</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cria uma dicionário com as respectivas distribuicões.</span>
+<span class="sd">    Cria uma dicionário com as respectivas distribuicões. As médias são sempre unitárias.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        variables: Variaves aleatorias.</span>
+<span class="sd">        variables: Variáves aleatórias.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        Retorna um dicionário com as distruibuições com sua respectivamente `pdf`, `cdf`, `ppf`.</span>
+<span class="sd">        Retorna um dicionário com as distruibuições com sua respectivamente `pdf`, `cdf` e `ppf`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">fs</span><span class="p">,</span> <span class="n">Fs</span><span class="p">,</span> <span class="n">IFs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 
@@ -2458,7 +2459,8 @@ Novas distruibuições devem ser adicionandas aqui.</p>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distribuição </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="si">}</span><span class="s2"> da variável </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> é invalida.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">KeyError</span>
 
-        <span class="n">dist</span> <span class="o">=</span> <span class="n">Dist</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">average_normalized</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">cov</span><span class="p">)</span>
+        <span class="c1"># Internamente das distribuições são sempre tradas como unitárias</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="n">Dist</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">cov</span><span class="p">)</span>
         <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">pdf</span><span class="p">)</span>
         <span class="n">Fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
         <span class="n">IFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">ppf</span><span class="p">)</span>
