@@ -527,8 +527,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#form.math_utils.Ua2dict" class="md-nav__link">
-    Ua2dict()
+  <a href="#form.math_utils.Ua2avgs_denormalized" class="md-nav__link">
+    Ua2avgs_denormalized()
   </a>
   
 </li>
@@ -913,8 +913,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#form.math_utils.Ua2dict" class="md-nav__link">
-    Ua2dict()
+  <a href="#form.math_utils.Ua2avgs_denormalized" class="md-nav__link">
+    Ua2avgs_denormalized()
   </a>
   
 </li>
@@ -1011,7 +1011,7 @@
       <p>Funções matemáticas de apoio.</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
-<li>Ua2dict</li>
+<li>Ua2avgs_denormalized</li>
 <li>array_U</li>
 <li>array_V</li>
 <li>i_matrix_A</li>
@@ -1041,8 +1041,8 @@
 
 
 
-<h2 id="form.math_utils.Ua2dict" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">Ua2dict</span><span class="p">(</span><span class="n">Un</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span></code>
+<h2 id="form.math_utils.Ua2avgs_denormalized" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">Ua2avgs_denormalized</span><span class="p">(</span><span class="n">Un</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1138,7 +1138,7 @@ não normalizadas.</p>
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Ua2dict</span><span class="p">(</span><span class="n">Un</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">FormVariabel</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Ua2avgs_denormalized</span><span class="p">(</span><span class="n">Un</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">FormVariabel</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transforma array das variaveis normalizadas para um dicionário com elas</span>
 <span class="sd">    não normalizadas.</span>

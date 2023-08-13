@@ -1005,7 +1005,8 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
+<span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -1058,8 +1059,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">71</span>
 <span class="normal">72</span>
 <span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera case truncado no new_last_step</span>
 
@@ -1233,7 +1233,8 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 78</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 77</span>
+<span class="normal"> 78</span>
 <span class="normal"> 79</span>
 <span class="normal"> 80</span>
 <span class="normal"> 81</span>
@@ -1264,9 +1265,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_tencim</span><span class="p">(</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_tencim</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -1285,8 +1284,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna os resultados.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">avgs</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">average</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">})</span>
-
+    <span class="n">avgs</span> <span class="o">=</span> <span class="n">sample_averages</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;deterministic&quot;</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">avgs</span><span class="p">)]</span>
 
     <span class="n">run_samples_iteration_i</span><span class="p">(</span>
