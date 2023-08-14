@@ -1225,7 +1225,7 @@
 
     <span class="k">except</span> <span class="p">(</span><span class="n">FormStepModZeroError</span><span class="p">,</span> <span class="n">FormStepUaInfError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">log_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span>
-        <span class="k">raise</span> <span class="n">e</span> <span class="kn">from</span> <span class="nn">e</span>
+        <span class="k">raise</span> <span class="n">e</span>
 
     <span class="k">finally</span><span class="p">:</span>
         <span class="n">_form_variable_state</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
