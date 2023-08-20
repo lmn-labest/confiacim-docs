@@ -983,7 +983,7 @@
 
 
 <h2 id="controllers.form.run" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1034,9 +1034,9 @@
           </td>
         </tr>
         <tr>
-          <td><code>verbose</code></td>
+          <td><code>verbose_level</code></td>
           <td>
-                <code>bool</code>
+                <code>int</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1050,6 +1050,15 @@
     </tbody>
   </table>
 
+<details class="info" open>
+  <summary>Info</summary>
+  <p>A verbosidade pode ser:</p>
+<ul>
+<li>0 - Nenhuma</li>
+<li>1 - Moderada</li>
+<li>2 - Alta</li>
+</ul>
+</details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/form.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
@@ -1091,16 +1100,31 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rodando a simulação FORM.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
 <span class="sd">        output_dir: Diterório do arquivo de saida.</span>
-<span class="sd">        verbose: Nivel de verbosidade.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">        verbose_level: Nivel de verbosidade.</span>
 
+<span class="sd">    Info:</span>
+<span class="sd">        A verbosidade pode ser:</span>
+
+<span class="sd">        - 0 - Nenhuma</span>
+<span class="sd">        - 1 - Moderada</span>
+<span class="sd">        - 2 - Alta</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">InputDirNotExists</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diretório </span><span class="si">{</span><span class="n">input_dir</span><span class="si">}</span><span class="s2"> não existe.&quot;</span><span class="p">)</span>
 
@@ -1112,22 +1136,23 @@
     <span class="n">simulation_conf</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.yml&quot;</span><span class="p">)</span>
     <span class="n">variable_names</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">variable_names</span>
 
-    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>
             <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">infos</span><span class="p">,</span>
             <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
             <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
             <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
-            <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+            <span class="n">verbose_level</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="n">ptencim_statistics</span><span class="o">.</span><span class="n">total_time</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_wall_time</span><span class="p">()</span>
 
-    <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Final results&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-    <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
-    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose_level</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Final results&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
 
-    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_final_stats</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
-    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_sensitity</span><span class="p">(</span><span class="n">variable_names</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_final_stats</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_sensitity</span><span class="p">(</span><span class="n">variable_names</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
 
     <span class="n">write_final_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
     <span class="n">write_confiacim_statistics</span><span class="p">(</span><span class="n">ptencim_statistics</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
