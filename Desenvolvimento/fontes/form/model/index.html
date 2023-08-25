@@ -631,6 +631,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#form.model.FormResult.json_results" class="md-nav__link">
+    json_results()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -953,6 +960,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#form.model.FormResult.json_results" class="md-nav__link">
+    json_results()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1148,7 +1162,28 @@
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">FormResult</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Resultado do simulação form</span>
@@ -1175,12 +1210,33 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">infos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Retorna as informações na forma de um dicionário.</span>
+<span class="sd">        Retorna as informações brutas na forma de um dicionário.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Atributos da classe.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">asdict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">json_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retorna as informações tratadas na forma de um dicionário.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Returna as informações em uma versão alternativas mais acessivel para ser escrita em formato json.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">infos</span>
+        <span class="k">del</span> <span class="n">results_json</span><span class="p">[</span><span class="s2">&quot;rcs&quot;</span><span class="p">]</span>
+        <span class="n">importance</span> <span class="o">=</span> <span class="n">results_json</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;importance_factors&quot;</span><span class="p">)</span>
+        <span class="n">omission</span> <span class="o">=</span> <span class="n">results_json</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;omission_factors&quot;</span><span class="p">)</span>
+
+        <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcs</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;base&quot;</span><span class="p">]</span>
+
+        <span class="n">dict_</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">importance</span><span class="p">,</span> <span class="n">omission</span><span class="p">):</span>
+            <span class="n">dict_</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;importance_factor&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;omission_factor&quot;</span><span class="p">:</span> <span class="n">o</span><span class="p">}</span>
+        <span class="n">results_json</span><span class="p">[</span><span class="s2">&quot;variables&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dict_</span>
+
+        <span class="k">return</span> <span class="n">results_json</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
@@ -1210,7 +1266,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Retorna as informações na forma de um dicionário.</p>
+      <p>Retorna as informações brutas na forma de um dicionário.</p>
 
 
 
@@ -1240,6 +1296,92 @@
 </div>
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="form.model.FormResult.json_results" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">json_results</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Retorna as informações tratadas na forma de um dicionário.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Returna as informações em uma versão alternativas mais acessivel para ser escrita em formato json.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/form/model.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">json_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retorna as informações tratadas na forma de um dicionário.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Returna as informações em uma versão alternativas mais acessivel para ser escrita em formato json.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">results_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">infos</span>
+    <span class="k">del</span> <span class="n">results_json</span><span class="p">[</span><span class="s2">&quot;rcs&quot;</span><span class="p">]</span>
+    <span class="n">importance</span> <span class="o">=</span> <span class="n">results_json</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;importance_factors&quot;</span><span class="p">)</span>
+    <span class="n">omission</span> <span class="o">=</span> <span class="n">results_json</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;omission_factors&quot;</span><span class="p">)</span>
+
+    <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcs</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;base&quot;</span><span class="p">]</span>
+
+    <span class="n">dict_</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">importance</span><span class="p">,</span> <span class="n">omission</span><span class="p">):</span>
+        <span class="n">dict_</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;importance_factor&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;omission_factor&quot;</span><span class="p">:</span> <span class="n">o</span><span class="p">}</span>
+    <span class="n">results_json</span><span class="p">[</span><span class="s2">&quot;variables&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dict_</span>
+
+    <span class="k">return</span> <span class="n">results_json</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
 
 
 
