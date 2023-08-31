@@ -1129,9 +1129,7 @@
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera a estrutura básica para as simulações</span>
 
@@ -1146,17 +1144,15 @@
 
     <span class="n">exc_dir</span> <span class="o">=</span> <span class="n">module_root_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;prebuild/</span><span class="si">{</span><span class="n">system</span><span class="si">}</span><span class="s2">&quot;</span>
 
-    <span class="n">output</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;simulation/output&quot;</span>
     <span class="nb">bin</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="s2">&quot;bin&quot;</span>
 
-    <span class="n">output</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="nb">bin</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">copy_exec_tencim</span><span class="p">(</span><span class="n">exc_dir</span><span class="p">,</span> <span class="nb">bin</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">case_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;case1a&quot;</span><span class="p">,</span> <span class="s2">&quot;case1b&quot;</span><span class="p">]:</span>
         <span class="n">case_dir</span> <span class="o">=</span> <span class="n">module_root_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;input/</span><span class="si">{</span><span class="n">case_name</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="nb">input</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;simulation/input/</span><span class="si">{</span><span class="n">case_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">base_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;simulation/</span><span class="si">{</span><span class="n">case_name</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="nb">input</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="n">input_files</span> <span class="o">=</span> <span class="n">list_files</span><span class="p">(</span><span class="n">case_dir</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;*.dat&quot;</span><span class="p">,</span> <span class="s2">&quot;*.yml&quot;</span><span class="p">])</span>
@@ -1331,7 +1327,9 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/base.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">121</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
 <span class="normal">122</span>
 <span class="normal">123</span>
 <span class="normal">124</span>
@@ -1344,9 +1342,7 @@
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">version</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">version</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pega a versão do confiacim e do tencim usado.</span>
 

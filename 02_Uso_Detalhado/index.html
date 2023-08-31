@@ -999,32 +999,28 @@
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>├── bin
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>├── bin
 │   └── TENCIM1D.exe
 └── simulation
-    └── input
-        ├── case1a
-        │   ├── case.dat
-        │   ├── case.yml
-        │   ├── mesh.dat
-        │   └── templates
-        │       ├── initialtemperature.jinja
-        │       ├── loads.jinja
-        │       └── materials.jinja
-        ├── case1b
-        │   ├── case.dat
-        │   ├── case.yml
-        │   ├── mesh.dat
-        │   └── templates
-        │       ├── initialtemperature.jinja
-        │       ├── loads.jinja
-        │       └── materials.jinja
-├── simulation/output
+    ├── case1a
+    │   ├── case.dat
+    │   ├── case.yml
+    │   ├── mesh.dat
+    │   └── templates
+    │       ├── initialtemperature.jinja
+    │       ├── loads.jinja
+    │       └── materials.jinja
+    ├── case1b
+    │   ├── case.dat
+    │   ├── case.yml
+    │   ├── mesh.dat
+    │   └── templates
+    │       ├── initialtemperature.jinja
+    │       ├── loads.jinja
+            └── materials.jinja
 </code></pre></div></td></tr></table></div>
-<p>O executavel do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>output</code> é onde serão salvos os resultados. Na pasta <code>input</code> deve ficar os arquivos de entrada. Na caso já temos dois exemplos simples na pasta. Ambos são são a mesma simalução com arquivos de entradas diferentes. No <code>caso1a</code> a médias da variaveis são consideras unitárias. Os valores reais das médias estão nos arquivos de template. Já no <code>caso2a</code> as médias estão definidas direramente no arquivo <code>yml</code>.</p>
-<p>Os arquivos de entradas são os mesmo do arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>case.yml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter o sufixo <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variavel na lista. No campo <code>correlations</code> são definidas as correlações entre as variáveis, este campo é <code>opcional</code>, caso nãao seja fornecida matriz de correlação é a matriz identidade. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
+<p>O executável do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>simulation</code> deve ficar os arquivos de entrada. Na caso já temos dois exemplos simples na pasta. Ambos são a mesma simulação com arquivos de entradas diferentes. No <code>case1a</code> a médias da variaveis são consideras unitárias. Os valores reais das médias estão nos arquivos de template. Já no <code>case2a</code> as médias estão definidas direramente no arquivo <code>yml</code>.</p>
+<p>Os arquivos de entradas são os mesmo do arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>case.yml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter extensão <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variavel na lista. No campo <code>correlations</code> são definidas as correlações entre as variáveis, este campo é <code>opcional</code>, caso não seja fornecido esse campo a matriz de correlação é automaticamente definidaa como a matriz identidade. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1084,17 +1080,17 @@
 <span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <p>Para verificar se as configuração da simulação foram lidas corretamente temos o comando:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/input/case1a/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Existe um conjuto de exemplos na apasta <code>tests/files/input</code> do repositório.</p>
 <h2 id="2-analise-probablistica-com-form">2) Análise probablística com FORM</h2>
 <p>Para rodar basta fazer</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <p>Para uma saida mais verbosa basta utilizar a opção <code>--verbose</code> ou <code>-v</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>--verbose<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>--verbose<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
-<p>Após rodar a estrutura de diretórios deve ser:</p>
+<p>Após rodar a estrutura de diretórios deve ser algo similar:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1126,79 +1122,77 @@
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>└── simulation
-    ├── input
-    │   ├── case.dat
-    │   ├── case.yml
-    │   ├── mesh.dat
-    │   └── templates
-    │       ├── initialtemperature.jinja
-    │       ├── loads.jinja
-    │       └── materials.jinja
-    └── output
-        ├── it_0001
-        │   ├── base
-        │   ├── cohesion
-        │   ├── E
-        │   ├── external_temperature
-        │   ├── friction_angle
-        │   ├── initial_temp
-        │   ├── internal_pressure
-        │   ├── internal_temperature
-        │   ├── poisson
-        │   └── thermal_expansion
-        ├── it_0002
-        │   ├── base
-        │   ├── cohesion
-        │   ├── E
-        │   ├── external_temperature
-        │   ├── friction_angle
-        │   ├── initial_temp
-        │   ├── internal_pressure
-        │   ├── internal_temperature
-        │   ├── poisson
-        │   └── thermal_expansion
-        ├── results.txt
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code>├── case1a
+│   ├── case.dat
+│   ├── case.yml
+│   ├── mesh.dat
+│   ├── output
+│   │   └── rodada1
+│   │       ├── it_0001
+│   │       │   ├── base
+│   │       │   ├── cohesion
+│   │       │   ├── E
+│   │       │   ├── external_temperature
+│   │       │   ├── friction_angle
+│   │       │   ├── initial_temp
+│   │       │   ├── internal_pressure
+│   │       │   ├── internal_temperature
+│   │       │   ├── poisson
+│   │       │   └── thermal_expansion
+│   │       ├── it_0002
+│   │       │   ├── base
+│   │       │   ├── cohesion
+│   │       │   ├── E
+│   │       │   ├── external_temperature
+│   │       │   ├── friction_angle
+│   │       │   ├── initial_temp
+│   │       │   ├── internal_pressure
+│   │       │   ├── internal_temperature
+│   │       │   ├── poisson
+│   │       │   └── thermal_expansion
+│   └── templates
+│       ├── initialtemperature.jinja
+│       ├── loads.jinja
+│       └── materials.jinja
 </code></pre></div></td></tr></table></div>
-<p>Na pasta <code>output</code> estão salvos os resultados desejados do <code>confiacim</code> para cada amostra em cada iteração. Por exemplo, na pasta <code>it_0001</code> estão os resultados da iteração <code>1</code> do <code>form</code>.</p>
+<p>Na pasta <code>output</code> estão salvos os resultados desejados do <code>confiacim</code> da execução <code>run1</code>. Por exemplo, na pasta <code>it_0001</code> estão os resultados da iteração <code>1</code> do <code>form</code>.</p>
 <p>Comando parar o <code>confiacim</code> plotar todos os resultados de <code>RC</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <blockquote>
 <p><img alt="RC" src="../assets/img/all_RC.png" /></p>
 <p>Fig1 - Série histórica do valor do RC agrupados por iterações.</p>
 </blockquote>
 <p>Para plotar os resultados de <code>RC</code> de uma iteração específica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">1</span><span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">1</span><span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <blockquote>
 <p><img alt="RC" src="../assets/img/it_0001_RC.png" /></p>
 <p>Fig2 - Serie histórica do valor do RC da iteração 1.</p>
 </blockquote>
 <p>Para salvar os gráficos pode-se usar a opção <code>-s</code> ou <code>--save</code></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>-s<span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>-s<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
-<p>Os gráficos serão salvos na pasta <code>simulation/output/case1/graphs</code>.</p>
+<p>Os gráficos serão salvos na pasta <code>simulation/case1a/output/run1/graphs</code>.</p>
 <p>Para um gráfico mais iterativo existe a possibilidade de usar o <code>plotly</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plotly<span class="w"> </span>all<span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plotly<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <h2 id="3-analise-deterministica">3) Análise deterministica</h2>
 <p>Para rodar a análise determinítica base:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/input/case1/<span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w"> </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <p>Para plotar os RCs da análise deterministica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w">  </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <p>Para truncar a analise em <code>174</code> basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">174</span><span class="w"> </span>simulation/input/case1/case.dat
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">174</span><span class="w"> </span>simulation/case1a/case.dat
 </code></pre></div></td></tr></table></div>
 <p>Será gerado um o novo <code>case.dat</code>. E caso não exita será criado um <code>case_original.dat</code> com o conteudo original do arquivo <code>case.dat</code>.</p>
 <p>Caso se queira agora truncar a análise em <code>139</code> você poded usar o <code>case_original.dat</code>, ou seja:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">139</span><span class="w"> </span>simulation/input/case1/case_original.dat
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">139</span><span class="w"> </span>simulation/case1a/case_original.dat
 </code></pre></div></td></tr></table></div>
 <p>Para voltar para o original basta usar step maior que o original, por exemplo:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">10000</span><span class="w"> </span>simulation/input/case1/case_original.dat
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">10000</span><span class="w"> </span>simulation/case1a/case_original.dat
 </code></pre></div></td></tr></table></div>
 <h2 id="4-configuracoes">4) Configurações</h2>
 <p>Algumas configurações extras podem ser feitas através do arquivo <code>.env</code>. Este arquivo deve estar na raiz do projeto, porem ele é completamente <code>opcional</code>.</p>
@@ -1221,7 +1215,7 @@
 <p>A variável de ambiente <code>CONFIACIM_LOG_LEVEL</code> irá definir o nivel de informações que serão escritos no aquivo <code>form.log</code> para cada iteração do <code>form</code>. Temos dois niveis atualmente <code>ERROR</code> e <code>DEBUG</code>. No nível <code>ERROR</code> só teremos informações caso haja algum problema numérico como <code>Inf</code> ou <code>divisão por zero</code>. No nível <code>DEBUG</code> todas as variaveis usadas no <code>form</code> serão escritas no arquivo em todas as iterações.</p>
 <p>A váriavel <code>CONFIACIM_EXEC_TENCIM_MODE</code> define o modelo de excução do <code>Tencim1D</code>. As opções são: <code>SEQUENTIAL</code>parar rodar o <code>tencim1D</code> em sequencial; <code>MULTIPROC</code>para rodar utilizando multiprocessos. O valor padrão é o <code>MULTIPROC</code>. O número de processos será o menor valor entre <code>número de variaveis + 1</code> e o número de <code>n</code>. Onde <code>CPUS</code> retornado pelo função <code>os.cpu_count()</code> dividido por <code>2</code>.</p>
 <p>Outra forma de alterar os valores configurações é passando elas na hora de executar o <code>confiacim</code>. Por exemplo para mudar o nivel do log pode-se fazer:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>form<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/input/case1<span class="w">  </span>simulation/output/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>form<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w">  </span>simulation/case1a/output/run1
 </code></pre></div></td></tr></table></div>
 <p>Nessa caso a variável passada na linha de comando irá prevalecer sobre a variável que está no arquivo <code>.env</code>.</p>
 
