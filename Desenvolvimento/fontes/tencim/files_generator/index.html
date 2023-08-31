@@ -756,6 +756,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tencim.files_generator.Genarator.check_variables" class="md-nav__link">
+    check_variables()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tencim.files_generator.Genarator.context_props_from_averages" class="md-nav__link">
+    context_props_from_averages()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tencim.files_generator.Genarator.generate_hidrprop" class="md-nav__link">
     generate_hidrprop()
   </a>
@@ -1016,6 +1030,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tencim.files_generator.Genarator.check_variables" class="md-nav__link">
+    check_variables()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tencim.files_generator.Genarator.context_props_from_averages" class="md-nav__link">
+    context_props_from_averages()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tencim.files_generator.Genarator.generate_hidrprop" class="md-nav__link">
     generate_hidrprop()
   </a>
@@ -1108,7 +1136,7 @@
 <a id="tencim.files_generator"></a>
   <div class="doc doc-contents first">
   
-      <p>Módulo com as funcionalidades ge geração de arquivos via template.</p>
+      <p>Módulo com as funcionalidades de geração de arquivos via template.</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
 <li>Genarator</li>
@@ -1323,7 +1351,27 @@
 <span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
-<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Genarator</span><span class="p">:</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Genarator</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe que genera os arquivos de entrada</span>
 
@@ -1348,9 +1396,9 @@
 
         <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;hidrationprop.jinja&quot;</span><span class="p">)</span>
 
-        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">HIDROPROP</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">HIDROPROP</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
@@ -1368,9 +1416,9 @@
 
         <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;materials.jinja&quot;</span><span class="p">)</span>
 
-        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">MATERIALS_PROPS</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">MATERIALS_PROPS</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
@@ -1408,9 +1456,9 @@
 
         <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;loads.jinja&quot;</span><span class="p">)</span>
 
-        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">LOADS</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">LOADS</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
@@ -1457,15 +1505,35 @@
 
         <span class="k">return</span> <span class="n">was_generated</span>
 
-    <span class="k">def</span> <span class="nf">_check_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="n">Jinja2ContextProcessor</span><span class="p">,</span> <span class="n">variable_in_context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">check_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="n">Jinja2ContextProcessor</span><span class="p">,</span> <span class="n">variable_in_context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verifica se todas as variaveis no dicionário estão no template.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            template: template Jinja</span>
+<span class="sd">            variable_in_context: Variveis no contexto</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            VariableTemplateError: _description_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">variables_in_templates</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">get_variables</span><span class="p">()</span>
 
-        <span class="k">for</span> <span class="n">var_in_context</span> <span class="ow">in</span> <span class="n">variables_in_templates</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">var_in_context</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">variable_in_context</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">VariableTemplateError</span><span class="p">(</span><span class="n">var_in_context</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">var_in_tamplate</span> <span class="ow">in</span> <span class="n">variables_in_templates</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">var_in_tamplate</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">variable_in_context</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">VariableTemplateError</span><span class="p">(</span><span class="n">var_in_tamplate</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_context_props_from_averages</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">averages</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">context_props_from_averages</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">averages</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pega a variaveis que serão utlizadas no contexto</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            averages: Médias de todas as variaveis aleatórias.</span>
+<span class="sd">            props: Propriedades desejadas</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Retorna um dicionário apenas com as médias desejadas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -1661,6 +1729,260 @@
 
 
 
+<h3 id="tencim.files_generator.Genarator.check_variables" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">variable_in_context</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Verifica se todas as variaveis no dicionário estão no template.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>template</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="tencim.files_generator.Jinja2ContextProcessor" href="#tencim.files_generator.Jinja2ContextProcessor">Jinja2ContextProcessor</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>template Jinja</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>variable_in_context</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Variveis no contexto</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="confiacim.erros.VariableTemplateError">VariableTemplateError</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p><em>description</em></p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/tencim/files_generator.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="n">Jinja2ContextProcessor</span><span class="p">,</span> <span class="n">variable_in_context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verifica se todas as variaveis no dicionário estão no template.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        template: template Jinja</span>
+<span class="sd">        variable_in_context: Variveis no contexto</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        VariableTemplateError: _description_</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">variables_in_templates</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">get_variables</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">var_in_tamplate</span> <span class="ow">in</span> <span class="n">variables_in_templates</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">var_in_tamplate</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">variable_in_context</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">VariableTemplateError</span><span class="p">(</span><span class="n">var_in_tamplate</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="tencim.files_generator.Genarator.context_props_from_averages" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pega a variaveis que serão utlizadas no contexto</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>averages</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Médias de todas as variaveis aleatórias.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>props</code></td>
+          <td>
+                <code>list[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Propriedades desejadas</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict[str, float]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Retorna um dicionário apenas com as médias desejadas.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/tencim/files_generator.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">context_props_from_averages</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">averages</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pega a variaveis que serão utlizadas no contexto</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        averages: Médias de todas as variaveis aleatórias.</span>
+<span class="sd">        props: Propriedades desejadas</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Retorna um dicionário apenas com as médias desejadas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">context</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">averages</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">context</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="tencim.files_generator.Genarator.generate_hidrprop" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">generate_hidrprop</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">write_path</span><span class="p">)</span></code>
 
@@ -1746,9 +2068,9 @@
 
     <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;hidrationprop.jinja&quot;</span><span class="p">)</span>
 
-    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">HIDROPROP</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">HIDROPROP</span><span class="p">)</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
     <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
@@ -1954,9 +2276,9 @@
 
     <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;loads.jinja&quot;</span><span class="p">)</span>
 
-    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">LOADS</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">LOADS</span><span class="p">)</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
     <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
@@ -2058,9 +2380,9 @@
 
     <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;materials.jinja&quot;</span><span class="p">)</span>
 
-    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">MATERIALS_PROPS</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_props_from_averages</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">MATERIALS_PROPS</span><span class="p">)</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">_check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_variables</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
     <span class="n">string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
 
