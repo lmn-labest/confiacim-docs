@@ -1122,12 +1122,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
 <span class="normal">169</span>
 <span class="normal">170</span>
 <span class="normal">171</span>
@@ -1174,7 +1169,12 @@
 <span class="normal">212</span>
 <span class="normal">213</span>
 <span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">deterministic_rcs</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">deterministic_rcs</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plota o grafico de `RC` da analise deterministica</span>
 
@@ -1328,13 +1328,22 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td>
+                <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A pasta da simulação não foi encontrado.</p>
+            </div>
+          </td>
+        </tr>
     </tbody>
   </table>
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 52</span>
-<span class="normal"> 53</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 53</span>
 <span class="normal"> 54</span>
 <span class="normal"> 55</span>
 <span class="normal"> 56</span>
@@ -1386,7 +1395,12 @@
 <span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
-<span class="normal">105</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_all_matplotlib</span><span class="p">(</span><span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_all_matplotlib</span><span class="p">(</span><span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plota os graficos de `RC` de todas as simulações.</span>
 
@@ -1401,6 +1415,7 @@
 <span class="sd">        DirsResultsNotFound: Nenhum diretório de resultados achado.</span>
 <span class="sd">        RCFileNotFound: O arquivo `RC` não encontrado.</span>
 <span class="sd">        MatplotlibModuleError: Matplotlib não instalado.</span>
+<span class="sd">        SimulationFolderNotFound: A pasta da simulação não foi encontrado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">plt</span><span class="p">:</span>
@@ -1408,7 +1423,10 @@
 
     <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-    <span class="n">results</span> <span class="o">=</span> <span class="n">result_folders</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">result_folders</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SimulationFolderNotFound</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">results</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">DirsResultsNotFound</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
@@ -1541,17 +1559,22 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td>
+                <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A pasta da simulação não foi encontrado.</p>
+            </div>
+          </td>
+        </tr>
     </tbody>
   </table>
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
@@ -1608,7 +1631,16 @@
 <span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span>
-<span class="normal">280</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_all_plotly</span><span class="p">(</span><span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_all_plotly</span><span class="p">(</span><span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plota os graficos de `RC` de todas as simulações.</span>
 
@@ -1624,12 +1656,16 @@
 <span class="sd">        ItFolderNotFound: Diretório da iteração nnão foi achado.</span>
 <span class="sd">        RCFileNotFound: O arquivo `RC` não encontrado.</span>
 <span class="sd">        PlotlyModuleError: Plotly não instalado.</span>
+<span class="sd">        SimulationFolderNotFound: A pasta da simulação não foi encontrado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">go</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">PlotlyModuleError</span><span class="p">(</span><span class="s2">&quot;É necessário instalar o plotly.&quot;</span><span class="p">)</span>
 
-    <span class="n">results</span> <span class="o">=</span> <span class="n">result_folders</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">result_folders</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SimulationFolderNotFound</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">results</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">DirsResultsNotFound</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
@@ -1787,12 +1823,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
@@ -1839,7 +1870,12 @@
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_it_matplotlib</span><span class="p">(</span><span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_it_matplotlib</span><span class="p">(</span><span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">save</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plota os graficos de `RC` da iteralção `it`.</span>
 
