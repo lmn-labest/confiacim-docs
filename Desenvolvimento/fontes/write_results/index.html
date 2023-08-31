@@ -1484,7 +1484,7 @@
 
 
 <h2 id="write_results.write_iteration_log" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1521,7 +1521,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>res</code></td>
+          <td><code>resid</code></td>
           <td>
                 <code>float</code>
           </td>
@@ -1591,13 +1591,13 @@
 <span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
-<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">resid</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Escreve informações da iteração do **FORM**.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        betai: Valor beta da iteração i.</span>
-<span class="sd">        res: Valor do residuo da iteração i.</span>
+<span class="sd">        resid: Valor do residuo da iteração i.</span>
 <span class="sd">        it: Número da iteração i.</span>
 <span class="sd">        output_dir: Caminho do diretório de saida.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1608,12 +1608,12 @@
 
     <span class="k">if</span> <span class="n">it</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
-        <span class="n">head</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:&gt;6}</span><span class="s2"> </span><span class="si">{:&gt;12}</span><span class="s2"> </span><span class="si">{:&gt;12}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;it&quot;</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="s2">&quot;res&quot;</span><span class="p">)</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:&gt;6}</span><span class="s2"> </span><span class="si">{:&gt;12}</span><span class="s2"> </span><span class="si">{:&gt;12}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;it&quot;</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="s2">&quot;resid&quot;</span><span class="p">)</span>
         <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
 
-    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">betai</span><span class="p">,</span> <span class="n">res</span><span class="p">))</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">))</span>
 
     <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
@@ -1628,7 +1628,7 @@
 
 
 <h2 id="write_results.write_iteration_log_json" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">write_iteration_log_json</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">write_iteration_log_json</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1665,7 +1665,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>res</code></td>
+          <td><code>resid</code></td>
           <td>
                 <code>float</code>
           </td>
@@ -1758,7 +1758,7 @@
 <span class="normal">142</span>
 <span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_iteration_log_json</span><span class="p">(</span>
     <span class="n">betai</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-    <span class="n">res</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">resid</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1768,7 +1768,7 @@
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        betai: Valor beta da iteração i.</span>
-<span class="sd">        res: Valor do residuo da iteração i.</span>
+<span class="sd">        resid: Valor do residuo da iteração i.</span>
 <span class="sd">        it: Número da iteração i.</span>
 <span class="sd">        output_dir: Caminho do diretório de saida.</span>
 <span class="sd">        indent: Identação do arquivo JSON.</span>
@@ -1778,13 +1778,13 @@
 
     <span class="k">if</span> <span class="n">it</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-            <span class="n">dict_</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">betai</span><span class="p">],</span> <span class="s2">&quot;res&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">res</span><span class="p">]}</span>
+            <span class="n">dict_</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">betai</span><span class="p">],</span> <span class="s2">&quot;resid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">resid</span><span class="p">]}</span>
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dict_</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
             <span class="n">dict_</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
             <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;beta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">betai</span><span class="p">)</span>
-            <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;res&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+            <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;resid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span>
 
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dict_</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span>
