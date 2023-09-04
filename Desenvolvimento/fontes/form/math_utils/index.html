@@ -1158,7 +1158,7 @@ não normalizadas.</p>
         <tr>
           <td><code>variables</code></td>
           <td>
-                <code>tuple[<span title="confiacim.variables.model.FormVariabel">FormVariabel</span>, ...]</code>
+                <code>tuple[<span title="confiacim.variables.model.StochasticVariable">StochasticVariable</span>, ...]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1214,7 +1214,7 @@ não normalizadas.</p>
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Ua2avgs_denormalized</span><span class="p">(</span><span class="n">Un</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">FormVariabel</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Ua2avgs_denormalized</span><span class="p">(</span><span class="n">Un</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transforma array das variaveis normalizadas para um dicionário com elas</span>
 <span class="sd">    não normalizadas.</span>
