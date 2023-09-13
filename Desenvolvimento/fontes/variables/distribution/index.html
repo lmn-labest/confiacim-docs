@@ -2608,7 +2608,7 @@ Novas distruibuições devem ser adicionandas aqui.</p>
 <span class="sd">            Returna uma tupla com a k, lambda.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">k</span><span class="p">,</span> <span class="n">lambda_</span> <span class="o">=</span> <span class="n">mean_and_std_to_k_lamb</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">1_000_000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-11</span><span class="p">,</span> <span class="n">alf</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">exeption</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">k</span><span class="p">,</span> <span class="n">lambda_</span> <span class="o">=</span> <span class="n">weibull_k_lambda_from_mean_std</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">exception</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">k</span><span class="p">,</span> <span class="n">lambda_</span>
 
