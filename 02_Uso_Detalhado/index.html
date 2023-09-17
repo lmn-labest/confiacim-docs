@@ -1284,7 +1284,7 @@
             └── materials.jinja
 </code></pre></div></td></tr></table></div>
 <p>O executável do <code>tencim</code> na pasta <code>bin</code> pode ser trocado para qualquer versão desejada. Na pasta <code>simulation</code> deve ficar os arquivos de entrada. Na caso já temos dois exemplos simples na pasta. Ambos são a mesma simulação com arquivos de entradas diferentes. No <code>case1a</code> a médias da variaveis são consideras unitárias. Os valores reais das médias estão nos arquivos de template. Já no <code>case2a</code> as médias estão definidas direramente no arquivo <code>yml</code>.</p>
-<p>Os arquivos de entradas são os mesmo do arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>case.yml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter extensão <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variavel na lista. No campo <code>correlations</code> são definidas as correlações entre as variáveis, este campo é <code>opcional</code>, caso não seja fornecido esse campo a matriz de correlação é automaticamente definidaa como a matriz identidade. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
+<p>Os arquivos de entradas são os mesmo do arquivos do <code>tencim1D</code> mais alguns arquivos extras <code>*.jinja</code> e <code>case.yml</code>. Na pasta <code>templates</code> estão os arquivos de entrada que serão gerados dinamicamente, esses arquivos precisam ter extensão <code>*.jinja</code>. No arquivo <code>case.yml</code> estão as configurações da simulação do <code>confiacim</code>. No campo <code>variables:</code> são definidos as variáves que serão utilizadas, é necessario que existam pelo menos uma variavel na lista. No campo <code>correlations</code> são definidas as correlações entre as variáveis, este campo é <code>opcional</code>, caso não seja fornecido esse campo a matriz de correlação é automaticamente definida como a matriz identidade. No campo <code>config</code> temos as configurações do <code>confiacim</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1331,10 +1331,10 @@
 <span class="w">    </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 
 <span class="nt">correlations</span><span class="p">:</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">E, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thermal_expansion, poisson</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle, thermal_expansion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">E_c, poisson_c</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle_c, poisson_c</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thermal_expansion_c, poisson_c</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle_c, thermal_expansion_c</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.4</span>
 
 <span class="nt">config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
