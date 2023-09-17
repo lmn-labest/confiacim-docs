@@ -1308,10 +1308,10 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <p>Na pasta <code>simulation</code> já temos dois casos simples chamados <code>caso1a</code> e <code>caso1b</code>. Na pasta <code>bin</code> temos o executável do <code>tencim</code>. Esse excutável pode ser subistuido se necessário.</p>
 <h3 id="21-analise-deterministica">2.1) Análise deterministica</h3>
 <p>Para roda a análise deterministica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w"> </span>simulation/case1a/output/run1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Plotando o resultado da simulação deterministica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/case1/output/run1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/case1/output/
 </code></pre></div></td></tr></table></div>
 <p>Para modificar <code>case.dat</code> para ter apenas <code>20</code> passos de tempo pode-se usar o <code>new_last_step</code>. Esse comando irá criar uma cópia do <code>case.dat</code> como o nome <code>case_original.dat</code> e depois modificar <code>case.dat</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">20</span><span class="w"> </span>simulation/case1/case.dat
@@ -1321,13 +1321,13 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 </code></pre></div></td></tr></table></div>
 <h3 id="21-analise-determistica-com-o-form">2.1) Análise determistica com o form</h3>
 <p>Agora para rodar a análise probabilistica usando o método <code>form</code> basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1<span class="w"> </span>simulation/case1/output/run1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1<span class="w"> </span>simulation/case1/output/
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando todos os resultados:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/run1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando os resultados da iteração <code>3</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/case1/output/run1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <h2 id="3-variaveis-aleatorias-disponiveis">3) Variaveis aleatórias disponiveis</h2>
 <p>A tabela abaixo temos a lista com as variáveis disponiveis.</p>
