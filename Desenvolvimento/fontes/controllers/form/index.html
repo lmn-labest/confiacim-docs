@@ -1327,9 +1327,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/form.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
@@ -1374,7 +1372,11 @@
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rodando a simulação FORM.</span>
 
@@ -1401,6 +1403,8 @@
 
     <span class="n">simulation_conf</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.yml&quot;</span><span class="p">)</span>
     <span class="n">variable_names</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">variable_names</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analise form: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">verbose_level</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>

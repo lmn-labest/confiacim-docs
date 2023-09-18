@@ -442,6 +442,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#logger.set_logger" class="md-nav__link">
+    set_logger()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1194,6 +1201,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#logger.set_logger" class="md-nav__link">
+    set_logger()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1224,7 +1238,7 @@
       <p>Módulo de logging</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
-<li>get_logger</li>
+<li>set_logger</li>
 </ul>
 <hr />
 
@@ -1247,14 +1261,112 @@
 
 
 <h2 id="logger.get_logger" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">NAME_LOG_FILE</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">get_logger</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Obtém um log configurado.</p>
+      <p>Obtém um logger.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>nome do logger.</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;confiacim&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Retorna a classe de logging.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_logger</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;confiacim&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Obtém um logger.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        name: nome do logger.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Retorna a classe de logging.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="logger.set_logger" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">NAME_LOG_FILE</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Configura um log para ser usuado depois.</p>
 
 
 
@@ -1272,7 +1384,7 @@
         <tr>
           <td><code>logfile</code></td>
           <td>
-                <code>str</code>
+                <code>str | <span title="pathlib.Path">Path</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1281,6 +1393,20 @@
           </td>
           <td>
                 <code><span title="confiacim.conf.settings.NAME_LOG_FILE">NAME_LOG_FILE</span></code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>nome do logger.</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;confiacim&#39;</code>
           </td>
         </tr>
     </tbody>
@@ -1303,7 +1429,7 @@
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Retorna a classe de logging</p>
+              <p>Retorna a classe de logging.</p>
             </div>
           </td>
         </tr>
@@ -1312,7 +1438,9 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
@@ -1325,16 +1453,24 @@
 <span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_logger</span><span class="p">(</span><span class="n">logfile</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">NAME_LOG_FILE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Logger</span><span class="p">:</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">NAME_LOG_FILE</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;confiacim&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Logger</span><span class="p">:</span>  <span class="c1"># TODO</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Obtém um log configurado.</span>
+<span class="sd">    Configura um log para ser usuado depois.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        logfile: Nome do arquivo de log.</span>
+<span class="sd">        name: nome do logger.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        Retorna a classe de logging</span>
+<span class="sd">        Retorna a classe de logging.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LOG_LEVEL</span><span class="p">)</span>
+
     <span class="n">fh</span> <span class="o">=</span> <span class="n">handlers</span><span class="o">.</span><span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">fh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
