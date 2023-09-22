@@ -1349,10 +1349,13 @@
 <p>Existe um conjuto de exemplos na apasta <code>tests/files/input</code> do repositório.</p>
 <h2 id="2-analise-probablistica-com-form">2) Análise probablística com FORM</h2>
 <p>Para rodar basta fazer</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Para uma saida mais verbosa basta utilizar a opção <code>--verbose</code> ou <code>-v</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>--verbose<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>--verbose<span class="w"> </span>simulation/case1a/
+</code></pre></div></td></tr></table></div>
+<p>Opcionalmente pode-se definir explicitamente o diretório de saida como:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output2
 </code></pre></div></td></tr></table></div>
 <p>Após rodar a estrutura de diretórios deve ser algo similar:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1441,7 +1444,10 @@
 </code></pre></div></td></tr></table></div>
 <h2 id="3-analise-deterministica">3) Análise deterministica</h2>
 <p>Para rodar a análise determinítica base:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w"> </span>simulation/case1a/output/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a
+</code></pre></div></td></tr></table></div>
+<p>Opcionalmente pode-se definir explicitamente o diretório de saida como:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a/<span class="w"> </span>simulation/case1a/output2
 </code></pre></div></td></tr></table></div>
 <p>Para plotar os RCs da análise deterministica:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w">  </span>simulation/case1a/output/
