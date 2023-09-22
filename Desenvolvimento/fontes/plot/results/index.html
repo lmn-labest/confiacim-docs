@@ -1477,6 +1477,40 @@
   <summary>Info</summary>
   <p>É esperado que o <strong>prefixo</strong> do arquivo de <code>RC</code> tem o <strong>mesmo</strong> nome da pasta.</p>
 </details>
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="confiacim.erros.EmptyRCFile">EmptyRCFile</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>O arquivo <code>RC</code> está vazio.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="confiacim.erros.RCFileNotFound">RCFileNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>O arquivo <code>RC</code> não encontrado.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
           <details class="quote">
             <summary>Source code in <code>src/confiacim/plot/results.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 60</span>
@@ -1522,7 +1556,10 @@
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_results</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_results</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Retorna somente diretorios que começamm com `it_` de forrmma ordenada.</span>
 
@@ -1535,6 +1572,9 @@
 <span class="sd">    Info:</span>
 <span class="sd">        É esperado que o **prefixo** do arquivo de `RC` tem o **mesmo** nome da pasta.</span>
 
+<span class="sd">    Raises:</span>
+<span class="sd">        EmptyRCFile: O arquivo `RC` está vazio.</span>
+<span class="sd">        RCFileNotFound: O arquivo `RC` não encontrado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">file_name</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_RC.txt&quot;</span>
