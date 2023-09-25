@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../simulation_config/">
+        <link rel="prev" href="../file_folder_handlers/">
       
       
-        <link rel="next" href="../tables/">
+        <link rel="next" href="../logger/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>System - Confiacim</title>
+        <title>Jsonencoder - Confiacim</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#system" class="md-skip">
+        <a href="#jsonencoder" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              System
+              Jsonencoder
             
           </span>
         </div>
@@ -385,9 +385,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../jsonencoder/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jsonencoder
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -396,6 +414,38 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jsonencoder" class="md-nav__link">
+    jsonencoder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonencoder.JSONEncoder2Dataclasses" class="md-nav__link">
+    JSONEncoder2Dataclasses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -485,27 +535,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    System
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -514,45 +546,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#system" class="md-nav__link">
-    system
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system.default_tencim_dir" class="md-nav__link">
-    default_tencim_dir()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system.get_os" class="md-nav__link">
-    get_os()
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1228,22 +1221,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system" class="md-nav__link">
-    system
+  <a href="#jsonencoder" class="md-nav__link">
+    jsonencoder
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#system.default_tencim_dir" class="md-nav__link">
-    default_tencim_dir()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system.get_os" class="md-nav__link">
-    get_os()
+  <a href="#jsonencoder.JSONEncoder2Dataclasses" class="md-nav__link">
+    JSONEncoder2Dataclasses
   </a>
   
 </li>
@@ -1266,22 +1252,74 @@
   
 
 
-  <h1>System</h1>
+  <h1>Jsonencoder</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="system"></a>
+<a id="jsonencoder"></a>
   <div class="doc doc-contents first">
+
   
-      <p>Modulo com funções que lidam com diferença entre <code>OS</code>.</p>
-<p>Classes e funções deste módulo:</p>
-<ul>
-<li>get_os</li>
-<li>default_tencim_dir</li>
-</ul>
-<hr />
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="jsonencoder.JSONEncoder2Dataclasses" class="doc doc-heading">
+          <code>JSONEncoder2Dataclasses</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="json.JSONEncoder">JSONEncoder</span></code></p>
+
+  
+      <p>Classe que expande JSONEncoder para dataclasses.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/jsonencoder.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">JSONEncoder2Dataclasses</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que expande JSONEncoder para dataclasses.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">is_dataclass</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">asdict</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
 
   
 
@@ -1296,146 +1334,13 @@
 
 
 
-<div class="doc doc-object doc-function">
 
+  </div>
 
-
-
-<h2 id="system.default_tencim_dir" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">default_tencim_dir</span><span class="p">()</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Retorna o diretório pradão do tencim de dependendo do <code>SO</code>.</p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna o diretório pradão do tencim.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/system.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">default_tencim_dir</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Retorna o diretório pradão do tencim de dependendo do `SO`.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        Retorna o diretório pradão do tencim.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">module_root_dir</span> <span class="o">=</span> <span class="n">files</span><span class="p">(</span><span class="s2">&quot;confiacim.data&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">module_root_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;prebuild/</span><span class="si">{</span><span class="n">get_os</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
-</code></pre></div></td></tr></table></div>
-          </details>
   </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h2 id="system.get_os" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_os</span><span class="p">()</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Retorna qual <code>OS</code> esta sendo usado.</p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna <code>linux</code> ou <code>win</code>.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/system.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_os</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Retorna qual `OS` esta sendo usado.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        Retorna `linux` ou `win`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">system</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">match</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">():</span>
-        <span class="k">case</span> <span class="s2">&quot;Linux&quot;</span><span class="p">:</span>
-            <span class="n">system</span> <span class="o">=</span> <span class="s2">&quot;linux&quot;</span>
-        <span class="k">case</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
-            <span class="n">system</span> <span class="o">=</span> <span class="s2">&quot;win&quot;</span>
-    <span class="k">return</span> <span class="n">system</span>
-</code></pre></div></td></tr></table></div>
-          </details>
-  </div>
-
-</div>
 
 
 
