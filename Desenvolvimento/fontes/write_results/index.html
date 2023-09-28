@@ -1838,7 +1838,7 @@
 
 
 <h2 id="write_results.write_iteration_log" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">write_iteration_log</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1889,7 +1889,7 @@
           </td>
         </tr>
         <tr>
-          <td><code>it</code></td>
+          <td><code>iteration</code></td>
           <td>
                 <code>int</code>
           </td>
@@ -1975,7 +1975,7 @@
 <span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_iteration_log</span><span class="p">(</span>
     <span class="n">betai</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">resid</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-    <span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">write_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1986,16 +1986,16 @@
 <span class="sd">    Parameters:</span>
 <span class="sd">        betai: Valor beta da iteração i.</span>
 <span class="sd">        resid: Valor do residuo da iteração i.</span>
-<span class="sd">        it: Número da iteração i.</span>
+<span class="sd">        iteration: Número da iteração i.</span>
 <span class="sd">        write_json: Escreve também no formato `JSON`.</span>
 <span class="sd">        output_dir: Caminho do diretório de saida.</span>
 <span class="sd">        indent: Identação do arquivo `JSON`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">write_json</span><span class="p">:</span>
-        <span class="n">_write_iteration_log_json</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
+        <span class="n">_write_iteration_log_json</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">_write_iteration_log_txt</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+        <span class="n">_write_iteration_log_txt</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>

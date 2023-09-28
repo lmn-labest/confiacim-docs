@@ -290,6 +290,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-arquivos-de-saida" class="md-nav__link">
+    5) Arquivos de saida
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1264,6 +1271,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-arquivos-de-saida" class="md-nav__link">
+    5) Arquivos de saida
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1515,6 +1529,37 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>form<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1a<span class="w">  </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Nessa caso a variável passada na linha de comando irá prevalecer sobre a variável que está no arquivo <code>.env</code>.</p>
+<h2 id="5-arquivos-de-saida">5) Arquivos de saida</h2>
+<p>Existe duas opções de arquivos de saidas. O formato <code>.json</code>e <code>.txt</code>. O padrão é o <code>json</code>. Para usar mudar o formato do arquivo existe a chave de configuração <code>result_files</code>. Por exemplo para uma saida <code>txt</code> basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">result_files</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;txt&quot;</span>
+<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
+<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div></td></tr></table></div>
+<p>Para a saida <code>json</code> ainda existe a chave de configuração <code>json_indent</code>. Essa configuração define o espaçammento no arquivo <code>json</code>. Por padrão a indentação é zero, isso deixa o arquivo menor porém menos legível. Para aumentar para 4 espaços basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">json_indent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
+<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div></td></tr></table></div>
 
 
 

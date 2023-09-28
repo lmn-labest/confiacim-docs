@@ -1359,10 +1359,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/deterministic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 78</span>
 <span class="normal"> 79</span>
 <span class="normal"> 80</span>
 <span class="normal"> 81</span>
@@ -1387,7 +1384,10 @@
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_max_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_max_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera case truncado no new_last_step</span>
 
@@ -1536,7 +1536,10 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rodando a simulação deterministica.</span>
 
@@ -1574,7 +1577,10 @@
     <span class="n">table</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">minimal_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">)</span>
     <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
 
-    <span class="n">write_deterministic_results</span><span class="p">(</span><span class="n">rcs</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">write_json</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
+    <span class="n">json_indent</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">json_indent</span>
+
+    <span class="n">write_deterministic_results</span><span class="p">(</span><span class="n">rcs</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="p">,</span> <span class="n">json_indent</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
