@@ -1289,7 +1289,7 @@
 
 
 <h2 id="form.mainloop.loop" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unitary_internal_dist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unitary_internal_dist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1490,7 +1490,7 @@
             </div>
           </td>
           <td>
-                <code>2</code>
+                <code><span title="confiacim.verbose.VerboseLevel.LEVEL_2">LEVEL_2</span></code>
           </td>
         </tr>
         <tr>
@@ -1545,8 +1545,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/form/mainloop.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 44</span>
-<span class="normal"> 45</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 45</span>
 <span class="normal"> 46</span>
 <span class="normal"> 47</span>
 <span class="normal"> 48</span>
@@ -1731,7 +1730,8 @@
 <span class="normal">227</span>
 <span class="normal">228</span>
 <span class="normal">229</span>
-<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">230</span>
+<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
@@ -1742,7 +1742,7 @@
     <span class="n">maxit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
     <span class="n">correlations</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">unitary_internal_dist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span>
     <span class="n">result_files</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
     <span class="n">json_indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">console</span><span class="p">:</span> <span class="n">Console</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1798,8 +1798,8 @@
 
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
 
-    <span class="n">progressbarDisable</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="mi">2</span>
-    <span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="n">progressbarDisable</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_0</span> <span class="ow">or</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
+    <span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
 
     <span class="k">with</span> <span class="n">Progress</span><span class="p">(</span>
         <span class="n">SpinnerColumn</span><span class="p">(),</span>
