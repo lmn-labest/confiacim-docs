@@ -1672,7 +1672,7 @@ não normalizadas.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">new_avg</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Un</span><span class="p">,</span> <span class="n">variables</span><span class="p">):</span>
-        <span class="n">new_avg</span><span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">average</span>
+        <span class="n">new_avg</span><span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="o">*</span> <span class="n">v</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">new_avg</span>
 </code></pre></div></td></tr></table></div>

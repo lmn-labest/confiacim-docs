@@ -1730,8 +1730,7 @@
 <span class="normal">227</span>
 <span class="normal">228</span>
 <span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
@@ -1786,14 +1785,13 @@
     <span class="k">if</span> <span class="n">unitary_internal_dist</span><span class="p">:</span>
         <span class="n">Ua</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_vars</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">Ua</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="o">.</span><span class="n">average</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">])</span>
+        <span class="n">Ua</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">mean</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">])</span>
 
     <span class="n">ro</span> <span class="o">=</span> <span class="n">generate_correlation_matrix</span><span class="p">(</span><span class="n">correlations</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
 
     <span class="n">L</span> <span class="o">=</span> <span class="n">cholesky</span><span class="p">(</span><span class="n">ro</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">avgs</span> <span class="o">=</span> <span class="n">sample_averages</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
-
     <span class="n">resid</span> <span class="o">=</span> <span class="mf">1.0</span>
 
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
