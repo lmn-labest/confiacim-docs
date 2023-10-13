@@ -1776,7 +1776,7 @@
 <span class="sd">        - 2 - Alta</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">simulation_logger</span> <span class="o">=</span> <span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;simulation.log&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">)</span>
+    <span class="n">simulation_logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">)</span>
 
     <span class="n">f_F_IFs</span> <span class="o">=</span> <span class="n">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
 

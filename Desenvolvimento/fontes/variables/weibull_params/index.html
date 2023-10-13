@@ -1397,11 +1397,7 @@ analítica estimada usuando a função <code>gamma</code>.</p>
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/variables/weibull_params.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">167</span>
 <span class="normal">168</span>
 <span class="normal">169</span>
 <span class="normal">170</span>
@@ -1414,7 +1410,11 @@ analítica estimada usuando a função <code>gamma</code>.</p>
 <span class="normal">177</span>
 <span class="normal">178</span>
 <span class="normal">179</span>
-<span class="normal">180</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_analytic_gamma</span><span class="p">(</span><span class="n">mu</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sig</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_analytic_gamma</span><span class="p">(</span><span class="n">mu</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sig</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Obtém o `k` e `lambda` da distribuição de `weibull` dada uma média e um desvio padrão de forma</span>
 <span class="sd">    analítica estimada usuando a função `gamma`.</span>
@@ -1562,9 +1562,7 @@ analítica estimada usuando a função <code>gamma</code>.</p>
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/variables/weibull_params.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
 <span class="normal">138</span>
@@ -1589,7 +1587,11 @@ analítica estimada usuando a função <code>gamma</code>.</p>
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_fsolve</span><span class="p">(</span><span class="n">mu</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sig</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_fsolve</span><span class="p">(</span><span class="n">mu</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sig</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Obtem o `k` e `lambda` da distribuicao de `weibull` dada uma média e um desvio padrao</span>
 
@@ -1612,7 +1614,9 @@ analítica estimada usuando a função <code>gamma</code>.</p>
     <span class="n">k0</span> <span class="o">=</span> <span class="mf">1.27</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mu</span> <span class="o">/</span> <span class="n">sig</span><span class="p">)</span>
     <span class="n">k</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">ier</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">_h</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">mu</span> <span class="o">/</span> <span class="n">sig</span><span class="p">),</span> <span class="n">k0</span><span class="p">,</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">exception</span> <span class="ow">and</span> <span class="n">ier</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">NoConvergenceWeibullParams</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;with mean=</span><span class="si">{</span><span class="n">mu</span><span class="si">}</span><span class="s2"> and std=</span><span class="si">{</span><span class="n">sig</span><span class="si">}</span><span class="s2">: fsolve failed: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NoConvergenceWeibullParams</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Erro não obtenção dos parametros da weibull com mean=</span><span class="si">{</span><span class="n">mu</span><span class="si">}</span><span class="s2"> and std=</span><span class="si">{</span><span class="n">sig</span><span class="si">}</span><span class="s2">: fsolve failed: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
 
     <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">lambda_</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">/</span> <span class="n">gamma</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">k</span><span class="p">)</span>
@@ -1911,7 +1915,9 @@ analítica estimada usuando a função <code>gamma</code>.</p>
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_numeric_picard</span><span class="p">(</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">weibull_k_lambda_from_mean_std_numeric_picard</span><span class="p">(</span>
     <span class="n">mu</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">sig</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-11</span><span class="p">,</span>
@@ -2015,7 +2021,9 @@ analítica estimada usuando a função <code>gamma</code>.</p>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ressiduo final </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2"> para _it </span><span class="si">{</span><span class="n">_it</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">exception</span> <span class="ow">and</span> <span class="n">_it</span> <span class="o">==</span> <span class="n">maxit</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">NoConvergenceWeibullParams</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Residuo final </span><span class="si">{</span><span class="n">res</span><span class="o">/</span><span class="n">res0</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> para iteração </span><span class="si">{</span><span class="n">_it</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">NoConvergenceWeibullParams</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Erro não obtenção dos parametros da weibull. Residuo final </span><span class="si">{</span><span class="n">res</span><span class="o">/</span><span class="n">res0</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> para iteração </span><span class="si">{</span><span class="n">_it</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
 
     <span class="n">k</span><span class="p">,</span> <span class="n">lambda_</span> <span class="o">=</span> <span class="mf">2.0e0</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 

@@ -1359,9 +1359,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/deterministic.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 80</span>
 <span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
@@ -1387,7 +1385,9 @@
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_max_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">new_max_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera case truncado no new_last_step</span>
 
@@ -1539,7 +1539,9 @@
 <span class="normal">72</span>
 <span class="normal">73</span>
 <span class="normal">74</span>
-<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rodando a simulação deterministica.</span>
 
@@ -1550,10 +1552,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">InputDirNotExists</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diretório </span><span class="si">{</span><span class="n">input_dir</span><span class="si">}</span><span class="s2"> não existe.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">InputDirNotExists</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">output_dir</span><span class="p">:</span>
         <span class="n">output_dir</span> <span class="o">=</span> <span class="n">default_output_dir</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
+
+    <span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;simulation.log&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">)</span>
 
     <span class="n">simulation_conf</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.yml&quot;</span><span class="p">)</span>
 
