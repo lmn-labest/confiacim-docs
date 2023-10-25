@@ -2027,7 +2027,7 @@
 <span class="sd">            Retorna um dicionário ordenando.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: fazer uma popriedade mean e std na StochasticVariable</span>
-    <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">({</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">({</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">mean</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">})</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
