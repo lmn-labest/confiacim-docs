@@ -1634,7 +1634,7 @@
 <span class="sd">            Retorna a distruição definida em dist_name.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">Dist</span> <span class="o">=</span> <span class="n">DIST_OPTIONS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">Dist</span> <span class="o">=</span> <span class="n">DIST_OPTIONS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;class_&quot;</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;Distribuição &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; da variável &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; é invalida.&quot;</span>
@@ -1839,7 +1839,7 @@
 <span class="sd">        Retorna a distruição definida em dist_name.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">Dist</span> <span class="o">=</span> <span class="n">DIST_OPTIONS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">Dist</span> <span class="o">=</span> <span class="n">DIST_OPTIONS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;class_&quot;</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;Distribuição &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; da variável &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; é invalida.&quot;</span>
