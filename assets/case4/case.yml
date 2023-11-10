@@ -1,0 +1,19 @@
+variables:
+  - name: internal_temperature
+    dist:
+      name: lognormal
+      params:
+        mean: 1.0
+        cov : 0.1
+  - name: internal_pressure
+    dist:
+      name: normal
+      params:
+        mean: 1.0
+        cov : 0.3
+config:
+  beta: 20.0
+  delta: 0.01
+  gamma: 0.3
+  tol:  1e-03
+  maxit: 100

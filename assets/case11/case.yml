@@ -1,0 +1,22 @@
+variables:
+  # Cimento
+  - name: E_c
+    dist:
+      name: normal
+      params:
+        mean: 1.19e+10
+        cov: 0.1
+  # Formação
+  - name: E_f
+    dist:
+      name: triang
+      params:
+        min: 2.000e+10
+        max: 3.000e+10
+        mod: 2.500e+10
+config:
+  beta: 20.0
+  delta: 0.01
+  gamma: 0.3
+  tol:  1e-04
+  maxit: 100

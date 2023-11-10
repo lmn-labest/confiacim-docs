@@ -1,0 +1,22 @@
+variables:
+  - name: E_c
+    dist:
+      name: sgld
+      params:
+        sigma: 0.014
+        r: 0.879
+        theta: 5.225
+        b: -4.226
+  - name: poisson_c
+    dist:
+      name: triang
+      params:
+        min: 0.15
+        max: 0.2
+        mod: 0.18
+config:
+  beta: 20.0
+  delta: 0.01
+  gamma: 0.3
+  tol:  1e-04
+  maxit: 100
