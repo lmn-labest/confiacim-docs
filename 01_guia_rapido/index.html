@@ -278,15 +278,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-variaveis-aleatorias-disponiveis" class="md-nav__link">
-    3) Variaveis aleatórias disponiveis
+  <a href="#3-vizualizando-as-distribuicoes" class="md-nav__link">
+    3) Vizualizando as distribuições
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-distribuicoes-disponivies" class="md-nav__link">
-    4) Distribuições disponívies
+  <a href="#4-variaveis-aleatorias-disponiveis" class="md-nav__link">
+    4) Variáveis aleatórias disponiveis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-distribuicoes-disponivies" class="md-nav__link">
+    5) Distribuições disponívies
   </a>
   
 </li>
@@ -1345,15 +1352,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-variaveis-aleatorias-disponiveis" class="md-nav__link">
-    3) Variaveis aleatórias disponiveis
+  <a href="#3-vizualizando-as-distribuicoes" class="md-nav__link">
+    3) Vizualizando as distribuições
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-distribuicoes-disponivies" class="md-nav__link">
-    4) Distribuições disponívies
+  <a href="#4-variaveis-aleatorias-disponiveis" class="md-nav__link">
+    4) Variáveis aleatórias disponiveis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-distribuicoes-disponivies" class="md-nav__link">
+    5) Distribuições disponívies
   </a>
   
 </li>
@@ -1421,7 +1435,17 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <p>Vizualizando os resultados da iteração <code>3</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
-<h2 id="3-variaveis-aleatorias-disponiveis">3) Variaveis aleatórias disponiveis</h2>
+<h2 id="3-vizualizando-as-distribuicoes">3) Vizualizando as distribuições</h2>
+<p>Vizualizando a curva <code>pdf</code> da variável <code>E_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>pdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+</code></pre></div></td></tr></table></div>
+<p>Vizualizando a curva <code>cdf</code> da variável <code>E_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>cdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+</code></pre></div></td></tr></table></div>
+<p>Vizualizando a curva <code>ppf</code> da variável <code>E_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>ppf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+</code></pre></div></td></tr></table></div>
+<h2 id="4-variaveis-aleatorias-disponiveis">4) Variáveis aleatórias disponiveis</h2>
 <p>A tabela abaixo temos a lista com as variáveis disponiveis.</p>
 <table>
 <thead>
@@ -1433,7 +1457,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <tbody>
 <tr>
 <td><code>E_c</code></td>
-<td>Modulo de elasticidade do <strong>cimento</strong></td>
+<td>Módulo de elasticidade do <strong>cimento</strong></td>
 </tr>
 <tr>
 <td><code>poisson_c</code></td>
@@ -1453,7 +1477,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 </tr>
 <tr>
 <td><code>friction_angle_c</code></td>
-<td>Angulo de fricção do <strong>cimento</strong></td>
+<td>Ângulo de atrito do <strong>cimento</strong></td>
 </tr>
 <tr>
 <td><code>cohesion_c</code></td>
@@ -1461,7 +1485,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 </tr>
 <tr>
 <td><code>E_f</code></td>
-<td>Modulo de elasticidade da <strong>formação</strong></td>
+<td>Módulo de elasticidade da <strong>formação</strong></td>
 </tr>
 <tr>
 <td><code>poisson_f</code></td>
@@ -1497,7 +1521,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 </tr>
 </tbody>
 </table>
-<h2 id="4-distribuicoes-disponivies">4) Distribuições disponívies</h2>
+<h2 id="5-distribuicoes-disponivies">5) Distribuições disponívies</h2>
 <p>A tabela abaixo temos a lista com as distruibuições disponiveis.</p>
 <table>
 <thead>
