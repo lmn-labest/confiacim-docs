@@ -1318,10 +1318,6 @@
   <div class="doc doc-contents first">
   
       <p>Loop principal do método <strong>FORM</strong></p>
-<p>Classes e funções deste módulo:</p>
-<ul>
-<li>loop</li>
-</ul>
 <hr />
 
   
@@ -1585,7 +1581,8 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/form/mainloop.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 40</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 39</span>
+<span class="normal"> 40</span>
 <span class="normal"> 41</span>
 <span class="normal"> 42</span>
 <span class="normal"> 43</span>
@@ -1759,9 +1756,7 @@
 <span class="normal">211</span>
 <span class="normal">212</span>
 <span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">214</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
@@ -1809,8 +1804,7 @@
 
     <span class="n">f_F_IFs</span> <span class="o">=</span> <span class="n">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
 
-    <span class="c1"># TODO: extrair isso para uma função</span>
-    <span class="n">Ua</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">mean</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">])</span>
+    <span class="n">Ua</span> <span class="o">=</span> <span class="n">variables_mean2Ua</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
 
     <span class="n">ro</span> <span class="o">=</span> <span class="n">generate_correlation_matrix</span><span class="p">(</span><span class="n">correlations</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
 
