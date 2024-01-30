@@ -1680,7 +1680,10 @@
 <span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
-<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SGLD</span><span class="p">:</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SGLD</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Função densidade de probabilidade da distruibuição `(pdf)`.</span>
@@ -1824,13 +1827,16 @@
 <span class="sd">        Returns</span>
 <span class="sd">            Retorna o valor de ppf(p)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># partial1 = 1.0 if p - 0.5 &gt; 0.0 else -1.0</span>
+        <span class="c1"># partial2 = (2.0 * p - 1.0) / partial1</span>
+        <span class="c1"># partial3 = 1.0 / r</span>
+        <span class="c1"># partial4 = pow(r * gammaincinv(partial3, partial2), partial3)</span>
 
-        <span class="n">partial1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
-        <span class="n">partial2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">p</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="n">partial1</span>
-        <span class="n">partial3</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">r</span>
-        <span class="n">partial4</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">gammaincinv</span><span class="p">(</span><span class="n">partial3</span><span class="p">,</span> <span class="n">partial2</span><span class="p">),</span> <span class="n">partial3</span><span class="p">)</span>
+        <span class="c1"># y = exp(partial1 * sigma * partial4)</span>
 
-        <span class="n">y</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">partial1</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">partial4</span><span class="p">)</span>
+        <span class="n">partial1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">p</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">&gt;</span> <span class="mf">0.0</span> <span class="k">else</span> <span class="o">-</span><span class="mf">1.0</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">partial1</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">gammaincinv</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">r</span><span class="p">,</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">p</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">partial1</span><span class="p">),</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">r</span><span class="p">))</span>
 
         <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">theta</span> <span class="o">+</span> <span class="n">b</span>
 
