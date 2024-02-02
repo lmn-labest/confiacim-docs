@@ -1533,7 +1533,7 @@
 <h2 id="1-linux">1) Linux</h2>
 <p>É bom ter o <a href="https://github.com/pyenv/pyenv">pyenv</a> instalando para configurar as versões do python.</p>
 <h3 id="11-instalando-o-ambiente-python-para-o-desenvolvimento">1.1) Instalando o ambiente python para o desenvolvimento</h3>
-<p>Caso vc queria contribuir para o projeto os comandos para a instalação do ambiente de desenvolvimento são:</p>
+<p>Caso você queria contribuir para o projeto os comandos para a instalação do ambiente de desenvolvimento são:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1559,7 +1559,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Para checar updates:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>list<span class="w"> </span>--outdated
 </code></pre></div></td></tr></table></div>
-<p>Para atualizar todo os pacotes:</p>
+<p>Para atualizar todos os pacotes:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1579,10 +1579,10 @@ pip-compile<span class="w"> </span>requirements/doc.in<span class="w"> </span>-U
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
-.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-pip<span class="w"> </span>install<span class="w"> </span>pip-tools
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>python -m venv .venv --upgrade-deps
+.venv\Scripts\activate
+pip install pip-tools
+pip install -e &quot;.[dev]&quot;
 </code></pre></div></td></tr></table></div>
 <p>Rodando os testes:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pytest

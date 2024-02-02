@@ -299,7 +299,7 @@
         <li class="md-nav__item">
   <a href="#4-variaveis-aleatorias-disponiveis" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Variáveis aleatórias disponiveis
+      4) Variáveis aleatórias disponíveis
     </span>
   </a>
   
@@ -1428,7 +1428,7 @@
         <li class="md-nav__item">
   <a href="#4-variaveis-aleatorias-disponiveis" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Variáveis aleatórias disponiveis
+      4) Variáveis aleatórias disponíveis
     </span>
   </a>
   
@@ -1465,26 +1465,50 @@
 <p>Necessário ter pelo menos o <code>python 3.11</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>No pacote do <code>connfiacim</code> são disponibilizadas duas versões do <strong>tencim1D</strong>. O <code>tencim_08.exe</code> com valor de abertura da interface de <code>1e-08</code>. E O <code>tencim_12.exe</code> com o valor de abertura de <code>1e-12</code>. Para alternar entre a versões pode-se usar a variavei de ambiente <code>CONFIACIM_EXEC_TENCIM_BIN</code>, para mais detalhes <a href="/02_Uso_Detalhado#5-executavel-do-tencim">ver</a>.</p>
+<p>No pacote do <code>connfiacim</code> são disponibilizadas duas versões do <strong>tencim1D</strong>. O <code>tencim_08.exe</code> com valor de abertura da interface de <code>1e-08</code>. E o <code>tencim_12.exe</code> com o valor de abertura de <code>1e-12</code>. Para alternar entre a versões pode-se usar a variável de ambiente <code>CONFIACIM_EXEC_TENCIM_BIN</code>, para mais detalhes <a href="/02_Uso_Detalhado#5-executavel-do-tencim">ver</a>.</p>
 </div>
 <h2 id="1-instalacao">1) Instalação</h2>
-<p>O confiacim foi empacotado utlizando o <code>setuptools</code>. Ele pode ser usando localmente de forma <code>standalone</code>com uma aplicação <code>CLI</code>.
-ou importado para outra aplicação. Nesse cenário indica-se instala-lo direto do pacote <code>*.whl</code>. O pacote python <code>.whl</code> pode ser obtido
+<p>O <code>confiacim</code> foi empacotado utlizando o <code>setuptools</code>. Ele pode ser usando localmente de forma <code>standalone</code> como uma aplicação <code>CLI</code> ou importado por outras aplicaççoes. Nesse cenário indica-se instala-lo direto do pacote <code>*.whl</code>. O pacote python <code>.whl</code> pode ser obtido
 <a href="https://github.com/lmn-labest/confiacim/releases">aqui</a>. Para instalar essa versão básica basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Após feita a instalação só é preciso ativar o ambiente virtual com:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>No windows para ativar o ambiente virtual basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>.venv\Scripts\activate
+</code></pre></div></td></tr></table></div>
+</div>
+<p>Para verificar a instalação basta:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>--version
+</code></pre></div></td></tr></table></div>
+<p>Para ter habilitar a funcionalidade de plotar gráficos é preciso instalar as dependencias extras, para tal basta:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl<span class="o">[</span><span class="s2">&quot;plot&quot;</span><span class="o">]</span>
 </code></pre></div></td></tr></table></div>
-<p>Para verificar a instalação basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>--version
+<p>Caso se queria instalar globalmente basta usar o <a href="https://pipx.pypa.io/stable/">pipx</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
+</code></pre></div></td></tr></table></div>
+<p>ou não criar um ambiente virtual é instalar no python global</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 <h2 id="2-uso">2) Uso</h2>
 <p>Inicializando o diretório de simulação</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>init
 </code></pre></div></td></tr></table></div>
-<p>Na pasta <code>simulation</code> já temos dois casos simples chamados <code>caso1a</code> e <code>caso1b</code>. Na pasta <code>bin</code> temos o executável do <code>tencim</code>. Esse excutável pode ser subistuido se necessário.</p>
+<p>Na pasta <code>simulation</code> já temos 3 casos simples chamados <code>caso1a</code>, <code>caso1b</code> e <code>case8</code>. Na pasta <code>bin</code> temos o executável do <code>tencim</code>. Esse excutável pode ser subistuido se necessário.</p>
 <h3 id="21-analise-deterministica">2.1) Análise deterministica</h3>
 <p>Para roda a análise deterministica:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a
@@ -1518,7 +1542,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <p>Vizualizando a curva <code>ppf</code> da variável <code>E_c</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>ppf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
-<h2 id="4-variaveis-aleatorias-disponiveis">4) Variáveis aleatórias disponiveis</h2>
+<h2 id="4-variaveis-aleatorias-disponiveis">4) Variáveis aleatórias disponíveis</h2>
 <p>A tabela abaixo temos a lista com as variáveis disponiveis.</p>
 <table>
 <thead>
