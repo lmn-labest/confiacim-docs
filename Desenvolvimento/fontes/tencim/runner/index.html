@@ -1562,7 +1562,8 @@
 <span class="normal">84</span>
 <span class="normal">85</span>
 <span class="normal">86</span>
-<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunner</span><span class="p">:</span>
+<span class="normal">87</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunner</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe que executa a chamada do tencim</span>
 
@@ -1607,6 +1608,7 @@
         <span class="n">base</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_folder</span><span class="p">(</span><span class="n">sample_name</span><span class="p">)</span>
 
         <span class="n">copy_file</span><span class="p">(</span><span class="s2">&quot;log_file&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="s2">&quot;stdout_log_file&quot;</span><span class="p">)</span>
+        <span class="n">copy_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_time_log.txt&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="s2">&quot;case_time_log.txt&quot;</span><span class="p">)</span>
         <span class="n">copy_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">)</span>
 
         <span class="c1"># TODO: Repensar isso</span>
@@ -1794,13 +1796,13 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/runner.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">90</span>
-<span class="normal">91</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
 <span class="normal">94</span>
 <span class="normal">95</span>
-<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunnerDeterministic</span><span class="p">(</span><span class="n">TencimRunner</span><span class="p">):</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunnerDeterministic</span><span class="p">(</span><span class="n">TencimRunner</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe que executa a chamada do tencim da análise deterministica.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
