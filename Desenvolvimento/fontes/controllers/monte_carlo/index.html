@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../rc/">
+        <link rel="prev" href="../form/">
       
       
-        <link rel="next" href="../../variables/core/">
+        <link rel="next" href="../../form/correlations/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Runner - Confiacim</title>
+        <title>Monte carlo - Confiacim</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tencim.runner" class="md-skip">
+        <a href="#controllers.monte_carlo" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Runner
+              Monte carlo
             
           </span>
         </div>
@@ -566,19 +566,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_11" checked>
         
           
           <label class="md-nav__link" for="__nav_5_2_11" id="__nav_5_2_11_label" tabindex="0">
@@ -592,7 +594,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2_11">
             <span class="md-nav__icon md-icon"></span>
             Controllers
@@ -606,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controllers/base/" class="md-nav__link">
+      <a href="../base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -627,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controllers/deterministic/" class="md-nav__link">
+      <a href="../deterministic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -648,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controllers/dist/" class="md-nav__link">
+      <a href="../dist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -669,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controllers/form/" class="md-nav__link">
+      <a href="../form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,10 +689,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../controllers/monte_carlo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Monte carlo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -699,6 +719,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controllers.monte_carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      monte_carlo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controllers.monte_carlo.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -953,21 +1009,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_14" >
         
           
           <label class="md-nav__link" for="__nav_5_2_14" id="__nav_5_2_14_label" tabindex="0">
@@ -981,7 +1035,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2_14">
             <span class="md-nav__icon md-icon"></span>
             Tencim
@@ -995,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deterministic/" class="md-nav__link">
+      <a href="../../tencim/deterministic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../files_generator/" class="md-nav__link">
+      <a href="../../tencim/files_generator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../input_file/" class="md-nav__link">
+      <a href="../../tencim/input_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1058,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iteration/" class="md-nav__link">
+      <a href="../../tencim/iteration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rc/" class="md-nav__link">
+      <a href="../../tencim/rc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,28 +1151,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Runner
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tencim/runner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1127,66 +1163,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tencim.runner" class="md-nav__link">
-    <span class="md-ellipsis">
-      runner
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunner" class="md-nav__link">
-    <span class="md-ellipsis">
-      TencimRunner
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TencimRunner">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunner.run" class="md-nav__link">
-    <span class="md-ellipsis">
-      run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunnerDeterministic" class="md-nav__link">
-    <span class="md-ellipsis">
-      TencimRunnerDeterministic
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1390,42 +1366,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tencim.runner" class="md-nav__link">
+  <a href="#controllers.monte_carlo" class="md-nav__link">
     <span class="md-ellipsis">
-      runner
+      monte_carlo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunner" class="md-nav__link">
-    <span class="md-ellipsis">
-      TencimRunner
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TencimRunner">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunner.run" class="md-nav__link">
+  <a href="#controllers.monte_carlo.run" class="md-nav__link">
     <span class="md-ellipsis">
       run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tencim.runner.TencimRunnerDeterministic" class="md-nav__link">
-    <span class="md-ellipsis">
-      TencimRunnerDeterministic
     </span>
   </a>
   
@@ -1449,20 +1401,19 @@
   
 
 
-  <h1>Runner</h1>
+  <h1>Monte carlo</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="tencim.runner"></a>
+<a id="controllers.monte_carlo"></a>
   <div class="doc doc-contents first">
   
-      <p>Módulo com os executores do <code>tencim</code>.</p>
+      <p>O módulo contem controladores para serem usando na <code>CLI</code> e na <code>API</code>.</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
-<li>TencimRunner</li>
-<li>TencimRunnerDeterministic</li>
+<li>run</li>
 </ul>
 <hr />
 
@@ -1477,21 +1428,21 @@
 
 
 
-<div class="doc doc-object doc-class">
+
+
+<div class="doc doc-object doc-function">
 
 
 
-<h2 id="tencim.runner.TencimRunner" class="doc doc-heading">
-          <code>TencimRunner</code>
-
+<h2 id="controllers.monte_carlo.run" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">)</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
-
   
-      <p>Classe que executa a chamada do tencim</p>
+      <p>Rodando a simulação Monte Carlo.</p>
 
 
 
@@ -1507,13 +1458,13 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>output_base_dir</code></td>
+          <td><code>input_dir</code></td>
           <td>
                 <code><span title="pathlib.Path">Path</span></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Diretório dos arquivos de saida.</p>
+              <p>Diterório do arquivo de entrada.</p>
             </div>
           </td>
           <td>
@@ -1521,30 +1472,48 @@
           </td>
         </tr>
         <tr>
-          <td><code>iteration</code></td>
+          <td><code>output_dir</code></td>
+          <td>
+                <code><span title="pathlib.Path">Path</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Diterório do arquivo de saida.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose_level</code></td>
           <td>
                 <code>int</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Número da iteração.</p>
+              <p>Nivel de verbosidade.</p>
             </div>
           </td>
           <td>
-                <code>1</code>
+              <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
 
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/tencim/runner.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
+<details class="info" open>
+  <summary>Info</summary>
+  <p>A verbosidade pode ser:</p>
+<ul>
+<li>0 - Nenhuma</li>
+<li>1 - Moderada</li>
+<li>2 - Alta</li>
+</ul>
+</details>
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/controllers/monte_carlo.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
@@ -1578,303 +1547,46 @@
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunner</span><span class="p">:</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Classe que executa a chamada do tencim</span>
+<span class="sd">    Rodando a simulação Monte Carlo.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        output_base_dir: Diretório dos arquivos de saida.</span>
-<span class="sd">        iteration: Número da iteração.</span>
+<span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
+<span class="sd">        output_dir: Diterório do arquivo de saida.</span>
+<span class="sd">        verbose_level: Nivel de verbosidade.</span>
+
+<span class="sd">    Info:</span>
+<span class="sd">        A verbosidade pode ser:</span>
+
+<span class="sd">        - 0 - Nenhuma</span>
+<span class="sd">        - 1 - Moderada</span>
+<span class="sd">        - 2 - Alta</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">InputDirNotExists</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_base_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output_base_dir</span> <span class="o">=</span> <span class="n">output_base_dir</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span> <span class="o">=</span> <span class="n">iteration</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">output_dir</span><span class="p">:</span>
+        <span class="n">output_dir</span> <span class="o">=</span> <span class="n">default_output_dir</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">workdir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">origin_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Roda a simulação de uma amostra.</span>
+    <span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;simulation.log&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">)</span>
 
-<span class="sd">        Parameters:</span>
-<span class="sd">            sample_name: Nome da amostra.</span>
-<span class="sd">            used_templates: Quais templates foram usandos.</span>
-<span class="sd">            workdir: Diretorio de trabalho temporário para rodar a análise.</span>
-<span class="sd">            origin_dir: Diretório original</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workdir</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_run_tencim</span><span class="p">(</span><span class="n">sample_name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_copy_anlysis_files</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">origin_dir</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">check_for_nocliprc_macro</span><span class="p">(</span><span class="n">case_file</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.dat&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">CaseFileNotFound</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span>
 
-    <span class="k">def</span> <span class="nf">_run_tencim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;log_file&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
-            <span class="n">sp</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-                <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;./</span><span class="si">{</span><span class="n">settings</span><span class="o">.</span><span class="n">EXEC_TENCIM_BIN</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;case.dat&quot;</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">],</span>
-                <span class="n">stdout</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span>
-                <span class="n">stderr</span><span class="o">=</span><span class="n">log_file</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.yml&quot;</span><span class="p">)</span>
+    <span class="c1"># simulation_conf = load_config(file_path=input_dir / &quot;case.yml&quot;)</span>
+    <span class="c1"># variable_names = simulation_conf.variable_names</span>
 
-        <span class="k">if</span> <span class="n">sp</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;log_file&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
-                <span class="n">log_error</span> <span class="o">=</span> <span class="n">log_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-            <span class="k">raise</span> <span class="n">TencimRunError</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">log_error</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">_copy_anlysis_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="n">base</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_folder</span><span class="p">(</span><span class="n">sample_name</span><span class="p">)</span>
-
-        <span class="n">copy_file</span><span class="p">(</span><span class="s2">&quot;log_file&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="s2">&quot;stdout_log_file&quot;</span><span class="p">)</span>
-        <span class="n">copy_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_time_log.txt&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="s2">&quot;case_time_log.txt&quot;</span><span class="p">)</span>
-        <span class="n">copy_file</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">)</span>
-
-        <span class="c1"># TODO: Repensar isso</span>
-        <span class="k">if</span> <span class="n">used_templates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;hidrationprop&quot;</span><span class="p">):</span>
-            <span class="n">file_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">HIDRPROP_FILE_NAME</span>
-            <span class="n">copy_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="n">file_name</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">used_templates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;materials&quot;</span><span class="p">):</span>
-            <span class="n">file_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">MATERIALS_FILE_NAME</span>
-            <span class="n">copy_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="n">file_name</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">used_templates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;initialtemperature&quot;</span><span class="p">):</span>
-            <span class="n">file_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">INITIAL_TEMP_FILE_NAME</span>
-            <span class="n">copy_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="n">file_name</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">used_templates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;loads&quot;</span><span class="p">):</span>
-            <span class="n">file_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">LOADS_FILE_NAME</span>
-            <span class="n">copy_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">base</span> <span class="o">/</span> <span class="n">file_name</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_output_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_base_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">iteration_folder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteration</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">/&quot;</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="tencim.runner.TencimRunner.run" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">,</span> <span class="n">workdir</span><span class="p">,</span> <span class="n">origin_dir</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Roda a simulação de uma amostra.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>sample_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome da amostra.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>used_templates</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Quais templates foram usandos.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>workdir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretorio de trabalho temporário para rodar a análise.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>origin_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório original</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/tencim/runner.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">workdir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">origin_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Roda a simulação de uma amostra.</span>
-
-<span class="sd">    Parameters:</span>
-<span class="sd">        sample_name: Nome da amostra.</span>
-<span class="sd">        used_templates: Quais templates foram usandos.</span>
-<span class="sd">        workdir: Diretorio de trabalho temporário para rodar a análise.</span>
-<span class="sd">        origin_dir: Diretório original</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workdir</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_run_tencim</span><span class="p">(</span><span class="n">sample_name</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_copy_anlysis_files</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">used_templates</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">origin_dir</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analise form: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">verbose_level</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
 
 </div>
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="tencim.runner.TencimRunnerDeterministic" class="doc doc-heading">
-          <code>TencimRunnerDeterministic</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code><a class="autorefs autorefs-internal" title="tencim.runner.TencimRunner" href="#tencim.runner.TencimRunner">TencimRunner</a></code></p>
-
-  
-      <p>Classe que executa a chamada do tencim da análise deterministica.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/tencim/runner.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TencimRunnerDeterministic</span><span class="p">(</span><span class="n">TencimRunner</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Classe que executa a chamada do tencim da análise deterministica.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">_output_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;deterministic&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_base_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">&quot;</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
 
 
 
