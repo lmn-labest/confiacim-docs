@@ -1570,7 +1570,9 @@
 <span class="normal">90</span>
 <span class="normal">91</span>
 <span class="normal">92</span>
-<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rodando a simulação FORM.</span>
 
@@ -1605,11 +1607,13 @@
 
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analise form: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">verbose_level</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+    <span class="n">output_dir_form</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;form&quot;</span>
+
     <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>
             <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">infos</span><span class="p">,</span>
             <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
-            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir_form</span><span class="p">,</span>
             <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
             <span class="n">verbose_level</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">,</span>
         <span class="p">)</span>
@@ -1626,8 +1630,8 @@
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
     <span class="n">json_indent</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">json_indent</span>
 
-    <span class="n">write_final_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
-    <span class="n">write_confiacim_statistics</span><span class="p">(</span><span class="n">ptencim_statistics</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
+    <span class="n">write_final_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">output_dir_form</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
+    <span class="n">write_confiacim_statistics</span><span class="p">(</span><span class="n">ptencim_statistics</span><span class="p">,</span> <span class="n">output_dir_form</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
