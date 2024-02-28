@@ -284,9 +284,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-analise-deterministica-pura" class="md-nav__link">
+  <a href="#3-analise-deterministica" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Análise deterministica pura
+      3) Análise deterministica
     </span>
   </a>
   
@@ -1573,9 +1573,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-analise-deterministica-pura" class="md-nav__link">
+  <a href="#3-analise-deterministica" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Análise deterministica pura
+      3) Análise deterministica
     </span>
   </a>
   
@@ -1934,27 +1934,26 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>simulation/
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>simulation/
 ├── case1a
 │   ├── case.dat
 │   ├── case.yml
 │   ├── mesh.dat
 │   ├── output
-│   │   ├── form_iteration_log.json
-│   │   ├── it_0001
-│   │   ├── it_0002
-│   │   ├── it_0003
-│   │   ├── results.json
-│   │   └── run_statistics.json
+│   │   ├── form
+│   │   │   ├── form_iteration_log.json
+│   │   │   ├── results.json
+│   │   │   └── run_statistics.json
 │   └── templates
 │       ├── initialtemperature.jinja
 │       ├── loads.jinja
 │       └── materials.jinja
 </code></pre></div></td></tr></table></div>
-<p>Na pasta <code>output</code> estão salvos os resultados desejados do <code>confiacim</code> da execução. Por exemplo, na pasta <code>it_0001</code> estão os resultados da iteração <code>1</code> do <code>confiacim</code>. Os resultado do <code>form</code> estão no arquivo <code>results.json</code>.</p>
-<p>Comando parar o <code>confiacim</code> plotar todos os resultados de <code>RC</code>:</p>
+<p>Na pasta <code>output/form</code> estão salvos os resultados desejados do <code>confiacim form</code> da execução. Os resultado do <code>form</code> estão no arquivo <code>results.json</code>.</p>
+<p>Para salvar os arquivos <code>RCs</code> e outros arquivos intermédiarios basta usar a opção <code>-s</code>ou <code>--save</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>-s<span class="w"> </span>simulation/case1a/
+</code></pre></div></td></tr></table></div>
+<p>Por exemplo, na pasta <code>it_0001</code> estão os resultados da iteração <code>1</code> do <code>confiacim form</code>. Com os arquivos intermédiarios salovs o <code>confiacim</code> e capaz plotar algums gráficos. Para plotar todos os resultados de <code>RC</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <blockquote>
@@ -1975,7 +1974,7 @@
 <p>Para um gráfico mais iterativo existe a possibilidade de usar o <code>plotly</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plotly<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
-<h2 id="3-analise-deterministica-pura">3) Análise deterministica pura</h2>
+<h2 id="3-analise-deterministica">3) Análise deterministica</h2>
 <p>Para rodar a análise determinítica base:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>

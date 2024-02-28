@@ -2193,7 +2193,7 @@
 <span class="sd">        output_dir: Caminho do diretório de saida.</span>
 <span class="sd">        indent: Identação do arquivo `JSON`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">write_json</span><span class="p">:</span>
         <span class="n">_write_iteration_log_json</span><span class="p">(</span><span class="n">betai</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -2334,14 +2334,14 @@
 <span class="sd">        write_json: Escreve também no formato `JSON`.</span>
 <span class="sd">        indent: Identação do arquivo `JSON`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">write_json</span><span class="p">:</span>
-        <span class="n">result_file</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;monte_carlo_results.json&quot;</span>
+        <span class="n">result_file</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;results.json&quot;</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">result_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONEncoder2Dataclasses</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">result_file</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;monte_carlo_results.txt&quot;</span>
+        <span class="n">result_file</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;results.txt&quot;</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">result_file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
             <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total: </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;fail: </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">fail</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>

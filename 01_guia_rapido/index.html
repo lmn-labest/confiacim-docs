@@ -274,9 +274,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-analise-determistica-com-o-form" class="md-nav__link">
+  <a href="#21-analise-probabilistica-com-o-form" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1) Análise determistica com o form
+      2.1) Análise probabilistica com o FORM
     </span>
   </a>
   
@@ -1466,9 +1466,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-analise-determistica-com-o-form" class="md-nav__link">
+  <a href="#21-analise-probabilistica-com-o-form" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1) Análise determistica com o form
+      2.1) Análise probabilistica com o FORM
     </span>
   </a>
   
@@ -1585,15 +1585,18 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <p>Caso seja necessário novamente modificar <code>case.dat</code> pode-se usar o <code>case_original.dat</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">30</span><span class="w"> </span>simulation/case1/case_original.dat
 </code></pre></div></td></tr></table></div>
-<h3 id="21-analise-determistica-com-o-form">2.1) Análise determistica com o form</h3>
+<h3 id="21-analise-probabilistica-com-o-form">2.1) Análise probabilistica com o FORM</h3>
 <p>Agora para rodar a análise probabilistica usando o método <code>form</code> basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>-s<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
-<p>Vizualizando todos os resultados:</p>
+<p>Os resultados são salvos na pasta <code>simulation/case1/output/form</code>. Com a uso da opção <code>-s</code> pode-se plotar os curvar de <code>RCs</code>. Para vizualizar todos os resultados:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando os resultados da iteração <code>3</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/case1a/output/
+</code></pre></div></td></tr></table></div>
+<p>Caso você queria só o arquivos básicos da solução basta não usar o <code>-s</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
 <h2 id="3-vizualizando-as-distribuicoes">3) Vizualizando as distribuições</h2>
 <p>Vizualizando a curva <code>pdf</code> da variável <code>E_c</code>:</p>
