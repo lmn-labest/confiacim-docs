@@ -1538,7 +1538,7 @@
         <tr>
           <td><code>samples</code></td>
           <td>
-                <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
+                <code>list[<span title="confiacim.samples.Sample">Sample</span>] | tuple[<span title="confiacim.samples.Sample">Sample</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1730,7 +1730,7 @@
 <span class="normal">135</span>
 <span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_samples_iteration_i</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
-    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
+    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -1846,7 +1846,7 @@
         <tr>
           <td><code>samples</code></td>
           <td>
-                <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
+                <code>list[<span title="confiacim.samples.Sample">Sample</span>] | tuple[<span title="confiacim.samples.Sample">Sample</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2060,7 +2060,7 @@
 <span class="normal">253</span>
 <span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
-    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
+    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
     <span class="n">was_generated</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
     <span class="n">original_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2156,7 +2156,7 @@
         <tr>
           <td><code>samples</code></td>
           <td>
-                <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
+                <code>list[<span title="confiacim.samples.Sample">Sample</span>] | tuple[<span title="confiacim.samples.Sample">Sample</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2319,7 +2319,7 @@
 <span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">setup_iteration</span><span class="p">(</span>
-    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
+    <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
     <span class="n">src_exec_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">abs_path_input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2408,7 +2408,7 @@
         <tr>
           <td><code>samples</code></td>
           <td>
-                <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
+                <code>list[<span title="confiacim.samples.Sample">Sample</span>] | tuple[<span title="confiacim.samples.Sample">Sample</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2506,7 +2506,7 @@
 <span class="normal">274</span>
 <span class="normal">275</span>
 <span class="normal">276</span>
-<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span> <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
+<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span> <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lê o `RC` das simulações das amostras</span>
 
