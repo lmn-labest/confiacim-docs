@@ -1528,7 +1528,7 @@
 <p>Necessário ter pelo menos o <code>python 3.11</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>No pacote do <code>connfiacim</code> são disponibilizadas duas versões do <strong>tencim1D</strong>. O <code>tencim_08.exe</code> com valor de abertura da interface de <code>1e-08</code>. E o <code>tencim_12.exe</code> com o valor de abertura de <code>1e-12</code>. Para alternar entre a versões pode-se usar a variável de ambiente <code>CONFIACIM_EXEC_TENCIM_BIN</code>, para mais detalhes <a href="/02_Uso_Detalhado#5-executavel-do-tencim">ver</a>.</p>
+<p>No pacote do <code>confiacim</code> são disponibilizadas duas versões do <strong>tencim1D</strong>. O <code>TENCIM_tdma.exe</code> que usa o solver direto TDMA. E o <code>tencim_pcg.exe</code> que usa o solver iterativo gradiente conjugado. Para alternar entre as versões pode-se usar a variável de ambiente <code>CONFIACIM_EXEC_TENCIM_BIN</code>, para mais detalhes <a href="/02_Uso_Detalhado#5-executavel-do-tencim">ver</a>.</p>
 </div>
 <h2 id="1-instalacao">1) Instalação</h2>
 <p>O <code>confiacim</code> foi empacotado utlizando o <code>setuptools</code>. Ele pode ser usando localmente de forma <code>standalone</code> como uma aplicação <code>CLI</code> ou importado por outras aplicaççoes. Nesse cenário indica-se instala-lo direto do pacote <code>*.whl</code>. O pacote python <code>.whl</code> pode ser obtido
