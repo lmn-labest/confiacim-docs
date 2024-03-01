@@ -6,8 +6,9 @@ variables:
         mean: 1.0
         cov : 0.1
 config:
-  beta: 20.0
-  delta: 0.01
-  gamma: 0.3
-  tol:  1e-03
-  maxit: 100
+  form:
+    beta: 20.0
+    delta: 0.01
+    gamma: 0.3
+    tol:  1e-03
+    maxit: 100

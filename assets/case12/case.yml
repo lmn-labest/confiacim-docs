@@ -15,8 +15,9 @@ variables:
         max: 0.2
         mod: 0.18
 config:
-  beta: 20.0
-  delta: 0.01
-  gamma: 0.3
-  tol:  1e-04
-  maxit: 100
+  form:
+    beta: 20.0
+    delta: 0.01
+    gamma: 0.3
+    tol: 1e-04
+    maxit: 100

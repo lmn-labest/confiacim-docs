@@ -1857,7 +1857,8 @@
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -1897,11 +1898,12 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">friction_angle_c, thermal_expansion_c</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.4</span>
 
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <p>Para verificar se as configuração da simulação foram lidas corretamente temos o comando:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>summary<span class="w"> </span>simulation/case1a/
@@ -2039,13 +2041,15 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">result_files</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;txt&quot;</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div></td></tr></table></div>
 <p>Para a saida <code>json</code> ainda existe a chave de configuração <code>json_indent</code>. Essa configuração define o espaçammento no arquivo <code>json</code>. Por padrão a indentação é zero, isso deixa o arquivo menor porém menos legível. Para aumentar para por exemplo 4 espaços basta:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2054,13 +2058,15 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">json_indent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="7-vizualizando-as-distribuicoes">7) Vizualizando as distribuições</h2>
 <p>Vizualizando a curva <code>pdf</code> da variável <code>cohesion_c</code>:</p>
@@ -2135,7 +2141,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2179,11 +2186,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="82-exemplo-2">8.2) Exemplo 2</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2223,7 +2231,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2255,11 +2264,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.400e-06</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-01</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">result_files</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;txt&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="83-exemplo-3">8.3) Exemplo 3</h3>
@@ -2275,7 +2285,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2283,11 +2294,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="84-exemplo-4">8.4) Exemplo 4</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2308,7 +2320,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">internal_temperature</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2322,11 +2335,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="85-exemplo-5">8.5) Exemplo 5</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2389,7 +2403,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
-<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2445,11 +2460,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="86-exemplo-6">8.6) Exemplo 6</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2494,7 +2510,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">40</span>
 <span class="normal">41</span>
 <span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lognormal</span>
@@ -2532,11 +2549,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="87-exemplo-7">8.7) Exemplo 7</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -2638,7 +2656,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
-<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">100</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Cimento</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
@@ -2733,11 +2752,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="88-exemplo-8">8.8) Exemplo 8</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -2839,7 +2859,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
-<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">100</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Cimento</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
@@ -2934,11 +2955,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">mean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="w">        </span><span class="nt">cov </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-03</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="89-exemplo-9">8.9) Exemplo 9</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2962,7 +2984,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Cimento</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
@@ -2979,11 +3002,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.000e+10</span>
 <span class="w">        </span><span class="nt">mod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.800e+10</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="810-exemplo-10">8.10) Exemplo 10</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3007,7 +3031,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Cimento</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
@@ -3024,11 +3049,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2</span>
 <span class="w">        </span><span class="nt">mod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="811-exemplo-11">8.11) Exemplo 11</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3052,7 +3078,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Cimento</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
@@ -3069,11 +3096,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.000e+10</span>
 <span class="w">        </span><span class="nt">mod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.500e+10</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="812-exemplo-12">8.12) Exemplo 12</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3097,7 +3125,8 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E_c</span>
 <span class="w">    </span><span class="nt">dist</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sgld</span>
@@ -3114,11 +3143,12 @@ CONFIACIM_EXEC_TENCIM_DIR=&quot;/opt/&quot;
 <span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
 <span class="w">        </span><span class="nt">mod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.18</span>
 <span class="nt">config</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
-<span class="w">  </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
-<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
-<span class="w">  </span><span class="nt">tol</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
-<span class="w">  </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
+<span class="w">    </span><span class="nt">delta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">tol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-04</span>
+<span class="w">    </span><span class="nt">maxit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 </code></pre></div></td></tr></table></div>
 
 

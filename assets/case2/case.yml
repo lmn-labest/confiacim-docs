@@ -30,9 +30,10 @@ variables:
         mean: 6.400e-06
         cov : 0.1
 config:
-  beta: 20.0
-  delta: 0.01
-  gamma: 0.3
-  tol:  1e-01
-  maxit: 2
+  form:
+    beta: 20.0
+    delta: 0.01
+    gamma: 0.3
+    tol:  1e-01
+    maxit: 2
   result_files: "txt"
