@@ -1622,8 +1622,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
-<span class="normal">34</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
@@ -1638,7 +1637,8 @@
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">MonteCarloResult</span><span class="p">:</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">MonteCarloResult</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indentifica os RCs menores de que zero para calcular a probabilidade de falha.</span>
 
@@ -1769,47 +1769,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">186</span>
 <span class="normal">187</span>
 <span class="normal">188</span>
 <span class="normal">189</span>
@@ -1817,7 +1777,47 @@
 <span class="normal">191</span>
 <span class="normal">192</span>
 <span class="normal">193</span>
-<span class="normal">194</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span>
     <span class="n">generator</span><span class="p">:</span> <span class="n">SamplesGeneratorMonteCarlo</span><span class="p">,</span>
     <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span>
     <span class="n">console</span><span class="p">:</span> <span class="n">Console</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2106,8 +2106,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 52</span>
-<span class="normal"> 53</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 53</span>
 <span class="normal"> 54</span>
 <span class="normal"> 55</span>
 <span class="normal"> 56</span>
@@ -2197,7 +2196,47 @@
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
-<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2246,47 +2285,86 @@
     <span class="n">seeds</span> <span class="o">=</span> <span class="n">generate_seeds</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">))</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">SamplesGeneratorMonteCarlo</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="n">seeds</span><span class="p">)</span>
 
-    <span class="n">samples</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Generate samples&quot;</span><span class="p">):</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
+    <span class="n">progressbarDisable</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_0</span> <span class="ow">or</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
     <span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
     <span class="n">json_indent</span> <span class="o">=</span> <span class="n">json_indent</span>
     <span class="n">ClassRunner</span> <span class="o">=</span> <span class="n">select_runner</span><span class="p">(</span><span class="n">save_intermediate_files</span><span class="p">)</span>
-    <span class="n">batched_size</span> <span class="o">=</span> <span class="n">batch_size</span>
 
     <span class="n">total</span><span class="p">,</span> <span class="n">fail</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">historic_results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">batched_number</span><span class="p">,</span> <span class="n">batched_samples</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">batched</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">batched_size</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">rcs</span> <span class="o">=</span> <span class="n">run_samples_iteration_i</span><span class="p">(</span>
-            <span class="n">samples</span><span class="o">=</span><span class="n">batched_samples</span><span class="p">,</span>
-            <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
-            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
-            <span class="n">iteration</span><span class="o">=</span><span class="n">batched_number</span><span class="p">,</span>
-            <span class="n">RunnerClass</span><span class="o">=</span><span class="n">ClassRunner</span><span class="p">,</span>
-            <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
-        <span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">save_intermediate_files</span><span class="p">:</span>
-            <span class="n">write_samples_variables_it</span><span class="p">(</span>
+    <span class="k">with</span> <span class="n">Progress</span><span class="p">(</span>
+        <span class="n">transient</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">disable</span><span class="o">=</span><span class="n">progressbarDisable</span><span class="p">,</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">progress</span><span class="p">:</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="n">progress</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Running Monte Carlo samples:&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">batch_number</span><span class="p">,</span> <span class="n">batched_samples</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">batched</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="n">console</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bath </span><span class="si">{</span><span class="n">batch_number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+                <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Tencim step&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+            <span class="n">rcs</span> <span class="o">=</span> <span class="n">run_samples_iteration_i</span><span class="p">(</span>
                 <span class="n">samples</span><span class="o">=</span><span class="n">batched_samples</span><span class="p">,</span>
-                <span class="n">iteration</span><span class="o">=</span><span class="n">batched_number</span><span class="p">,</span>
+                <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
                 <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
-                <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span>
-                <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">,</span>
+                <span class="n">iteration</span><span class="o">=</span><span class="n">batch_number</span><span class="p">,</span>
+                <span class="n">RunnerClass</span><span class="o">=</span><span class="n">ClassRunner</span><span class="p">,</span>
+                <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
             <span class="p">)</span>
 
-        <span class="n">partial_results</span> <span class="o">=</span> <span class="n">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="n">console</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;End tencim step&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
 
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">total</span>
-        <span class="n">fail</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">fail</span>
+            <span class="k">if</span> <span class="n">save_intermediate_files</span><span class="p">:</span>
+                <span class="n">write_samples_variables_it</span><span class="p">(</span>
+                    <span class="n">samples</span><span class="o">=</span><span class="n">batched_samples</span><span class="p">,</span>
+                    <span class="n">iteration</span><span class="o">=</span><span class="n">batch_number</span><span class="p">,</span>
+                    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+                    <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span>
+                    <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">,</span>
+                <span class="p">)</span>
 
-        <span class="n">results</span> <span class="o">=</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">fail</span><span class="p">)</span>
-        <span class="n">historic_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+            <span class="n">partial_results</span> <span class="o">=</span> <span class="n">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">)</span>
 
-        <span class="n">write_monte_carlo_batch_results</span><span class="p">(</span><span class="n">historic_results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">total</span>
+            <span class="n">fail</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">fail</span>
 
-        <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="n">console</span><span class="p">:</span>
-            <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;batch = </span><span class="si">{</span><span class="n">batched_number</span><span class="si">:</span><span class="s2">6d</span><span class="si">}</span><span class="s2"> Probability = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">P</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">fail</span><span class="p">)</span>
+            <span class="n">historic_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+            <span class="n">write_monte_carlo_batch_results</span><span class="p">(</span><span class="n">historic_results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
+
+            <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">task</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;[green]Running[/green]:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;[cyan]batch[/cyan] = </span><span class="si">{</span><span class="n">batch_number</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;[cyan]Failure Probability[/cyan]  = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">P</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">),</span>
+                <span class="n">advance</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">batched_samples</span><span class="p">),</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="n">console</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Partial results&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;batch = </span><span class="si">{</span><span class="n">batch_number</span><span class="si">:</span><span class="s2">6d</span><span class="si">}</span><span class="s2"> Probability = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">P</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;End bath step&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">results</span>
 </code></pre></div></td></tr></table></div>
