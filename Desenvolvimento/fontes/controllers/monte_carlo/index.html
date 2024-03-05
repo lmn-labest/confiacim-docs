@@ -1619,11 +1619,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/monte_carlo.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
 <span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
@@ -1670,7 +1666,11 @@
 <span class="normal">139</span>
 <span class="normal">140</span>
 <span class="normal">141</span>
-<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_samples</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_samples</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera as amostras do Monte Carlo.</span>
 
@@ -1826,9 +1826,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/controllers/monte_carlo.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
 <span class="normal">42</span>
@@ -1877,7 +1875,11 @@
 <span class="normal">85</span>
 <span class="normal">86</span>
 <span class="normal">87</span>
-<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1914,21 +1916,23 @@
 
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analise Monte Carlo: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">verbose_level</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>
-        <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">monte_carlo_configs</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">base_configs</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">variables_infos</span><span class="p">,</span>
-        <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
-        <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
-        <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
-        <span class="n">verbose_level</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">,</span>
-        <span class="n">save_intermediate_files</span><span class="o">=</span><span class="n">save_intermediate_files</span><span class="p">,</span>
-    <span class="p">)</span>
-
+    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>
+            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">monte_carlo_configs</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">base_configs</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">variables_infos</span><span class="p">,</span>
+            <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+            <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
+            <span class="n">verbose_level</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">,</span>
+            <span class="n">save_intermediate_files</span><span class="o">=</span><span class="n">save_intermediate_files</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">confiacim_statistics</span><span class="o">.</span><span class="n">total_time</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_wall_time</span><span class="p">()</span>
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
     <span class="n">json_indent</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">json_indent</span>
 
     <span class="n">write_monte_carlo_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
+    <span class="n">write_confiacim_statistics</span><span class="p">(</span><span class="n">confiacim_statistics</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
