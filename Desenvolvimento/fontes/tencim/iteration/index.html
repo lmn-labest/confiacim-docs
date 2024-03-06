@@ -1879,7 +1879,7 @@
                 <span class="k">break</span>
             <span class="k">except</span> <span class="ne">NotADirectoryError</span><span class="p">:</span>
                 <span class="c1"># TODO: coloca isso no log</span>
-                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[red]Tentativa: </span><span class="si">{</span><span class="n">attempts</span><span class="si">}</span><span class="s2"> - Esperando </span><span class="si">{</span><span class="mf">0.05</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">attempts</span><span class="si">}</span><span class="s2"> segundos[/red]&quot;</span><span class="p">)</span>
+                <span class="c1"># console.print(f&quot;[red]Tentativa: {attempts} - Esperando {0.05 * attempts} segundos[/red]&quot;)</span>
                 <span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">attempts</span><span class="p">)</span>
                 <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
