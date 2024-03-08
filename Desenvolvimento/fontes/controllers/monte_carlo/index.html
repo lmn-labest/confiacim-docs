@@ -1802,19 +1802,6 @@
               <em>required</em>
           </td>
         </tr>
-        <tr>
-          <td><code>function_plot</code></td>
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Função que plota.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
     </tbody>
   </table>
 
@@ -1912,15 +1899,13 @@
 <span class="normal">202</span>
 <span class="normal">203</span>
 <span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plot_histgram</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">plot_histgram</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plota o histograma da distribuição selecinada.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        input_dir: Diretório da simulação</span>
 <span class="sd">        var_name: Nome da variável.</span>
-<span class="sd">        function_plot: Função que plota.</span>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        InputDirNotExists: Diretŕio não encontrado.</span>

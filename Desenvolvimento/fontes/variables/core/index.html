@@ -1372,6 +1372,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#variables.core.search_var_by_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      search_var_by_name
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1590,6 +1599,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#variables.core.search_var_by_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      search_var_by_name
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1617,7 +1635,7 @@
 <a id="variables.core"></a>
   <div class="doc doc-contents first">
   
-      <p>Definição da variaveis aleatórias.</p>
+      <p>Modulo da variáveis aleatórias.</p>
 <hr />
 
   
@@ -2282,6 +2300,132 @@
         <span class="n">IFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">ppf</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="n">Fs</span><span class="p">,</span> <span class="n">IFs</span><span class="o">=</span><span class="n">IFs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="variables.core.search_var_by_name" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">var_name</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Procura por uma variável especifica</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>variables</code></td>
+          <td>
+                <code>tuple[<a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a>, ...]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Variaveis aleatorias</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>var_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Nome da variável que desejada</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Retorna a variável caso seja encontrada.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StochasticVariable</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Procura por uma variável especifica</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        variables: Variaveis aleatorias</span>
+<span class="sd">        var_name: Nome da variável que desejada</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Retorna a variável caso seja encontrada.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">found_var</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">var_name</span><span class="p">:</span>
+            <span class="n">found_var</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">found_var</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
