@@ -1939,8 +1939,7 @@
 <span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
@@ -2036,15 +2035,14 @@
             <span class="n">samples</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
             <span class="n">simulation_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Amostras geradas: </span><span class="si">{</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">samples</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-            <span class="n">ClassRunner</span> <span class="o">=</span> <span class="n">select_runner</span><span class="p">(</span><span class="n">save_intermediate_files</span><span class="p">)</span>
-
             <span class="n">rcs</span> <span class="o">=</span> <span class="n">run_samples_iteration_i</span><span class="p">(</span>
                 <span class="n">samples</span><span class="o">=</span><span class="n">samples</span><span class="p">,</span>
                 <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
                 <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
                 <span class="n">iteration</span><span class="o">=</span><span class="n">it</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="n">RunnerClass</span><span class="o">=</span><span class="n">ClassRunner</span><span class="p">,</span>
+                <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span>
                 <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+                <span class="n">save_intermediate_files</span><span class="o">=</span><span class="n">save_intermediate_files</span><span class="p">,</span>
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="n">save_intermediate_files</span><span class="p">:</span>

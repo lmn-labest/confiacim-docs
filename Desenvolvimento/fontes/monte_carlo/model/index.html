@@ -1536,6 +1536,17 @@
           </td>
         </tr>
         <tr>
+          <td><code><span title="monte_carlo.model.MonteCarloResult.valid_simulation">valid_simulation</span></code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Simulações válidas.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
           <td><code><span title="monte_carlo.model.MonteCarloResult.fail">fail</span></code></td>
           <td>
                 <code>int</code>
@@ -1562,9 +1573,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/monte_carlo/model.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
@@ -1579,24 +1588,36 @@
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">MonteCarloResult</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe que define os resultados.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        total (int): Número total de amostras.</span>
+<span class="sd">        valid_simulation: Simulações válidas.</span>
 <span class="sd">        fail (int): Número amostras que falharam.</span>
 <span class="sd">        P (int): Instâcia da distribuição desejada</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">total</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">valid_simulation</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">fail</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">P</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">P</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_simulation</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Inf</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
