@@ -1639,7 +1639,7 @@
 <span class="sd">        Resultado do Monte Carlo</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">fail_count</span><span class="p">,</span> <span class="n">valid_simulation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">fail_count</span><span class="p">,</span> <span class="n">valid_simulations</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rcs</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
 
         <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1648,9 +1648,9 @@
         <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;last&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
             <span class="n">fail_count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-        <span class="n">valid_simulation</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">valid_simulations</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">return</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">rcs</span><span class="p">),</span> <span class="n">valid_simulation</span><span class="o">=</span><span class="n">valid_simulation</span><span class="p">,</span> <span class="n">fail</span><span class="o">=</span><span class="n">fail_count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">rcs</span><span class="p">),</span> <span class="n">valid_simulations</span><span class="o">=</span><span class="n">valid_simulations</span><span class="p">,</span> <span class="n">fail</span><span class="o">=</span><span class="n">fail_count</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -2297,7 +2297,7 @@
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
     <span class="n">json_indent</span> <span class="o">=</span> <span class="n">json_indent</span>
 
-    <span class="n">total</span><span class="p">,</span> <span class="n">fail</span><span class="p">,</span> <span class="n">valid_simulation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">total</span><span class="p">,</span> <span class="n">fail</span><span class="p">,</span> <span class="n">valid_simulations</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">historic_results</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">with</span> <span class="n">Progress</span><span class="p">(</span>
@@ -2344,9 +2344,9 @@
 
             <span class="n">total</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">total</span>
             <span class="n">fail</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">fail</span>
-            <span class="n">valid_simulation</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">valid_simulation</span>
+            <span class="n">valid_simulations</span> <span class="o">+=</span> <span class="n">partial_results</span><span class="o">.</span><span class="n">valid_simulations</span>
 
-            <span class="n">results</span> <span class="o">=</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">valid_simulation</span><span class="p">,</span> <span class="n">fail</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">valid_simulations</span><span class="p">,</span> <span class="n">fail</span><span class="p">)</span>
             <span class="n">historic_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
             <span class="n">write_monte_carlo_batch_results</span><span class="p">(</span><span class="n">historic_results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>

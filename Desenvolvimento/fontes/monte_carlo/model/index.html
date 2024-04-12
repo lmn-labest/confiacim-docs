@@ -1536,7 +1536,7 @@
           </td>
         </tr>
         <tr>
-          <td><code><span title="monte_carlo.model.MonteCarloResult.valid_simulation">valid_simulation</span></code></td>
+          <td><code><span title="monte_carlo.model.MonteCarloResult.valid_simulations">valid_simulations</span></code></td>
           <td>
                 <code>int</code>
           </td>
@@ -1601,21 +1601,21 @@
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        total (int): Número total de amostras.</span>
-<span class="sd">        valid_simulation: Simulações válidas.</span>
+<span class="sd">        valid_simulations: Simulações válidas.</span>
 <span class="sd">        fail (int): Número amostras que falharam.</span>
 <span class="sd">        P (int): Instância da distribuição desejada.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">total</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">valid_simulation</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">valid_simulations</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">fail</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">P</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">estimator</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">_probability</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_simulation</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">_estimator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">P</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_simulation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">_probability</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_simulations</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">_estimator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">P</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_simulations</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
