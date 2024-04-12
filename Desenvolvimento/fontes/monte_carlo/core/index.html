@@ -1765,13 +1765,7 @@
 </details>
           <details class="quote">
             <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
@@ -1813,7 +1807,13 @@
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
-<span class="normal">244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_samples</span><span class="p">(</span>
     <span class="n">generator</span><span class="p">:</span> <span class="n">SamplesGeneratorMonteCarlo</span><span class="p">,</span>
     <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span>
     <span class="n">console</span><span class="p">:</span> <span class="n">Console</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2234,7 +2234,13 @@
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2345,12 +2351,18 @@
 
             <span class="n">write_monte_carlo_batch_results</span><span class="p">(</span><span class="n">historic_results</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
 
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;[cyan]Estimator[/cyan]  = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">estimator</span><span class="si">:</span><span class="s2">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">if</span> <span class="n">results</span><span class="o">.</span><span class="n">estimator</span>
+                <span class="k">else</span> <span class="s2">&quot;[cyan]Estimator[/cyan] = Not avalible yet&quot;</span>
+            <span class="p">)</span>
             <span class="n">progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
                 <span class="n">task</span><span class="p">,</span>
                 <span class="n">description</span><span class="o">=</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;[green]Running[/green]:</span><span class="se">\n</span><span class="s2">&quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;[cyan]batch[/cyan] = </span><span class="si">{</span><span class="n">batch_number</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;[cyan]Failure Probability[/cyan]  = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">P</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;[cyan]Failure Probability[/cyan]  = </span><span class="si">{</span><span class="n">results</span><span class="o">.</span><span class="n">P</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="p">),</span>
                 <span class="n">advance</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">batched_samples</span><span class="p">),</span>
             <span class="p">)</span>
