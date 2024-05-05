@@ -1778,7 +1778,7 @@
 <span class="sd">            used_templates: Quais templates foram usandos.</span>
 <span class="sd">            workdir: Diretorio de trabalho temporário para rodar a análise.</span>
 <span class="sd">            origin_dir: Diretório original</span>
-<span class="sd">            salva:  Salva os arquivos intermediarios da simulação.</span>
+<span class="sd">            save:  Salva os arquivos intermediarios da simulação.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workdir</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_run_tencim</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">used_templates</span><span class="o">=</span><span class="n">used_templates</span><span class="p">)</span>
@@ -1965,8 +1965,9 @@
           </td>
         </tr>
         <tr>
-          <td><code>salva</code></td>
+          <td><code>save</code></td>
           <td>
+                <code>bool</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1974,7 +1975,7 @@
             </div>
           </td>
           <td>
-              <em>required</em>
+                <code>False</code>
           </td>
         </tr>
     </tbody>
@@ -2011,7 +2012,7 @@
 <span class="sd">        used_templates: Quais templates foram usandos.</span>
 <span class="sd">        workdir: Diretorio de trabalho temporário para rodar a análise.</span>
 <span class="sd">        origin_dir: Diretório original</span>
-<span class="sd">        salva:  Salva os arquivos intermediarios da simulação.</span>
+<span class="sd">        save:  Salva os arquivos intermediarios da simulação.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workdir</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_run_tencim</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">used_templates</span><span class="o">=</span><span class="n">used_templates</span><span class="p">)</span>

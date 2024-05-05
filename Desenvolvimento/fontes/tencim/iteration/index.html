@@ -1563,14 +1563,14 @@
 
 
 <h2 id="tencim.iteration.run_samples_iteration_i" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Função executa simulações dessa iteração <code>i</code>.</p>
+      <p>Função executa simulações da iteração <code>i</code>.</p>
 
 
 
@@ -1639,6 +1639,20 @@
           </td>
           <td>
                 <code>1</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rc_criteria</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria" href="../rc/#tencim.rc.RCCriteria">RCCriteria</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Critério do <strong>RC</strong>.</p>
+            </div>
+          </td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MHOR_COULOMB" href="../rc/#tencim.rc.RCCriteria.MHOR_COULOMB">MHOR_COULOMB</a></code>
           </td>
         </tr>
         <tr>
@@ -1803,24 +1817,28 @@
 <span class="normal">146</span>
 <span class="normal">147</span>
 <span class="normal">148</span>
-<span class="normal">149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_samples_iteration_i</span><span class="p">(</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_samples_iteration_i</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">rc_criteria</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">,</span>
     <span class="n">RunnerClass</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">TencimRunner</span><span class="p">]</span> <span class="o">=</span> <span class="n">TencimRunner</span><span class="p">,</span>
     <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">save_intermediate_files</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Função executa simulações dessa iteração `i`.</span>
+<span class="sd">    Função executa simulações da iteração `i`.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        samples: Lista da amostras.</span>
 <span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
 <span class="sd">        output_dir: Diterório do arquivo de saida.</span>
 <span class="sd">        iteration: Número da iteração do **FORM**.</span>
+<span class="sd">        rc_criteria: Critério do **RC**.</span>
 <span class="sd">        RunnerClass: Classe que executa o `tencim`.</span>
 <span class="sd">        verbose: Nivel de verbosidade.</span>
 <span class="sd">        save_intermediate_files: Salva os arquivos intermediarios da simulação.</span>
@@ -1869,7 +1887,7 @@
         <span class="p">)</span>
 
     <span class="c1"># posprocess</span>
-    <span class="n">rcs</span> <span class="o">=</span> <span class="n">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">)</span>
+    <span class="n">rcs</span> <span class="o">=</span> <span class="n">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="p">)</span>
 
     <span class="c1"># No windows as vezes temos um problema de permissão</span>
     <span class="c1"># na hora de deletar executável do tencim por ele</span>
@@ -2098,9 +2116,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">209</span>
 <span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
@@ -2160,7 +2176,9 @@
 <span class="normal">266</span>
 <span class="normal">267</span>
 <span class="normal">268</span>
-<span class="normal">269</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
@@ -2370,9 +2388,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
@@ -2422,7 +2438,9 @@
 <span class="normal">201</span>
 <span class="normal">202</span>
 <span class="normal">203</span>
-<span class="normal">204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">setup_iteration</span><span class="p">(</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">setup_iteration</span><span class="p">(</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
     <span class="n">src_exec_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2487,7 +2505,7 @@
 
 
 <h2 id="tencim.iteration.simulation_rcs" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">simulation_rcs</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2535,6 +2553,20 @@
           </td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rc_criteria</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria" href="../rc/#tencim.rc.RCCriteria">RCCriteria</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Critério do <strong>RC</strong>.</p>
+            </div>
+          </td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MHOR_COULOMB" href="../rc/#tencim.rc.RCCriteria.MHOR_COULOMB">MHOR_COULOMB</a></code>
           </td>
         </tr>
     </tbody>
@@ -2590,9 +2622,7 @@
 
           <details class="quote">
             <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">274</span>
 <span class="normal">275</span>
 <span class="normal">276</span>
 <span class="normal">277</span>
@@ -2616,9 +2646,14 @@
 <span class="normal">295</span>
 <span class="normal">296</span>
 <span class="normal">297</span>
-<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
+    <span class="n">rc_criteria</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lê o `RC` das simulações das amostras</span>
@@ -2626,6 +2661,7 @@
 <span class="sd">    Parameters:</span>
 <span class="sd">        samples: Lista da amostras.</span>
 <span class="sd">        tmpdir: Diretório temporário base onde as analises serão rodadas.</span>
+<span class="sd">        rc_criteria: Critério do **RC**.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna o `RC` mínimo e ultimo das amostras.</span>
@@ -2638,7 +2674,7 @@
         <span class="n">sample_name</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span>
         <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">rcs</span><span class="p">[</span><span class="n">sample_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rc_stats</span><span class="p">(</span><span class="n">workdir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">)</span>
+            <span class="n">rcs</span><span class="p">[</span><span class="n">sample_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rc_stats</span><span class="p">(</span><span class="n">workdir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_RC.txt&quot;</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
             <span class="n">rcs</span><span class="p">[</span><span class="n">sample_name</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
