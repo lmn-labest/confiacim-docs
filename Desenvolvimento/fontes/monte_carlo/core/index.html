@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1515,18 +1515,17 @@
 
 
 <a id="monte_carlo.core"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Modulo com a funcionalidades do Monte Carlo</p>
 <ul>
 <li>generate_samples</li>
 </ul>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -1539,74 +1538,71 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="monte_carlo.core.failure_probability_from_rcs" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Indentifica os RCs menores de que zero para calcular a probabilidade de falha.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>rcs</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Resultados de RCs das amostras</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>rcs</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Resultados de RCs das amostras</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.monte_carlo.model.MonteCarloResult">MonteCarloResult</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Resultado do Monte Carlo</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.monte_carlo.model.MonteCarloResult">MonteCarloResult</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Resultado do Monte Carlo</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
@@ -1652,107 +1648,104 @@
 
     <span class="k">return</span> <span class="n">MonteCarloResult</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">rcs</span><span class="p">),</span> <span class="n">valid_simulations</span><span class="o">=</span><span class="n">valid_simulations</span><span class="p">,</span> <span class="n">fail</span><span class="o">=</span><span class="n">fail_count</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="monte_carlo.core.generate_samples" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">generate_samples</span><span class="p">(</span><span class="n">generator</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">generate_samples</span><span class="p">(</span><span class="n">generator</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Gerndo as amostras do Monte Carlo.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>generator</code></td>
-          <td>
-                <code><span title="confiacim.samples.SamplesGeneratorMonteCarlo">SamplesGeneratorMonteCarlo</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Gerador de amostras.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>verbose_level</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nivel de verbosidade.</p>
-            </div>
-          </td>
-          <td>
-                <code><span title="confiacim.verbose.VerboseLevel.LEVEL_2">LEVEL_2</span></code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>console</code></td>
-          <td>
-                <code><span title="rich.console.Console">Console</span> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>console do <code>Rich</code>.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>generator</code></td>
+            <td>
+                  <code><span title="confiacim.samples.SamplesGeneratorMonteCarlo">SamplesGeneratorMonteCarlo</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Gerador de amostras.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>verbose_level</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nivel de verbosidade.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="confiacim.verbose.VerboseLevel.LEVEL_2">LEVEL_2</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>console</code></td>
+            <td>
+                  <code><span title="rich.console.Console">Console</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>console do <code>Rich</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Amostras geradas do <strong>Monte Carlo</strong>.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>list[<span title="confiacim.samples.Sample">Sample</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Amostras geradas do <strong>Monte Carlo</strong>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 <details class="info" open>
   <summary>Info</summary>
@@ -1763,9 +1756,9 @@
 <li>2 - Alta</li>
 </ul>
 </details>
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
 <span class="normal">207</span>
 <span class="normal">208</span>
 <span class="normal">209</span>
@@ -1863,247 +1856,244 @@
 
     <span class="k">return</span> <span class="n">samples</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="monte_carlo.core.loop" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="s1">&#39;mohr-coulomb&#39;</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="s1">&#39;mohr-coulomb&#39;</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Efetua os cálculos e procedientos do loop principal do método <strong>Monte Carlo</strong>.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>input_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório dos arquivos de entrada.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>output_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório dos arquivos de saida.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>variables</code></td>
-          <td>
-                <code>tuple[<span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span>, ...]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variaveis aleatórias.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>n_samples</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Número de amostras do <strong>Monte Carlo</strong>.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>batch_size</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Tamanho do lote de simulação do <strong>Monte Carlo</strong>.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>seed</code></td>
-          <td>
-                <code>int | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Semente do <strong>Monte Carlo</strong>.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>correlations</code></td>
-          <td>
-                <code>dict[str, float] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Informação das correlações das variáveis.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>rc_criteria</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Critério do <strong>RC</strong>.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;mohr-coulomb&#39;</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>result_files</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Tipo de arquivo de saida.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;json&#39;</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>save_intermediate_files</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Salva os arquivos intermediarios da simulação.</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>json_indent</code></td>
-          <td>
-                <code>int | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>identação do arquivo json.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>verbose_level</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nivel de verbosidade.</p>
-            </div>
-          </td>
-          <td>
-                <code><span title="confiacim.verbose.VerboseLevel.LEVEL_2">LEVEL_2</span></code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>console</code></td>
-          <td>
-                <code><span title="rich.console.Console">Console</span> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>console do <code>Rich</code>.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>input_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório dos arquivos de entrada.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>output_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório dos arquivos de saida.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>variables</code></td>
+            <td>
+                  <code>tuple[<span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span>, ...]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variaveis aleatórias.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>n_samples</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Número de amostras do <strong>Monte Carlo</strong>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>batch_size</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tamanho do lote de simulação do <strong>Monte Carlo</strong>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>seed</code></td>
+            <td>
+                  <code>int | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Semente do <strong>Monte Carlo</strong>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>correlations</code></td>
+            <td>
+                  <code>dict[str, float] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Informação das correlações das variáveis.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>rc_criteria</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Critério do <strong>RC</strong>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;mohr-coulomb&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>result_files</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tipo de arquivo de saida.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;json&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>save_intermediate_files</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Salva os arquivos intermediarios da simulação.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>json_indent</code></td>
+            <td>
+                  <code>int | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>identação do arquivo json.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>verbose_level</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nivel de verbosidade.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="confiacim.verbose.VerboseLevel.LEVEL_2">LEVEL_2</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>console</code></td>
+            <td>
+                  <code><span title="rich.console.Console">Console</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>console do <code>Rich</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.monte_carlo.model.MonteCarloResult">MonteCarloResult</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna o resultado final do <strong>FORM</strong>.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.monte_carlo.model.MonteCarloResult">MonteCarloResult</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna o resultado final do <strong>FORM</strong>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
 
 <details class="info" open>
   <summary>Info</summary>
@@ -2114,9 +2104,9 @@
 <li>2 - Alta</li>
 </ul>
 </details>
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 62</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 62</span>
 <span class="normal"> 63</span>
 <span class="normal"> 64</span>
 <span class="normal"> 65</span>
@@ -2400,8 +2390,8 @@
 
     <span class="k">return</span> <span class="n">results</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2409,7 +2399,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -2461,7 +2451,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

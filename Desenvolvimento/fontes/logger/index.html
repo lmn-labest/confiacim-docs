@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1579,12 +1579,12 @@
 
 
 <a id="logger"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Módulo de logging</p>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1600,80 +1600,79 @@
 
 
 <h2 id="logger.JsonFormatter" class="doc doc-heading">
-          <code>JsonFormatter</code>
+            <code>JsonFormatter</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="logging.Formatter">Formatter</span></code></p>
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="logging.Formatter">Formatter</span></code></p>
 
-  
+
       <p>Formatter that outputs JSON strings after parsing the LogRecord.</p>
 
 
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>fmt_dict</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Key: logging format attribute pairs..</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>time_format</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>time.strftime() format string."</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;%Y-%m-%d %H:%M:%S&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>msec_format</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Microsecond formatting. Appended at the end."</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;%s.%03d&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>fmt_dict</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Key: logging format attribute pairs..</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>time_format</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>time.strftime() format string."</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;%Y-%m-%d %H:%M:%S&#39;</code>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>msec_format</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Microsecond formatting. Appended at the end."</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;%s.%03d&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+              <details class="quote">
+                <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
@@ -1795,12 +1794,11 @@
         <span class="n">message_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatMessage</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">message_dict</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -1813,21 +1811,20 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="logger.JsonFormatter.format" class="doc doc-heading">
-          <code class="highlight language-python"><span class="nb">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="nb">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Mostly the same as the parent's class method, the difference being that a dict is manipulated and dumped as JSON
 instead of a string.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
@@ -1889,30 +1886,28 @@ instead of a string.</p>
     <span class="n">message_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatMessage</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">message_dict</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="logger.JsonFormatter.formatMessage" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">formatMessage</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">formatMessage</span><span class="p">(</span><span class="n">record</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Overwritten to return a dictionary of the relevant LogRecord attributes instead of a string.
 KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
@@ -1924,29 +1919,27 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">fmt_key</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">fmt_val</span><span class="p">]</span> <span class="k">for</span> <span class="n">fmt_key</span><span class="p">,</span> <span class="n">fmt_val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="logger.JsonFormatter.usesTime" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">usesTime</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">usesTime</span><span class="p">()</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Overwritten to look for the attribute in the format dict values instead of the fmt string.</p>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
@@ -1956,8 +1949,8 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s2">&quot;asctime&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -1965,84 +1958,79 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
-
 
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="logger.get_logger" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_logger</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_logger</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Obtém um logger.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>nome do logger.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;confiacim&#39;</code>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>nome do logger.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;confiacim&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="logging.Logger">Logger</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna a classe de logging.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="logging.Logger">Logger</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna a classe de logging.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
 <span class="normal">114</span>
@@ -2064,97 +2052,93 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="logger.set_logger" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;confiacim&#39;</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Configura um log para ser usuado depois.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>logfile</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do arquivo de log.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>nome do logger.</p>
-            </div>
-          </td>
-          <td>
-                <code>&#39;confiacim&#39;</code>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>logfile</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome do arquivo de log.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>nome do logger.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;confiacim&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="logging.Logger">Logger</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna a classe de logging.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="logging.Logger">Logger</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna a classe de logging.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/logger.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 90</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 90</span>
 <span class="normal"> 91</span>
 <span class="normal"> 92</span>
 <span class="normal"> 93</span>
@@ -2192,8 +2176,8 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
     <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">logger</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2201,7 +2185,7 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -2253,7 +2237,7 @@ KeyError is raised if an unknown attribute is provided in the fmt_dict.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

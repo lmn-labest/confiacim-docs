@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1479,8 +1479,8 @@
 
 
 <a id="form.correlations"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Matrix de correlação.</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
@@ -1488,10 +1488,9 @@
 </ul>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -1504,88 +1503,85 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="form.correlations.generate_correlation_matrix" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">generate_correlation_matrix</span><span class="p">(</span><span class="n">correlations</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">generate_correlation_matrix</span><span class="p">(</span><span class="n">correlations</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Calcula a matrix de correlação.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>correlations</code></td>
-          <td>
-                <code>dict[str, float] | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>dicionário com as correlações entre as variáveis.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>variables</code></td>
-          <td>
-                <code>tuple[<span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span>, ...]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>variáveis aleatorios.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>correlations</code></td>
+            <td>
+                  <code>dict[str, float] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>dicionário com as correlações entre as variáveis.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>variables</code></td>
+            <td>
+                  <code>tuple[<span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span>, ...]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>variáveis aleatorios.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna a matriz de correlações</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="numpy.ndarray">ndarray</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna a matriz de correlações</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/form/correlations.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/form/correlations.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
@@ -1645,8 +1641,8 @@
 
     <span class="k">return</span> <span class="n">ro</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -1654,7 +1650,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -1706,7 +1702,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

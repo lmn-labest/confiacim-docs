@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1617,12 +1617,12 @@
 
 
 <a id="variables.core"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Modulo da variáveis aleatórias.</p>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1638,9 +1638,9 @@
 
 
 <h2 id="variables.core.DistInfos" class="doc doc-heading">
-          <code>DistInfos</code>
+            <code>DistInfos</code>
 
-  
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
   </span>
@@ -1648,51 +1648,50 @@
 </h2>
 
 
-  <div class="doc doc-contents ">
+    <div class="doc doc-contents ">
 
-  
+
       <p>Classe que que guarda as infos da distruição lidas.</p>
 
 
-
-  <p><span class="doc-section-title">Attributes:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code><span title="variables.core.DistInfos.name">name</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome da distribuição.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code><span title="variables.core.DistInfos.params">params</span></code></td>
-          <td>
-                <code> dict[str, int | float]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Parâmentros da distruibuição.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.DistInfos.name">name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome da distribuição.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.DistInfos.params">params</span></code></td>
+            <td>
+                  <code> dict[str, int | float]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Parâmentros da distruibuição.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+              <details class="quote">
+                <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
@@ -1716,9 +1715,9 @@
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1734,8 +1733,7 @@
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
 
@@ -1744,72 +1742,72 @@
 
 
 <h2 id="variables.core.StochasticVariable" class="doc doc-heading">
-          <code>StochasticVariable</code>
+            <code>StochasticVariable</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
+    <div class="doc doc-contents ">
 
-  
+
       <p>Classe que define as variável aleatória.</p>
 
 
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.StochasticVariable.name">name</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome da variável.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.StochasticVariable.dist_infos">dist_infos</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="variables.core.DistInfos" href="#variables.core.DistInfos">DistInfos</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Informação da distribuição.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.StochasticVariable.dist">dist</span></code></td>
+            <td>
+                  <code>object</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Instância da distribuição desejada</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-  <p><span class="doc-section-title">Attributes:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code><span title="variables.core.StochasticVariable.name">name</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome da variável.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code><span title="variables.core.StochasticVariable.dist_infos">dist_infos</span></code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="variables.core.DistInfos" href="#variables.core.DistInfos">DistInfos</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Informação da distribuição.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code><span title="variables.core.StochasticVariable.dist">dist</span></code></td>
-          <td>
-                <code>object</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Instância da distribuição desejada</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
 <details class="info" open>
   <summary>Info</summary>
   <p>o Coeficiente de variação é o desvio padrão divido pela média.</p>
 </details>
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 46</span>
+              <details class="quote">
+                <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 46</span>
 <span class="normal"> 47</span>
 <span class="normal"> 48</span>
 <span class="normal"> 49</span>
@@ -1927,9 +1925,9 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1944,8 +1942,8 @@
 
 
 <h3 id="variables.core.StochasticVariable.mean" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">mean</span></code>
-  
+            <code class="highlight language-python"><span class="n">mean</span></code>
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
@@ -1953,10 +1951,10 @@
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Retorna a média da variável.</p>
-  </div>
+    </div>
 
 </div>
 
@@ -1965,8 +1963,8 @@
 
 
 <h3 id="variables.core.StochasticVariable.std" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">std</span></code>
-  
+            <code class="highlight language-python"><span class="n">std</span></code>
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
@@ -1974,76 +1972,73 @@
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Retorna o desvio padrão da variável.</p>
-  </div>
+    </div>
 
 </div>
-
 
 
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="variables.core.StochasticVariable.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">)</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
 
 
 
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome da variável_</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>dist_infos</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="variables.core.DistInfos" href="#variables.core.DistInfos">DistInfos</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Informações das distribuição_</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome da variável_</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>dist_infos</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="variables.core.DistInfos" href="#variables.core.DistInfos">DistInfos</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Informações das distribuição_</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
@@ -2061,75 +2056,71 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span> <span class="o">=</span> <span class="n">dist_infos</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_distribution</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h3 id="variables.core.StochasticVariable.set_distribution" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">set_distribution</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">set_distribution</span><span class="p">()</span></code>
 
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
 
 
 
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>ValueError</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Levanta o erro caso a distruição não seja válida.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>ValueError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Levanta o erro caso a distruição não seja válida.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna a distruição definida em dist_name.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna a distruição definida em dist_name.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
 <span class="normal">80</span>
 <span class="normal">81</span>
 <span class="normal">82</span>
@@ -2163,8 +2154,8 @@
 
     <span class="k">return</span> <span class="n">Dist</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2172,84 +2163,79 @@
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
-
 
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="variables.core.pdf_cdf_ppf_of_distributions" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Cria uma dicionário com as respectivas <code>pdf</code>, <code>cdf</code> e <code>ppf</code> das distribuicões..</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>variables</code></td>
-          <td>
-                <code>tuple[<a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a>, ...]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variáves aleatórias.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>variables</code></td>
+            <td>
+                  <code>tuple[<a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a>, ...]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variáves aleatórias.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>dict[str, list]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna um dicionário com as distruibuições com sua respectivamente <code>pdf</code>, <code>cdf</code> e <code>ppf</code>.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>dict[str, list]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna um dicionário com as distruibuições com sua respectivamente <code>pdf</code>, <code>cdf</code> e <code>ppf</code>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">107</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
@@ -2285,97 +2271,93 @@
 
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="n">Fs</span><span class="p">,</span> <span class="n">IFs</span><span class="o">=</span><span class="n">IFs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="variables.core.search_var_by_name" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">var_name</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">var_name</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Procura por uma variável especifica</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>variables</code></td>
-          <td>
-                <code>tuple[<a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a>, ...]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variaveis aleatorias</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>var_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome da variável que desejada</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>variables</code></td>
+            <td>
+                  <code>tuple[<a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a>, ...]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variaveis aleatorias</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>var_name</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome da variável que desejada</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna a variável caso seja encontrada.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><a class="autorefs autorefs-internal" title="variables.core.StochasticVariable" href="#variables.core.StochasticVariable">StochasticVariable</a> | None</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna a variável caso seja encontrada.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
 <span class="normal">130</span>
@@ -2411,8 +2393,8 @@
 
     <span class="k">return</span> <span class="n">found_var</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2420,7 +2402,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -2472,7 +2454,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

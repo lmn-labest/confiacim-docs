@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1623,8 +1623,8 @@
 
 
 <a id="plot.graphs"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Modulo com as funções que plotam os gráficos</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
@@ -1635,10 +1635,9 @@
 </ul>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
-
 
 
 
@@ -1651,112 +1650,110 @@
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.deterministic_rcs" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">deterministic_rcs</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">deterministic_rcs</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota o grafico de <code>RC</code> da analise deterministica</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>output_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório onde a análise esta.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>save</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Flag par salvar o gráfico em um arquivo.</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>output_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório onde a análise esta.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>save</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flag par salvar o gráfico em um arquivo.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>RCFileNotFound</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> não encontrado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code>EmptyRCFile</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O Arquivo <code>RC</code>esta vazio.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>RCFileNotFound</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> não encontrado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>EmptyRCFile</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O Arquivo <code>RC</code>esta vazio.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
 <span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
@@ -1862,87 +1859,84 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.dist_cdf" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">dist_cdf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">dist_cdf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota o grafico da <code>cdf</code> da variával.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>variable</code></td>
-          <td>
-                <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variavel probabilística.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>variable</code></td>
+            <td>
+                  <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variavel probabilística.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">377</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">377</span>
 <span class="normal">378</span>
 <span class="normal">379</span>
 <span class="normal">380</span>
@@ -2032,87 +2026,84 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.dist_pdf" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">dist_pdf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">dist_pdf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota o grafico da <code>pdf</code> da variával.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>variable</code></td>
-          <td>
-                <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variavel probabilística.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>variable</code></td>
+            <td>
+                  <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variavel probabilística.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">304</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">304</span>
 <span class="normal">305</span>
 <span class="normal">306</span>
 <span class="normal">307</span>
@@ -2254,87 +2245,84 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.dist_ppf" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">dist_ppf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">dist_ppf</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota o grafico da <code>ppf</code> da variával.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>variable</code></td>
-          <td>
-                <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variavel probabilística.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>variable</code></td>
+            <td>
+                  <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variavel probabilística.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">424</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">424</span>
 <span class="normal">425</span>
 <span class="normal">426</span>
 <span class="normal">427</span>
@@ -2416,93 +2404,89 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.get_max_min_rc_from_files" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get_max_min_rc_from_files</span><span class="p">(</span><span class="n">dir_results</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_max_min_rc_from_files</span><span class="p">(</span><span class="n">dir_results</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota os gráficos de <code>RC</code> de todas as simulações.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>dir_results</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretórios dos resultados.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>dir_results</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretórios dos resultados.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>EmptyRCFile</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> está vazio.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code>RCFileNotFound</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> não encontrado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>EmptyRCFile</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> está vazio.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>RCFileNotFound</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> não encontrado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
 <span class="normal">56</span>
@@ -2536,101 +2520,98 @@
 
     <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">max_</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">min_</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.histogram" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">histogram</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">histogram</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota o grafico do histagrama da variával.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>values</code></td>
-          <td>
-                <code>list[float]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Valor das amostras.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>variable</code></td>
-          <td>
-                <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Variável probabilística.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>values</code></td>
+            <td>
+                  <code>list[float]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Valor das amostras.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>variable</code></td>
+            <td>
+                  <code><span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Variável probabilística.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">467</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">467</span>
 <span class="normal">468</span>
 <span class="normal">469</span>
 <span class="normal">470</span>
@@ -2724,131 +2705,128 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.rc_all_matplotlib" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">rc_all_matplotlib</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rc_all_matplotlib</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota os graficos de <code>RC</code> de todas as simulações.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o matplotlib.</p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>output_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório onde a análise esta.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>save</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Flag par salvar o gráfico em um arquivo.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>output_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório onde a análise esta.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>save</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flag par salvar o gráfico em um arquivo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.DirsResultsNotFound">DirsResultsNotFound</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nenhum diretório de resultados achado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code>RCFileNotFound</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> não encontrado.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A pasta da simulação não foi encontrado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.DirsResultsNotFound">DirsResultsNotFound</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nenhum diretório de resultados achado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>RCFileNotFound</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> não encontrado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A pasta da simulação não foi encontrado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
 <span class="normal"> 73</span>
 <span class="normal"> 74</span>
 <span class="normal"> 75</span>
@@ -2958,117 +2936,114 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.rc_all_plotly" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">rc_all_plotly</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rc_all_plotly</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota os graficos de <code>RC</code> de todas as simulações.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>plotly</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>output_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório onde a análise esta.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>output_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório onde a análise esta.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.ItFolderNotFound">ItFolderNotFound</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório da iteração nnão foi achado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code>RCFileNotFound</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> não encontrado.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.PlotlyModuleError">PlotlyModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Plotly não instalado.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A pasta da simulação não foi encontrado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.ItFolderNotFound">ItFolderNotFound</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório da iteração nnão foi achado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>RCFileNotFound</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> não encontrado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.PlotlyModuleError">PlotlyModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plotly não instalado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.SimulationFolderNotFound">SimulationFolderNotFound</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A pasta da simulação não foi encontrado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">236</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
 <span class="normal">239</span>
@@ -3200,135 +3175,132 @@
 
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="plot.graphs.rc_it_matplotlib" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">rc_it_matplotlib</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rc_it_matplotlib</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">save</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Plota os graficos de <code>RC</code> da iteralção <code>it</code>.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Usa o <code>matplotlib</code></p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>it</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Número da iteração.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>output_dir</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório onde a análise esta.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>save</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Flag par salvar o gráfico em um arquivo.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>it</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Número da iteração.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>output_dir</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório onde a análise esta.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>save</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flag par salvar o gráfico em um arquivo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.ItFolderNotFound">ItFolderNotFound</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diretório da iteração nnão foi achado.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code>RCFileNotFound</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O arquivo <code>RC</code> não encontrado.</p>
-            </div>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Matplotlib não instalado.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.ItFolderNotFound">ItFolderNotFound</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Diretório da iteração nnão foi achado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>RCFileNotFound</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O arquivo <code>RC</code> não encontrado.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.MatplotlibModuleError">MatplotlibModuleError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Matplotlib não instalado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/plot/graphs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
@@ -3428,8 +3400,8 @@
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -3437,7 +3409,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -3489,7 +3461,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -1581,8 +1581,8 @@
 
 
 <a id="tencim.rc"></a>
-  <div class="doc doc-contents first">
-  
+    <div class="doc doc-contents first">
+
       <p>Modulo que lida com a <code>RC</code> simulação</p>
 <p>Classes e funções deste módulo:</p>
 <ul>
@@ -1592,7 +1592,7 @@
 </ul>
 <hr />
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1608,22 +1608,22 @@
 
 
 <h2 id="tencim.rc.RCCriteria" class="doc doc-heading">
-          <code>RCCriteria</code>
+            <code>RCCriteria</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="enum.Enum">Enum</span></code></p>
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
 
-  
+
       <p>Tipos de criteiros de RC.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+              <details class="quote">
+                <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
@@ -1653,9 +1653,9 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">convert</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1670,8 +1670,8 @@
 
 
 <h3 id="tencim.rc.RCCriteria.MHOR_COULOMB" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">MHOR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span></code>
-  
+            <code class="highlight language-python"><span class="n">MHOR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span></code>
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
@@ -1680,10 +1680,10 @@
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Criterio de Mhor Coulomb</p>
-  </div>
+    </div>
 
 </div>
 
@@ -1692,8 +1692,8 @@
 
 
 <h3 id="tencim.rc.RCCriteria.RANKINE" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">RANKINE</span> <span class="o">=</span> <span class="mi">5</span></code>
-  
+            <code class="highlight language-python"><span class="n">RANKINE</span> <span class="o">=</span> <span class="mi">5</span></code>
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
@@ -1702,10 +1702,10 @@
 </h3>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Criterio de Rankine</p>
-  </div>
+    </div>
 
 </div>
 
@@ -1715,8 +1715,7 @@
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
 
@@ -1725,9 +1724,9 @@
 
 
 <h2 id="tencim.rc.TimeMinimalRC" class="doc doc-heading">
-          <code>TimeMinimalRC</code>
+            <code>TimeMinimalRC</code>
 
-  
+
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
   </span>
@@ -1735,72 +1734,71 @@
 </h2>
 
 
-  <div class="doc doc-contents ">
+    <div class="doc doc-contents ">
 
-  
+
       <p><code>RC</code> minimo da simulação.</p>
 
 
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>istep</code></td>
+            <td>
+                  <code>int | <span title="numpy.int32">int32</span> | <span title="numpy.int64">int64</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Passo de tempo do <code>RC</code> mínimo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>t</code></td>
+            <td>
+                  <code>float | <span title="numpy.float64">float64</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tempo do <code>RC</code> mínimo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>rc</code></td>
+            <td>
+                  <code>float | <span title="numpy.float64">float64</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>valor do <code>RC</code> mínimo.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>istep</code></td>
-          <td>
-                <code>int | <span title="numpy.int32">int32</span> | <span title="numpy.int64">int64</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Passo de tempo do <code>RC</code> mínimo.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>t</code></td>
-          <td>
-                <code>float | <span title="numpy.float64">float64</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Tempo do <code>RC</code> mínimo.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr class="doc-section-item">
-          <td><code>rc</code></td>
-          <td>
-                <code>float | <span title="numpy.float64">float64</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>valor do <code>RC</code> mínimo.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+              <details class="quote">
+                <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
@@ -1828,9 +1826,9 @@
     <span class="n">t</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
     <span class="n">rc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -1846,88 +1844,84 @@
 
   </div>
 
-  </div>
-
+    </div>
 
 </div>
-
 
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="tencim.rc.first_timestamp_minimal_rc" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">first_timestamp_minimal_rc</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">first_timestamp_minimal_rc</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Obtém o passo de tempo do RC minimo do <code>RC</code>minimo para ambos os métodos.</p>
+
 
 <details class="info" open>
   <summary>Info</summary>
   <p>Caso o mínimo seja um patamar o tempo será o do menor tempo.</p>
 </details>
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>results</code></td>
-          <td>
-                <code><span title="confiacim.plot.results.RCResults">RCResults</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Resultado de <code>RC</code> da analise.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>results</code></td>
+            <td>
+                  <code><span title="confiacim.plot.results.RCResults">RCResults</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Resultado de <code>RC</code> da analise.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>dict[str, <a class="autorefs autorefs-internal" title="tencim.rc.TimeMinimalRC" href="#tencim.rc.TimeMinimalRC">TimeMinimalRC</a>]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna o RC minimo de ambos os métodos.</p>
-            </div>
-          </td>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>dict[str, <a class="autorefs autorefs-internal" title="tencim.rc.TimeMinimalRC" href="#tencim.rc.TimeMinimalRC">TimeMinimalRC</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna o RC minimo de ambos os métodos.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
@@ -1989,121 +1983,116 @@
 
     <span class="k">return</span> <span class="n">dict_</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
-
 
 <div class="doc doc-object doc-function">
 
 
-
 <h2 id="tencim.rc.rc_stats" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">)</span></code>
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-  
+    <div class="doc doc-contents ">
+
       <p>Le o <code>RC</code> do arquivo e pega o menor e o último.</p>
 
 
-
-  <p><span class="doc-section-title">Parameters:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td><code>path_rc_file</code></td>
-          <td>
-                <code><span title="pathlib.Path">Path</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Caminho para o arquivo <code>RC</code>.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
-        <tr class="doc-section-item">
-          <td><code>method</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria" href="#tencim.rc.RCCriteria">RCCriteria</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>O metodo de calculo de <code>RC</code>.</p>
-            </div>
-          </td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MHOR_COULOMB" href="#tencim.rc.RCCriteria.MHOR_COULOMB">MHOR_COULOMB</a></code>
-          </td>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>path_rc_file</code></td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Caminho para o arquivo <code>RC</code>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>method</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria" href="#tencim.rc.RCCriteria">RCCriteria</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>O metodo de calculo de <code>RC</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MHOR_COULOMB" href="#tencim.rc.RCCriteria.MHOR_COULOMB">MHOR_COULOMB</a></code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>dict[str, float]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna o dicionário com menor e ultimo <code>RC</code>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
-
-  <p><span class="doc-section-title">Returns:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code>dict[str, float]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Retorna o dicionário com menor e ultimo <code>RC</code>.</p>
-            </div>
-          </td>
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="confiacim.erros.EmptyRCFile">EmptyRCFile</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Arquivo de <code>RC</code>vazio.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-
-
-  <p><span class="doc-section-title">Raises:</span></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr class="doc-section-item">
-          <td>
-                <code><span title="confiacim.erros.EmptyRCFile">EmptyRCFile</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Arquivo de <code>RC</code>vazio.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/tencim/rc.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
 <span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
@@ -2161,8 +2150,8 @@
 
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;min&quot;</span><span class="p">:</span> <span class="n">rc_min</span><span class="p">,</span> <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="n">_rc_parser</span><span class="p">(</span><span class="n">last_line</span><span class="p">,</span> <span class="n">method</span><span class="p">)}</span>
 </code></pre></div></td></tr></table></div>
-          </details>
-  </div>
+            </details>
+    </div>
 
 </div>
 
@@ -2170,7 +2159,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -2222,7 +2211,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
