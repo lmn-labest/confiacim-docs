@@ -1619,7 +1619,10 @@
 </details>
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/standalone.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 25</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
 <span class="normal"> 26</span>
 <span class="normal"> 27</span>
 <span class="normal"> 28</span>
@@ -1694,22 +1697,7 @@
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_tencim</span><span class="p">(</span>
+<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_tencim</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -1787,19 +1775,7 @@
     <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="n">console</span><span class="p">:</span>
         <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Clean files ...&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;win&quot;</span><span class="p">):</span>
-        <span class="n">attempts</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">tmpdir</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
-                <span class="k">break</span>
-            <span class="k">except</span> <span class="ne">NotADirectoryError</span><span class="p">:</span>
-                <span class="c1"># TODO: coloca isso no log</span>
-                <span class="c1"># console.print(f&quot;[red]Tentativa: {attempts} - Esperando {0.05 * attempts} segundos[/red]&quot;)</span>
-                <span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">attempts</span><span class="p">)</span>
-                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tmpdir</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">clean_temporary_dir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
