@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../dist/">
+        <link rel="prev" href="../monte_carlo/">
       
       
-        <link rel="next" href="../monte_carlo/">
+        <link rel="next" href="../../form/correlations/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Form - confiacim-core</title>
+        <title>Tencim - confiacim-core</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controllers.form" class="md-skip">
+        <a href="#controllers.tencim" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Form
+              Tencim
             
           </span>
         </div>
@@ -662,28 +662,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Form
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../form/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -692,42 +674,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#controllers.form" class="md-nav__link">
-    <span class="md-ellipsis">
-      form
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#controllers.form.run" class="md-nav__link">
-    <span class="md-ellipsis">
-      run
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -758,10 +704,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tencim/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tencim
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -770,6 +734,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controllers.tencim" class="md-nav__link">
+    <span class="md-ellipsis">
+      tencim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controllers.tencim.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1479,16 +1479,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#controllers.form" class="md-nav__link">
+  <a href="#controllers.tencim" class="md-nav__link">
     <span class="md-ellipsis">
-      form
+      tencim
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#controllers.form.run" class="md-nav__link">
+  <a href="#controllers.tencim.run" class="md-nav__link">
     <span class="md-ellipsis">
       run
     </span>
@@ -1514,21 +1514,16 @@
   
 
 
-  <h1>Form</h1>
+  <h1>Tencim</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="controllers.form"></a>
+<a id="controllers.tencim"></a>
     <div class="doc doc-contents first">
 
       <p>O módulo contem controladores para serem usando na <code>CLI</code> e na <code>API</code>.</p>
-<p>Classes e funções deste módulo:</p>
-<ul>
-<li>run</li>
-</ul>
-<hr />
 
 
 
@@ -1545,15 +1540,16 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="controllers.form.run" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<h2 id="controllers.tencim.run" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">verbose_level</span><span class="p">)</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents ">
 
-      <p>Rodando a simulação FORM.</p>
+      <p>Rodando a simulação do tencim standalone. Roda simulação usando os *.dat. Funcionada
+simular a chamadar o tencim direto.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1574,7 +1570,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Diterório do arquivo de entrada.</p>
+                <p>Ditetório do arquivo de entrada.</p>
               </div>
             </td>
             <td>
@@ -1588,7 +1584,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Diterório do arquivo de saida.</p>
+                <p>Ditetório do arquivo de saida.</p>
               </div>
             </td>
             <td>
@@ -1596,9 +1592,8 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>verbose_level</code></td>
+            <td><code>verbose</code></td>
             <td>
-                  <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1609,126 +1604,59 @@
                 <em>required</em>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td><code>save_intermediate_files</code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Salva os arquivos intermediarios da simulação.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
       </tbody>
     </table>
 
-
-<details class="info" open>
-  <summary>Info</summary>
-  <p>A verbosidade pode ser:</p>
-<ul>
-<li>0 - Nenhuma</li>
-<li>1 - Moderada</li>
-<li>2 - Alta</li>
-</ul>
-</details>
             <details class="quote">
-              <summary>Source code in <code>src/confiacim/controllers/form.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+              <summary>Source code in <code>src/confiacim/controllers/tencim.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">save_intermediate_files</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Rodando a simulação FORM.</span>
+<span class="sd">    Rodando a simulação do tencim standalone. Roda simulação usando os *.dat. Funcionada</span>
+<span class="sd">    simular a chamadar o tencim direto.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
-<span class="sd">        output_dir: Diterório do arquivo de saida.</span>
-<span class="sd">        verbose_level: Nivel de verbosidade.</span>
-<span class="sd">        save_intermediate_files: Salva os arquivos intermediarios da simulação.</span>
-
-<span class="sd">    Info:</span>
-<span class="sd">        A verbosidade pode ser:</span>
-
-<span class="sd">        - 0 - Nenhuma</span>
-<span class="sd">        - 1 - Moderada</span>
-<span class="sd">        - 2 - Alta</span>
+<span class="sd">        input_dir: Ditetório do arquivo de entrada.</span>
+<span class="sd">        output_dir: Ditetório do arquivo de saida.</span>
+<span class="sd">        verbose: Nivel de verbosidade.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">InputDirNotExists</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
 
@@ -1737,44 +1665,15 @@
 
     <span class="n">set_logger</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;simulation.log&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">)</span>
 
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">check_for_nocliprc_macro</span><span class="p">(</span><span class="n">case_file</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.dat&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">CaseFileNotFound</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">FileNotFoundError</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Análise do tencim: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="n">simulation_conf</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.yml&quot;</span><span class="p">)</span>
-    <span class="n">variable_names</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">variable_names</span>
-
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analise form: </span><span class="si">{</span><span class="n">input_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">output_dir</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">verbose_level</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">output_dir_form</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;form&quot;</span>
-
-    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Complete Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span>
-            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">form_configs</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">base_configs</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">variables_infos</span><span class="p">,</span>
+    <span class="k">with</span> <span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;Tencim Analysis&quot;</span><span class="p">,</span> <span class="n">print_time</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">):</span>
+        <span class="n">run_tencim</span><span class="p">(</span>
             <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
-            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir_form</span><span class="p">,</span>
-            <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
             <span class="n">verbose_level</span><span class="o">=</span><span class="n">verbose_level</span><span class="p">,</span>
-            <span class="n">save_intermediate_files</span><span class="o">=</span><span class="n">save_intermediate_files</span><span class="p">,</span>
+            <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="n">confiacim_statistics</span><span class="o">.</span><span class="n">total_time</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_wall_time</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">verbose_level</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Final results&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-        <span class="n">panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span><span class="n">Align</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
-        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
-
-        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_final_stats</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
-        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">tables</span><span class="o">.</span><span class="n">form_sensitity</span><span class="p">(</span><span class="n">variable_names</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
-
-    <span class="n">write_json</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
-    <span class="n">json_indent</span> <span class="o">=</span> <span class="n">simulation_conf</span><span class="o">.</span><span class="n">json_indent</span>
-
-    <span class="n">write_final_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">output_dir_form</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
-    <span class="n">write_confiacim_statistics</span><span class="p">(</span><span class="n">confiacim_statistics</span><span class="p">,</span> <span class="n">output_dir_form</span><span class="p">,</span> <span class="n">write_json</span><span class="o">=</span><span class="n">write_json</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">json_indent</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

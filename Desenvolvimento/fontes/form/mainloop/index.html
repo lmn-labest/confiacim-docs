@@ -698,6 +698,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controllers/tencim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tencim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1241,6 +1262,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tencim/standalone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standalone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1482,7 +1524,6 @@
     <div class="doc doc-contents first">
 
       <p>Loop principal do método <strong>FORM</strong></p>
-<hr />
 
 
 
@@ -1769,7 +1810,10 @@
 </details>
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/mainloop.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 41</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
 <span class="normal"> 42</span>
 <span class="normal"> 43</span>
 <span class="normal"> 44</span>
@@ -1950,9 +1994,7 @@
 <span class="normal">219</span>
 <span class="normal">220</span>
 <span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
+<span class="normal">222</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
@@ -2014,6 +2056,7 @@
 
     <span class="n">write_json</span> <span class="o">=</span> <span class="n">result_files</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span>
 
+    <span class="c1"># TODO: Codigo repetido</span>
     <span class="n">progressbarDisable</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_0</span> <span class="ow">or</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
     <span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose_level</span> <span class="o">==</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span>
 
