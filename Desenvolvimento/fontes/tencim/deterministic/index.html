@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../plot/results/">
+        <link rel="prev" href="../../plot/graphs/">
       
       
         <link rel="next" href="../files_generator/">
@@ -1016,27 +1016,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../plot/results/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Results
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1241,6 +1220,27 @@
   
   <span class="md-ellipsis">
     Rc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results
   </span>
   
 
@@ -1858,7 +1858,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="confiacim.plot.results.RCResults">RCResults</span></code>
+                  <code><span title="confiacim.tencim.results.RCResults">RCResults</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1935,7 +1935,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
         <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="n">results</span> <span class="o">=</span> <span class="n">read_results</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;deterministic&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">read_rc_file</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;deterministic/deterministic_RC.txt&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">results</span>
 </code></pre></div></td></tr></table></div>
