@@ -1213,9 +1213,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tencim.rc.RCCriteria.MHOR_COULOMB" class="md-nav__link">
+  <a href="#tencim.rc.RCCriteria.MOHR_COULOMB" class="md-nav__link">
     <span class="md-ellipsis">
-      MHOR_COULOMB
+      MOHR_COULOMB
     </span>
   </a>
   
@@ -1549,9 +1549,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tencim.rc.RCCriteria.MHOR_COULOMB" class="md-nav__link">
+  <a href="#tencim.rc.RCCriteria.MOHR_COULOMB" class="md-nav__link">
     <span class="md-ellipsis">
-      MHOR_COULOMB
+      MOHR_COULOMB
     </span>
   </a>
   
@@ -1682,7 +1682,7 @@
 <span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">RCCriteria</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Tipos de criteiros de RC.&quot;&quot;&quot;</span>
 
-    <span class="n">MHOR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">MOHR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Criterio de Mhor Coulomb&quot;&quot;&quot;</span>
     <span class="n">RANKINE</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Criterio de Rankine&quot;&quot;&quot;</span>
@@ -1690,7 +1690,7 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">str_to_enum</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="n">convert</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;mohr-coulomb&quot;</span><span class="p">:</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">,</span>
+            <span class="s2">&quot;mohr-coulomb&quot;</span><span class="p">:</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span>
             <span class="s2">&quot;rankine&quot;</span><span class="p">:</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">RANKINE</span><span class="p">,</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">convert</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -1711,8 +1711,8 @@
 
 
 
-<h3 id="tencim.rc.RCCriteria.MHOR_COULOMB" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">MHOR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span></code>
+<h3 id="tencim.rc.RCCriteria.MOHR_COULOMB" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">MOHR_COULOMB</span> <span class="o">=</span> <span class="mi">3</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
@@ -2010,11 +2010,11 @@
     <span class="n">dict_</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="n">istep</span><span class="p">,</span> <span class="n">t_min</span><span class="p">,</span> <span class="n">rc_min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inf</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">rc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">istep</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rc_mhor_coulomb</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">rc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">istep</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rc_mohr_coulomb</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">rc_min</span> <span class="o">&gt;</span> <span class="n">rc</span><span class="p">:</span>
             <span class="n">istep</span><span class="p">,</span> <span class="n">t_min</span><span class="p">,</span> <span class="n">rc_min</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">rc</span>
 
-    <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;rc_mhor_coulomb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">TimeMinimalRC</span><span class="p">(</span><span class="n">istep</span><span class="p">,</span> <span class="n">t_min</span><span class="p">,</span> <span class="n">rc_min</span><span class="p">)</span>
+    <span class="n">dict_</span><span class="p">[</span><span class="s2">&quot;rc_mohr_coulomb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">TimeMinimalRC</span><span class="p">(</span><span class="n">istep</span><span class="p">,</span> <span class="n">t_min</span><span class="p">,</span> <span class="n">rc_min</span><span class="p">)</span>
 
     <span class="n">istep</span><span class="p">,</span> <span class="n">t_min</span><span class="p">,</span> <span class="n">rc_min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inf</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">rc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">istep</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rc_rankine</span><span class="p">):</span>
@@ -2034,7 +2034,7 @@
 
 
 <h2 id="tencim.rc.rc_stats" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2080,7 +2080,7 @@
               </div>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MHOR_COULOMB" href="#tencim.rc.RCCriteria.MHOR_COULOMB">MHOR_COULOMB</a></code>
+                  <code><a class="autorefs autorefs-internal" title="tencim.rc.RCCriteria.MOHR_COULOMB" href="#tencim.rc.RCCriteria.MOHR_COULOMB">MOHR_COULOMB</a></code>
             </td>
           </tr>
       </tbody>
@@ -2162,7 +2162,7 @@
 <span class="normal">120</span>
 <span class="normal">121</span>
 <span class="normal">122</span>
-<span class="normal">123</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MHOR_COULOMB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="normal">123</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rc_stats</span><span class="p">(</span><span class="n">path_rc_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Le o `RC` do arquivo e pega o menor e o último.</span>
 

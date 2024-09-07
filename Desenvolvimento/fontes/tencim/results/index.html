@@ -1626,7 +1626,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="tencim.results.RCResults.rc_mhor_coulomb">rc_mhor_coulomb</span></code></td>
+            <td><code><span title="tencim.results.RCResults.rc_mohr_coulomb">rc_mohr_coulomb</span></code></td>
             <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
@@ -1675,13 +1675,13 @@
 <span class="sd">    Attributes:</span>
 <span class="sd">        istep: passos de tempo.</span>
 <span class="sd">        t: tempos.</span>
-<span class="sd">        rc_mhor_coulomb: `RC` do critério de Mhor Coulomb.</span>
+<span class="sd">        rc_mohr_coulomb: `RC` do critério de Mhor Coulomb.</span>
 <span class="sd">        rc_rankine: `RC` do critério de Rankine.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">istep</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
     <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
-    <span class="n">rc_mhor_coulomb</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">rc_mohr_coulomb</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
     <span class="n">rc_rankine</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -1882,7 +1882,7 @@
         <span class="k">return</span> <span class="n">RCResults</span><span class="p">(</span>
             <span class="n">istep</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i_s</span><span class="p">),</span>
             <span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t_s</span><span class="p">),</span>
-            <span class="n">rc_mhor_coulomb</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rc_mc_s</span><span class="p">),</span>
+            <span class="n">rc_mohr_coulomb</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rc_mc_s</span><span class="p">),</span>
             <span class="n">rc_rankine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rc_r_s</span><span class="p">),</span>
         <span class="p">)</span>
     <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
