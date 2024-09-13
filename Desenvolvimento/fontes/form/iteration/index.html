@@ -851,6 +851,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#form.iteration.relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      relaxation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1496,6 +1505,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#form.iteration.relaxation" class="md-nav__link">
+    <span class="md-ellipsis">
+      relaxation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1542,7 +1560,7 @@
 
 
 <h2 id="form.iteration.form_step" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">form_step</span><span class="p">(</span><span class="n">Ua</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">rcs</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">distributions</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">form_step</span><span class="p">(</span><span class="n">Ua</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">rcs</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">distributions</span><span class="p">,</span> <span class="n">iteration</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1661,6 +1679,33 @@
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td><code>iteration</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Numero do iteração do <strong>FORM</strong>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>Nr</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Paramentro da relaxação.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -1722,77 +1767,84 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/iteration.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span>
-<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">form_step</span><span class="p">(</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">form_step</span><span class="p">(</span>
     <span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">L</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
@@ -1800,6 +1852,7 @@
     <span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">beta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="n">distributions</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+    <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cálculos de uma iteração do **FORM**.</span>
@@ -1812,6 +1865,8 @@
 <span class="sd">        delta: delta das derivadas.</span>
 <span class="sd">        beta: Parametro do **FORM**.</span>
 <span class="sd">        distributions: Distribuições `pdf`, `cpf`e `ppf`.</span>
+<span class="sd">        iteration: Numero do iteração do **FORM**.</span>
+<span class="sd">        Nr: Paramentro da relaxação.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna as variáveis do `Ua`, `betai`, `res` e `Grad_gi / Modg` da iteração.</span>
@@ -1846,11 +1901,15 @@
         <span class="n">Modg_square</span> <span class="o">=</span> <span class="n">Modg</span><span class="o">**</span><span class="mi">2</span>
         <span class="n">Vn</span> <span class="o">=</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Grad_gi</span><span class="p">,</span> <span class="n">Vi</span><span class="p">)</span> <span class="o">-</span> <span class="n">Gi</span><span class="p">)</span> <span class="o">*</span> <span class="n">Grad_gi</span><span class="p">)</span> <span class="o">/</span> <span class="n">Modg_square</span>
 
-        <span class="n">betai</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Vn</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">relaxation</span><span class="p">(</span><span class="n">iteration</span><span class="p">,</span> <span class="n">_get_Nr_value</span><span class="p">())</span>
+
+        <span class="n">Vstart</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">Vn</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0e0</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">Vi</span>
+
+        <span class="n">betai</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Vstart</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
         <span class="n">res</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">betai</span> <span class="o">-</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">betai</span>
 
-        <span class="n">Ua</span> <span class="o">=</span> <span class="n">array_U</span><span class="p">(</span><span class="n">Vn</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">IFs</span><span class="p">)</span>
+        <span class="n">Ua</span> <span class="o">=</span> <span class="n">array_U</span><span class="p">(</span><span class="n">Vstart</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">IFs</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">Ua</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="n">FormStepUaInfError</span><span class="p">()</span>
@@ -1863,6 +1922,114 @@
         <span class="n">_form_variable_state</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
 
     <span class="k">return</span> <span class="n">Ua</span><span class="p">,</span> <span class="n">betai</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">Grad_gi</span> <span class="o">/</span> <span class="n">Modg</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="form.iteration.relaxation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">relaxation</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">Nr</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Fator de relaxação entre ]0.0, 1.0]</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>it</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Numero da iteração</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>Nr</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Paramentro da relaxação</p>
+              </div>
+            </td>
+            <td>
+                  <code>5</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>float</code></td>            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorno o valor de relaxação</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/form/iteration.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">relaxation</span><span class="p">(</span><span class="n">it</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">Nr</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fator de relaxação entre ]0.0, 1.0]</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        it: Numero da iteração</span>
+<span class="sd">        Nr: Paramentro da relaxação</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Retorno o valor de relaxação</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">it</span> <span class="o">/</span> <span class="n">Nr</span> <span class="k">if</span> <span class="n">it</span> <span class="o">&lt;</span> <span class="n">Nr</span> <span class="k">else</span> <span class="mf">1.0</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
