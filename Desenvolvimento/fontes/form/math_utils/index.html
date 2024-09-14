@@ -1729,7 +1729,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Transforma a tupla des variáveis para um dicionário.</p>
+      <p>Transforma a tupla das variáveis para um dicionário.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1750,7 +1750,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Valor das variaveis aleatórias.</p>
+                <p>Valor das variáveis aleatórias.</p>
               </div>
             </td>
             <td>
@@ -1764,7 +1764,7 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>variaveis.</p>
+                <p>variáveis.</p>
               </div>
             </td>
             <td>
@@ -1816,11 +1816,11 @@
 <span class="normal">58</span>
 <span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">Ua2avgs</span><span class="p">(</span><span class="n">Un</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Transforma a tupla des variáveis para um dicionário.</span>
+<span class="sd">    Transforma a tupla das variáveis para um dicionário.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        Un: Valor das variaveis aleatórias.</span>
-<span class="sd">        variables: variaveis.</span>
+<span class="sd">        Un: Valor das variáveis aleatórias.</span>
+<span class="sd">        variables: variáveis.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna as variáveis.</span>
@@ -1987,7 +1987,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Cálculo do arranho <code>V</code> do <strong>FORM</strong>.</p>
+      <p>Cálculo do arranjo <code>V</code> do <strong>FORM</strong>.</p>
 <p>Info:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1996,7 +1996,7 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Procedimento para evitar inverta matriz.
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Procedimento para evitar inverter a matriz.
 
 1. Gamma = inv(L)
 2. V = Gamma * qNorm
@@ -2120,14 +2120,13 @@
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">array_V</span><span class="p">(</span><span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">list_of_F</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">array_V</span><span class="p">(</span><span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">list_of_F</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cálculo do arranho `V` do **FORM**.</span>
+<span class="sd">    Cálculo do arranjo `V` do **FORM**.</span>
 
 <span class="sd">    Info:</span>
 
-<span class="sd">        Procedimento para evitar inverta matriz.</span>
+<span class="sd">        Procedimento para evitar inverter a matriz.</span>
 
 <span class="sd">        1. Gamma = inv(L)</span>
 <span class="sd">        2. V = Gamma * qNorm</span>
@@ -2143,7 +2142,6 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna o vetor `V`.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">qNorm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Ua</span><span class="p">)</span>
@@ -2228,7 +2226,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">119</span>
+<span class="normal">120</span>
 <span class="normal">121</span>
 <span class="normal">122</span>
 <span class="normal">123</span>
@@ -2238,8 +2237,7 @@
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">i_matrix_A</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">i_matrix_A</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cálculo da matriz inversa diagonal.</span>
 
@@ -2324,7 +2322,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
+<span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
 <span class="normal">137</span>
@@ -2334,8 +2333,7 @@
 <span class="normal">141</span>
 <span class="normal">142</span>
 <span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">importance_factors</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">importance_factors</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cálculo ao fator da importância.</span>
 
@@ -2448,7 +2446,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">147</span>
+<span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
 <span class="normal">151</span>
@@ -2465,8 +2464,7 @@
 <span class="normal">162</span>
 <span class="normal">163</span>
 <span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matrix_A</span><span class="p">(</span><span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">fs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">Fs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">matrix_A</span><span class="p">(</span><span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">fs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">Fs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cálculo da matriz `A` do **FORM**.</span>
 
@@ -2572,7 +2570,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">169</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">168</span>
+<span class="normal">169</span>
 <span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
@@ -2592,8 +2591,7 @@
 <span class="normal">186</span>
 <span class="normal">187</span>
 <span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_G</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="n">gamma</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_G</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="n">gamma</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera o vetor `G` e o vetor `Gaux` do **FORM**.</span>
 
@@ -2632,7 +2630,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Cálculo o gradiente do <strong>Form</strong>.</p>
+      <p>Cálculo o gradiente do <strong>FORM</strong>.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2730,7 +2728,8 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">193</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">192</span>
+<span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
@@ -2742,11 +2741,9 @@
 <span class="normal">202</span>
 <span class="normal">203</span>
 <span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_gradU</span><span class="p">(</span><span class="n">Gaux</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Gi</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_gradU</span><span class="p">(</span><span class="n">Gaux</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Gi</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Ua</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cálculo o gradiente do **Form**.</span>
+<span class="sd">    Cálculo o gradiente do **FORM**.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        Gaux: Função de falha do casos das derivadas.</span>
@@ -2756,7 +2753,6 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna o `gradU`</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">Gaux</span> <span class="o">-</span> <span class="n">Gi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Ua</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -2776,7 +2772,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Cálculo o gradiente <code>g</code> do <strong>Form</strong>.</p>
+      <p>Cálculo o gradiente <code>g</code> do <strong>FORM</strong>.</p>
 
 
 <details class="info" open>
@@ -2865,7 +2861,9 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">210</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
 <span class="normal">213</span>
@@ -2881,11 +2879,9 @@
 <span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
-<span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_grad_g</span><span class="p">(</span><span class="n">Lt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">iA</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">gradU</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">mk_grad_g</span><span class="p">(</span><span class="n">Lt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">iA</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">gradU</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cálculo o gradiente `g` do **Form**.</span>
+<span class="sd">    Cálculo o gradiente `g` do **FORM**.</span>
 
 <span class="sd">    Info:</span>
 <span class="sd">        L^(T) * A^(-1) * gradU</span>
@@ -2919,7 +2915,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Cálculo ao fator de omissão.</p>
+      <p>Cálculo do fator de omissão.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2975,7 +2971,9 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/form/math_utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">231</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
 <span class="normal">232</span>
 <span class="normal">233</span>
 <span class="normal">234</span>
@@ -2986,11 +2984,9 @@
 <span class="normal">239</span>
 <span class="normal">240</span>
 <span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">omission_factors</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">242</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">omission_factors</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cálculo ao fator de omissão.</span>
+<span class="sd">    Cálculo do fator de omissão.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        alpha: vetor do **FORM**.</span>
@@ -3036,6 +3032,7 @@
           <tr class="doc-section-item">
             <td><code>variables</code></td>
             <td>
+                  <code>tuple[<span title="confiacim.variables.core.StochasticVariable">StochasticVariable</span>, ...]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3088,7 +3085,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Pega o valor médio da variáveis estocásticas e inicia a vetor Ua.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        variables : Tupla das variáveis estocásticas.</span>
+<span class="sd">        variables: Tupla das variáveis estocásticas.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Vetor Ua iniciado com as médias.</span>
