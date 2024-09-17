@@ -1838,6 +1838,17 @@
               </div>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="variables.core.StochasticVariable.initial_point_factor">initial_point_factor</span></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Fator multiplicativo do ponto inicial</p>
+              </div>
+            </td>
+          </tr>
       </tbody>
     </table>
 
@@ -1906,7 +1917,16 @@
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
-<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">StochasticVariable</span><span class="p">:</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">StochasticVariable</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe que define as variável aleatória.</span>
 
@@ -1914,12 +1934,13 @@
 <span class="sd">        name (str): Nome da variável.</span>
 <span class="sd">        dist_infos (DistInfos): Informação da distribuição.</span>
 <span class="sd">        dist (object): Instância da distribuição desejada</span>
+<span class="sd">        initial_point_factor (int): Fator multiplicativo do ponto inicial</span>
 
 <span class="sd">    Info:</span>
 <span class="sd">        o Coeficiente de variação é o desvio padrão divido pela média.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">:</span> <span class="n">DistInfos</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">:</span> <span class="n">DistInfos</span><span class="p">,</span> <span class="n">initial_point_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parameters:</span>
 <span class="sd">            name: Nome da variável_</span>
@@ -1928,6 +1949,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span> <span class="o">=</span> <span class="n">dist_infos</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_distribution</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">initial_point_factor</span> <span class="o">=</span> <span class="n">initial_point_factor</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1961,10 +1983,17 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">StochasticVariable</span><span class="p">):</span>
             <span class="k">return</span> <span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span>
+                <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_point_factor</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">initial_point_factor</span>
                 <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">params</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">params</span>
                 <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">dist_infos</span><span class="o">.</span><span class="n">name</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;StochasticVariable(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;initial_point_factor=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_point_factor</span><span class="si">}</span><span class="s2">, dist_infos=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -2026,7 +2055,7 @@
 
 
 <h3 id="variables.core.StochasticVariable.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">,</span> <span class="n">initial_point_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2079,15 +2108,16 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
-<span class="normal">57</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
-<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">:</span> <span class="n">DistInfos</span><span class="p">):</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dist_infos</span><span class="p">:</span> <span class="n">DistInfos</span><span class="p">,</span> <span class="n">initial_point_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parameters:</span>
 <span class="sd">        name: Nome da variável_</span>
@@ -2096,6 +2126,7 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">dist_infos</span> <span class="o">=</span> <span class="n">dist_infos</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_distribution</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">initial_point_factor</span> <span class="o">=</span> <span class="n">initial_point_factor</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2161,9 +2192,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">78</span>
 <span class="normal">79</span>
 <span class="normal">80</span>
 <span class="normal">81</span>
@@ -2177,7 +2206,9 @@
 <span class="normal">89</span>
 <span class="normal">90</span>
 <span class="normal">91</span>
-<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_distribution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># TODO: Tipar -&gt; DistType</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_distribution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># TODO: Tipar -&gt; DistType</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Raises:</span>
@@ -2276,16 +2307,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
@@ -2293,7 +2315,16 @@
 <span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
-<span class="normal">121</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pdf_cdf_ppf_of_distributions</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cria uma dicionário com as respectivas `pdf`, `cdf` e `ppf` das distribuições.</span>
 
@@ -2398,16 +2429,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/variables/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
 <span class="normal">136</span>
@@ -2415,7 +2437,16 @@
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
-<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StochasticVariable</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">search_var_by_name</span><span class="p">(</span><span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">var_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StochasticVariable</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Procura por uma variável específica</span>
 
 <span class="sd">    Args:</span>
