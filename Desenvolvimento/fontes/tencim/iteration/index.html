@@ -2172,7 +2172,9 @@
 <span class="normal">240</span>
 <span class="normal">241</span>
 <span class="normal">242</span>
-<span class="normal">243</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
@@ -2216,7 +2218,7 @@
 
                 <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
 
-                <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                <span class="n">future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
                     <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">,</span>
                     <span class="n">sample_name</span><span class="p">,</span>
                     <span class="n">was_generated</span><span class="p">,</span>
@@ -2224,6 +2226,8 @@
                     <span class="n">original_dir</span><span class="p">,</span>
                     <span class="n">save_intermediate_files</span><span class="p">,</span>
                 <span class="p">)</span>
+
+            <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
     <span class="k">else</span><span class="p">:</span>
         <span class="n">workers</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2607,9 +2611,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">248</span>
 <span class="normal">249</span>
 <span class="normal">250</span>
 <span class="normal">251</span>
@@ -2635,7 +2637,9 @@
 <span class="normal">271</span>
 <span class="normal">272</span>
 <span class="normal">273</span>
-<span class="normal">274</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">simulation_rcs</span><span class="p">(</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
     <span class="n">rc_criteria</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span>
