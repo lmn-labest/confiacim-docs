@@ -48,3 +48,4 @@ config:
     gamma: 0.3
     tol:  1e-03
     maxit: 100
+    Nr: 1
