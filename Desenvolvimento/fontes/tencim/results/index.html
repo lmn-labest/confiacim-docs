@@ -1711,7 +1711,7 @@
 
 
 <h2 id="tencim.results.read_rc_file" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">read_rc_file</span><span class="p">(</span><span class="n">filename_path</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">read_rc_file</span><span class="p">(</span><span class="n">filename_path</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1741,31 +1741,20 @@
               </div>
             </td>
           </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
           <tr class="doc-section-item">
+            <td><code><span title="tencim.results.read_rc_file.stride">stride</span></code></td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="tencim.results.RCResults" href="#tencim.results.RCResults">RCResults</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Retorna os resultados.</p>
+                <p>quantidade de passos entre os elementos.</p>
               </div>
             </td>
           </tr>
       </tbody>
     </table>
+      <p>Returns:
+    Retorna os resultados.</p>
 
 
 <p><span class="doc-section-title">Raises:</span></p>
@@ -1844,13 +1833,28 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_rc_file</span><span class="p">(</span><span class="n">filename_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_rc_file</span><span class="p">(</span><span class="n">filename_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">stride</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lê o arquivo `RC`.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        filename_path: caminho do diretório onde existe um arquivo`RC`.</span>
-
+<span class="sd">        stride: quantidade de passos entre os elementos.</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        Retorna os resultados.</span>
 
@@ -1868,16 +1872,31 @@
             <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">EmptyRCFile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Arquivo </span><span class="si">{</span><span class="n">filename_path</span><span class="si">}</span><span class="s2"> está vazio.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">StopIteration</span>
 
-            <span class="n">i_s</span><span class="p">,</span> <span class="n">t_s</span><span class="p">,</span> <span class="n">rc_mc_s</span><span class="p">,</span> <span class="n">rc_r_s</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+            <span class="n">count_stride</span><span class="p">,</span> <span class="n">i_s</span><span class="p">,</span> <span class="n">t_s</span><span class="p">,</span> <span class="n">rc_mc_s</span><span class="p">,</span> <span class="n">rc_r_s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+            <span class="n">save_line</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+
+                <span class="n">count_stride</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
                 <span class="n">istep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
                 <span class="n">t</span><span class="p">,</span> <span class="n">rc_mc</span><span class="p">,</span> <span class="n">rc_r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
-                <span class="n">i_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">istep</span><span class="p">)</span>
-                <span class="n">t_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-                <span class="n">rc_mc_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_mc</span><span class="p">)</span>
-                <span class="n">rc_r_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_r</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">stride</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">save_line</span><span class="p">:</span>
+                        <span class="n">i_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">istep</span><span class="p">)</span>
+                        <span class="n">t_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+                        <span class="n">rc_mc_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_mc</span><span class="p">)</span>
+                        <span class="n">rc_r_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_r</span><span class="p">)</span>
+                        <span class="n">save_line</span> <span class="o">=</span> <span class="kc">False</span>
+
+                    <span class="k">if</span> <span class="n">count_stride</span> <span class="o">==</span> <span class="n">stride</span><span class="p">:</span>
+                        <span class="n">save_line</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">count_stride</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">i_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">istep</span><span class="p">)</span>
+                    <span class="n">t_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+                    <span class="n">rc_mc_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_mc</span><span class="p">)</span>
+                    <span class="n">rc_r_s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rc_r</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">RCResults</span><span class="p">(</span>
             <span class="n">istep</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i_s</span><span class="p">),</span>
@@ -1993,25 +2012,25 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/results.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_rc_results_from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_rc_results_from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lê o arquivo RC no diretório especificado.</span>
 
