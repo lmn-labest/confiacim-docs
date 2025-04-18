@@ -1,0 +1,44 @@
+variables:
+  - name: E_r
+    dist:
+      name: normal
+      params:
+        mean: 1.0
+        cov: 0.1
+
+  - name: poisson_r
+    dist:
+      name: lognormal
+      params:
+        mean: 1.0
+        cov: 0.1
+
+  - name: thermal_expansion_r
+    dist:
+      name: normal
+      params:
+        mean: 1.0
+        cov: 0.1
+
+  - name: thermal_conductivity_r
+    dist:
+      name: normal
+      params:
+        mean: 1.0
+        cov: 0.1
+
+  - name: volumetric_heat_capacity_r
+    dist:
+      name: normal
+      params:
+        mean: 1.0
+        cov: 0.1
+
+config:
+  form:
+    beta: 0.0
+    delta: 0.01
+    gamma: 0.00
+    tol:  1e-03
+    maxit: 100
+    Nr: 5
