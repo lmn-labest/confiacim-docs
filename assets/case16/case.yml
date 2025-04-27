@@ -1,33 +1,33 @@
 variables:
-  - name: E_r
+  - name: E_s
     dist:
       name: normal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: poisson_r
+  - name: poisson_s
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: thermal_expansion_r
+  - name: thermal_expansion_s
     dist:
       name: normal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: thermal_conductivity_r
+  - name: thermal_conductivity_s
     dist:
       name: normal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: volumetric_heat_capacity_r
+  - name: volumetric_heat_capacity_s
     dist:
       name: normal
       params:
