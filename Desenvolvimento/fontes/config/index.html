@@ -1941,13 +1941,24 @@
             </td>
           </tr>
           <tr class="doc-section-item">
+            <td><code><span title="conf.Settings.MESH_FILE_NAME">MESH_FILE_NAME</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nome do arquivo <code>mesh.dat</code>.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
             <td><code><span title="conf.Settings.LOG_LEVEL">LOG_LEVEL</span></code></td>
             <td>
                   <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Nivel do log</p>
+                <p>Nivel do log.</p>
               </div>
             </td>
           </tr>
@@ -2024,7 +2035,9 @@
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Settings</span><span class="p">(</span><span class="n">BaseSettings</span><span class="p">):</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Settings</span><span class="p">(</span><span class="n">BaseSettings</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Classe de configurações</span>
 
@@ -2036,7 +2049,8 @@
 <span class="sd">        MATERIALS_FILE_NAME: Nome do arquivo `materials.dat`.</span>
 <span class="sd">        INITIAL_TEMP_FILE_NAME: Nome do arquivo `initialtemperature.dat`.</span>
 <span class="sd">        LOADS_FILE_NAME: Nome do arquivo `loads.dat`.</span>
-<span class="sd">        LOG_LEVEL: Nivel do log</span>
+<span class="sd">        MESH_FILE_NAME:  Nome do arquivo `mesh.dat`.</span>
+<span class="sd">        LOG_LEVEL: Nivel do log.</span>
 <span class="sd">        LOG_FILE_PATH: Caminho do arquivo log do confiacim.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2049,6 +2063,7 @@
     <span class="n">MATERIALS_FILE_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;materials.dat&quot;</span>
     <span class="n">INITIAL_TEMP_FILE_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;initialtemperature.dat&quot;</span>
     <span class="n">LOADS_FILE_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;loads.dat&quot;</span>
+    <span class="n">MESH_FILE_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mesh.dat&quot;</span>
 
     <span class="n">LOG_LEVEL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;WARNING&quot;</span>
     <span class="n">LOG_FILE_PATH</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./confiacim.log&quot;</span><span class="p">)</span>
@@ -2154,9 +2169,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/conf.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
@@ -2169,7 +2182,9 @@
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;EXEC_TENCIM_MODE&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;before&quot;</span><span class="p">)</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;EXEC_TENCIM_MODE&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;before&quot;</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">exec_tencim_mode_convert</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converta a string `EXEC_TENCIM_MODE`para um código númerico</span>

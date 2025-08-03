@@ -1,4 +1,6 @@
 variables:
+
+  # Cimento
   - name: E_c
     dist:
       name: sgld_lower_t
@@ -9,16 +11,23 @@ variables:
         b: -4.226
         x_lower_limit: 0.0
         scale_factor: 1.0
+
   - name: poisson_c
     dist:
       name: lognormal
       params:
         mean: 0.18
         cov: 0.1
+
 config:
   form:
     beta: 20.0
     delta: 0.01
     gamma: 0.3
-    tol: 1e-04
+    tol:  1e-04
     maxit: 100
+
+mesh:
+  internal_diameter: 0.22246
+  pipe_diameter: 0.25082
+  well_diameter: 0.3175

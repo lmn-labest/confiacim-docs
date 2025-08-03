@@ -1,4 +1,5 @@
 variables:
+
   # Cimento
   - name: E_c
     dist:
@@ -6,6 +7,7 @@ variables:
       params:
         mean: 1.19e+10
         cov: 0.1
+
   # Formação
   - name: E_f
     dist:
@@ -14,10 +16,16 @@ variables:
         min: 2.000e+10
         max: 3.000e+10
         mod: 2.500e+10
+
 config:
   form:
     beta: 20.0
     delta: 0.01
     gamma: 0.3
-    tol: 1e-04
+    tol:  1e-04
     maxit: 100
+
+mesh:
+  internal_diameter: 0.22246
+  pipe_diameter: 0.25082
+  well_diameter: 0.3175

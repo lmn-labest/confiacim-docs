@@ -1832,7 +1832,8 @@
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span>
+<span class="normal">103</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
@@ -1880,6 +1881,7 @@
             <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">form_configs</span><span class="p">,</span>
             <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">base_configs</span><span class="p">,</span>
             <span class="o">**</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">variables_infos</span><span class="p">,</span>
+            <span class="n">mesh_infos</span><span class="o">=</span><span class="n">simulation_conf</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span>
             <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
             <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir_form</span><span class="p">,</span>
             <span class="n">console</span><span class="o">=</span><span class="n">console</span><span class="p">,</span>

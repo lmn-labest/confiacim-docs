@@ -5,12 +5,14 @@ variables:
       params:
         mean: 1.0
         cov : 0.1
+
   - name: internal_pressure
     dist:
       name: normal
       params:
         mean: 1.0
         cov : 0.3
+
 config:
   form:
     beta: 20.0
@@ -18,3 +20,8 @@ config:
     gamma: 0.3
     tol:  1e-03
     maxit: 100
+
+mesh:
+  internal_diameter: 0.2169
+  pipe_diameter: 0.25082
+  well_diameter: 0.26892

@@ -105,3 +105,8 @@ config:
     n_samples: 30000
     batch_size: 50
     seed: 1234
+
+mesh:
+  internal_diameter: 0.31432
+  pipe_diameter: 0.34608
+  well_diameter: 0.4191

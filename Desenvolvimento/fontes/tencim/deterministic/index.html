@@ -1653,11 +1653,6 @@
     <div class="doc doc-contents first">
 
         <p>Modulo com as funcionalidades da analises determiniticas com o <code>tencim</code>.</p>
-<ul>
-<li>new_case_with_until_the_step</li>
-<li>run_tencim</li>
-</ul>
-<hr />
 
 
 
@@ -1769,7 +1764,13 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">19</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
@@ -1817,13 +1818,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera case truncado no new_last_step</span>
 
@@ -1888,7 +1883,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
 
 <h2 id="tencim.deterministic.run_tencim" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">run_tencim</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">run_tencim</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">mesh_infos</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1959,6 +1954,22 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>mesh_infos</code>
+            </td>
+            <td>
+                  <code><span title="confiacim.simulation_config.MeshConfig">MeshConfig</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Configurações da malha.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>verbose</code>
             </td>
             <td>
@@ -2002,7 +2013,13 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 76</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
 <span class="normal"> 77</span>
 <span class="normal"> 78</span>
 <span class="normal"> 79</span>
@@ -2032,14 +2049,12 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_tencim</span><span class="p">(</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_tencim</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="n">mesh_infos</span><span class="p">:</span> <span class="n">MeshConfig</span><span class="p">,</span>
     <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RCResults</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2049,6 +2064,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
 <span class="sd">        output_dir: Diterório do arquivo de saida.</span>
 <span class="sd">        variables: Variaveis aleatorias.</span>
+<span class="sd">        mesh_infos: Configurações da malha.</span>
 <span class="sd">        verbose: Nivel de verbosidade.</span>
 
 <span class="sd">    Returns:</span>
@@ -2058,6 +2074,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
     <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;deterministic&quot;</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">avgs</span><span class="p">)]</span>
 
     <span class="n">run_samples_iteration_i</span><span class="p">(</span>
+        <span class="n">mesh_infos</span><span class="o">=</span><span class="n">mesh_infos</span><span class="p">,</span>
         <span class="n">samples</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span>
         <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
         <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>

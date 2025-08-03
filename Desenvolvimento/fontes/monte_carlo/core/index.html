@@ -1764,8 +1764,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
-<span class="normal">38</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
@@ -1786,7 +1785,8 @@
 <span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">MonteCarloResult</span><span class="p">:</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">failure_probability_from_rcs</span><span class="p">(</span><span class="n">rcs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">MonteCarloResult</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Indentifica os RCs menores de que zero para calcular a probabilidade de falha.</span>
 
@@ -1927,11 +1927,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
 <span class="normal">213</span>
@@ -1975,7 +1971,11 @@
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
-<span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_samples</span><span class="p">(</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_samples</span><span class="p">(</span>
     <span class="n">generator</span><span class="p">:</span> <span class="n">SamplesGeneratorMonteCarlo</span><span class="p">,</span>
     <span class="n">verbose_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span>
     <span class="n">console</span><span class="p">:</span> <span class="n">Console</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2034,7 +2034,7 @@
 
 
 <h2 id="monte_carlo.core.loop" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="s1">&#39;mohr-coulomb&#39;</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">loop</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">mesh_infos</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">correlations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="s1">&#39;mohr-coulomb&#39;</span><span class="p">,</span> <span class="n">result_files</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">json_indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose_level</span><span class="o">=</span><span class="n">VerboseLevel</span><span class="o">.</span><span class="n">LEVEL_2</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2097,6 +2097,22 @@
             <td>
               <div class="doc-md-description">
                 <p>Variaveis aleatórias.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mesh_infos</code>
+            </td>
+            <td>
+                  <code><span title="confiacim.simulation_config.MeshConfig">MeshConfig</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Informações da malha.</p>
               </div>
             </td>
             <td>
@@ -2302,8 +2318,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/monte_carlo/core.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 62</span>
-<span class="normal"> 63</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 63</span>
 <span class="normal"> 64</span>
 <span class="normal"> 65</span>
 <span class="normal"> 66</span>
@@ -2443,11 +2458,16 @@
 <span class="normal">200</span>
 <span class="normal">201</span>
 <span class="normal">202</span>
-<span class="normal">203</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StochasticVariable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="n">mesh_infos</span><span class="p">:</span> <span class="n">MeshConfig</span><span class="p">,</span>
     <span class="n">n_samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2466,6 +2486,7 @@
 <span class="sd">        input_dir: Diretório dos arquivos de entrada.</span>
 <span class="sd">        output_dir: Diretório dos arquivos de saida.</span>
 <span class="sd">        variables: Variaveis aleatórias.</span>
+<span class="sd">        mesh_infos: Informações da malha.</span>
 <span class="sd">        n_samples: Número de amostras do **Monte Carlo**.</span>
 <span class="sd">        batch_size: Tamanho do lote de simulação do **Monte Carlo**.</span>
 <span class="sd">        seed: Semente do **Monte Carlo**.</span>
@@ -2522,6 +2543,7 @@
                 <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
 
             <span class="n">rcs</span> <span class="o">=</span> <span class="n">run_samples_iteration_i</span><span class="p">(</span>
+                <span class="n">mesh_infos</span><span class="o">=</span><span class="n">mesh_infos</span><span class="p">,</span>
                 <span class="n">samples</span><span class="o">=</span><span class="n">batched_samples</span><span class="p">,</span>
                 <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
                 <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>

@@ -1,40 +1,47 @@
 variables:
+
   - name: E_c
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.05
+
   - name: poisson_c
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.2
+
   - name: thermal_conductivity_c
     dist:
       name: normal
       params:
         mean: 1.0
         cov: 0.5
+
   - name: volumetric_heat_capacity_c
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.6
+
   - name: thermal_conductivity_f
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov : 0.7
+
   - name: volumetric_heat_capacity_f
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov : 0.12
+
 config:
   form:
     beta: 20.0
@@ -42,3 +49,8 @@ config:
     gamma: 0.3
     tol:  1e-03
     maxit: 100
+
+mesh:
+  internal_diameter: 0.22246
+  pipe_diameter: 0.25082
+  well_diameter: 0.3175

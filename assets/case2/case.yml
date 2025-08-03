@@ -5,30 +5,35 @@ variables:
       params:
         mean: 1.19e10
         cov : 0.1
+
   - name: poisson_c
     dist:
       name: lognormal
       params:
         mean: 0.18
         cov : 0.1
+
   - name: cohesion_c
     dist:
       name: normal
       params:
         mean: 1.97e07
         cov : 0.1
+
   - name: friction_angle_c
     dist:
       name: lognormal
       params:
         mean: 9.200e00
         cov : 0.1
+
   - name: thermal_expansion_c
     dist:
       name: lognormal
       params:
         mean: 6.400e-06
         cov : 0.1
+
 config:
   form:
     beta: 20.0
@@ -37,3 +42,8 @@ config:
     tol:  1e-01
     maxit: 2
   result_files: "txt"
+
+mesh:
+  internal_diameter: 0.2169
+  pipe_diameter: 0.25082
+  well_diameter: 0.26892

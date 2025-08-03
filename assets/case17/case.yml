@@ -1,38 +1,24 @@
 variables:
-  - name: E_s
-    dist:
-      name: normal
-      params:
-        mean: 1.0
-        cov: 0.1
-
-  - name: poisson_s
+  - name: E_c
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: thermal_expansion_s
+  - name: poisson_c
     dist:
-      name: normal
+      name: lognormal
       params:
         mean: 1.0
         cov: 0.1
 
-  - name: thermal_conductivity_s
+  - name: autogenous_retraction_c
     dist:
-      name: normal
+      name: lognormal
       params:
         mean: 1.0
-        cov: 0.1
-
-  - name: volumetric_heat_capacity_s
-    dist:
-      name: normal
-      params:
-        mean: 1.0
-        cov: 0.1
+        cov: 0.01
 
 config:
   form:

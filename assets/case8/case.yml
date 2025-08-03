@@ -1,4 +1,5 @@
 variables:
+
   # Cimento
   - name: E_c
     dist:
@@ -6,42 +7,49 @@ variables:
       params:
         mean: 1.19e+10
         cov: 0.1
+
   - name: poisson_c
     dist:
       name: lognormal
       params:
         mean: 0.18
         cov: 0.1
+
   - name: thermal_expansion_c
     dist:
       name: lognormal
       params:
         mean: 6.400e-06
         cov: 0.1
+
   - name: thermal_conductivity_c
     dist:
       name: lognormal
       params:
         mean: 1.950e+00
         cov: 0.1
+
   - name: volumetric_heat_capacity_c
     dist:
       name: normal
       params:
         mean: 1.936e+06
         cov: 0.1
+
   - name: friction_angle_c
     dist:
       name: weibull_min
       params:
         mean: 9.200e+00
         cov: 0.1
+
   - name: cohesion_c
     dist:
       name: normal
       params:
         mean: 1.97e+07
         cov: 0.1
+
   # Formação
   - name: E_f
     dist:
@@ -49,49 +57,58 @@ variables:
       params:
         mean:  3.000e+10
         cov: 0.1
+
   - name: poisson_f
     dist:
       name: lognormal
       params:
         mean: 0.15
         cov: 0.1
+
   - name: thermal_expansion_f
     dist:
       name: lognormal
       params:
         mean: 3.900e-05
         cov: 0.1
+
   - name: thermal_conductivity_f
     dist:
       name: lognormal
       params:
         mean: 2.300e+00
         cov: 0.1
+
   - name: volumetric_heat_capacity_f
     dist:
       name: normal
       params:
         mean: 4.032e+06
         cov: 0.1
+
   # condicoes de contorno
+
   - name: external_temperature
     dist:
       name: lognormal
       params:
         mean: 291.639
         cov: 0.1
+
   - name: internal_temperature
     dist:
       name: lognormal
       params:
         mean: 1.0
         cov: 0.1
+
   - name: internal_pressure
     dist:
       name: gumbel_r
       params:
         mean: 1.0
         cov : 0.1
+
 config:
   form:
     beta: 20.0
@@ -99,3 +116,8 @@ config:
     gamma: 0.0
     tol:  1e-03
     maxit: 100
+
+mesh:
+  internal_diameter: 0.22246
+  pipe_diameter: 0.25082
+  well_diameter: 0.3175
