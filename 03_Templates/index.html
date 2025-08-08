@@ -1675,8 +1675,7 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>├── input_base
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>├── input_base
 │   ├── adiabat.dat
 │   ├── case.dat
 |   ├── case.yml
@@ -1684,13 +1683,16 @@
 │   ├── initialtemperature.dat
 │   ├── loads.dat
 │   ├── materials.dat
-│   ├── mesh.dat
 │   ├── setpnode.dat
 │   └── setptime.dat
 │   └── templates
 │       ├── hidrationprop.jinja
 │       └── materials.jinja
 </code></pre></div></td></tr></table></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>A malha não precisa de template para ser geradas</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>O <code>jinja2</code> possui vários filtros uteis como pode se ver na <a href="https://tedboy.github.io/jinja2/templ14.html">documentação</a>. Nós utilizamos principalmente o filtro <code>format</code>.</p>

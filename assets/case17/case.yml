@@ -30,6 +30,6 @@ config:
     Nr: 5
 
 mesh:
-  internal_diameter: 0.31432
-  pipe_diameter: 0.34608
+  casing_internal_diameter: 0.31432
+  casing_external_diameter: 0.34608
   well_diameter: 0.4191

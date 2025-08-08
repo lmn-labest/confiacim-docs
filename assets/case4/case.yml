@@ -22,6 +22,6 @@ config:
     maxit: 100
 
 mesh:
-  internal_diameter: 0.2169
-  pipe_diameter: 0.25082
+  casing_internal_diameter: 0.2169
+  casing_external_diameter: 0.25082
   well_diameter: 0.26892

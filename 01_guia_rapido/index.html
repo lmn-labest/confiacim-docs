@@ -1774,13 +1774,9 @@
 <a href="https://github.com/lmn-labest/confiacim/releases">aqui</a>. Para instalar essa versão básica basta:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-python -m venv .venv --upgrade-deps
-source .venv/bin/activate
-pip install confiacim-x.y.z-py3-none-any.whl
-```
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1795,155 +1791,75 @@ pip install confiacim-x.y.z-py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 </div>
 <p>Para verificar a instalação basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim --version
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>--version
 </code></pre></div></td></tr></table></div>
 <p>Para habilitar a funcionalidade de plotar gráficos é preciso instalar as dependencias extras, para tal basta:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-python -m venv .venv --upgrade-deps
-source .venv/bin/activate
-pip install confiacim-x.y.z-py3-none-any.whl[&quot;plot&quot;]
-```
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--upgrade-deps
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl<span class="o">[</span><span class="s2">&quot;plot&quot;</span><span class="o">]</span>
 </code></pre></div></td></tr></table></div>
 <p>Caso se queria instalar globalmente basta usar o <a href="https://pipx.pypa.io/stable/">pipx</a>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-pipx install confiacim-x.y.z-py3-none-any.whl
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 <p>ou não criar um ambiente virtual é instalar no python global:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-pip install confiacim-x.y.z-py3-none-any.whl
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-none-any.whl
 </code></pre></div></td></tr></table></div>
 <h2 id="2-uso">2) Uso</h2>
 <p>Inicializando o diretório de simulação:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim init
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>init
 </code></pre></div></td></tr></table></div>
 <p>Na pasta <code>simulation</code> já temos 3 casos simples chamados <code>caso1a</code>, <code>caso1b</code> e <code>case8</code>. Na pasta <code>bin</code> temos o executável do <code>tencim</code>. Esse excutável pode ser subistuido se necessário.</p>
 <h3 id="21-analise-deterministica">2.1) Análise deterministica</h3>
 <p>Para rodar a análise deterministica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim deterministic run simulation/case1a
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>run<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
 <p>Para plotar o resultado da simulação deterministica:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim deterministic plot simulation/case1/output/
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>plot<span class="w"> </span>simulation/case1/output/
 </code></pre></div></td></tr></table></div>
 <p>Para modificar <code>case.dat</code> para ter apenas <code>20</code> passos de tempo pode-se usar o <code>new_last_step</code>. Esse comando irá criar uma cópia do <code>case.dat</code> como o nome <code>case_original.dat</code> e depois modificar <code>case.dat</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim deterministic new_last_step 20 simulation/case1/case.dat
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">20</span><span class="w"> </span>simulation/case1/case.dat
 </code></pre></div></td></tr></table></div>
 <p>Caso seja necessário novamente modificar <code>case.dat</code> pode-se usar o <code>case_original.dat</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim deterministic new_last_step 30 simulation/case1/case_original.dat
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>deterministic<span class="w"> </span>new_last_step<span class="w"> </span><span class="m">30</span><span class="w"> </span>simulation/case1/case_original.dat
 </code></pre></div></td></tr></table></div>
 <h3 id="22-analise-probabilistica-com-o-form">2.2) Análise probabilistica com o FORM</h3>
 <p>Agora para rodar a análise probabilistica usando o método <code>FORM</code> basta:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim form run -s simulation/case1
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>-s<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
 <p>Os resultados são salvos na pasta <code>simulation/case1/output/form</code>. Com a uso da opção <code>-s</code> pode-se plotar os curvar de <code>RCs</code>. Para vizualizar todos os resultados:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim form plot all simulation/case1a/output/
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>all<span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando os resultados da iteração <code>3</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim form plot it 3 simulation/case1a/output/
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>plot<span class="w"> </span>it<span class="w"> </span><span class="m">3</span><span class="w"> </span>simulation/case1a/output/
 </code></pre></div></td></tr></table></div>
 <p>Caso você queria só os arquivos básicos da solução basta não usar o <code>-s</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim form run simulation/case1
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>form<span class="w"> </span>run<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
 <h3 id="23-analise-probablistica-com-monte-carlo">2.3) Análise probablística com Monte Carlo</h3>
 <p>Para rodar a análise <code>Monte Carlo</code> basta fazer:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim mc run simulation/case1a/
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>run<span class="w"> </span>simulation/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Para apenas gerar as amostras:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim mc mk_samples run simulation/case1a/
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>mk_samples<span class="w"> </span>run<span class="w"> </span>simulation/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Para plotar o histograma das amostras de uma distribuição:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim mc hist E_c simulation/case1
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>hist<span class="w"> </span>E_c<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
 <h3 id="24-vizualizando-as-distribuicoes">2.4) Vizualizando as distribuições</h3>
 <p>Vizualizando a curva <code>pdf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim dist pdf E_c simulation/case1a
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>pdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando a curva <code>cdf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim dist cdf E_c simulation/case1a
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>cdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
 <p>Vizualizando a curva <code>ppf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim dist ppf E_c simulation/case1a
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>ppf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
 <h3 id="25-rodando-uma-analise-do-tencim1d-de-forma-direta">2.5) Rodando uma análise do tencim1D de forma direta</h3>
 <p>Para rodar um análise pura do o <code>tencim1D</code> pode-se usar o comando</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```bash
-confiacim tencim run simulation/pos-sal-top-thick
-```
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>tencim<span class="w"> </span>run<span class="w"> </span>simulation/pos-sal-top-thick
 </code></pre></div></td></tr></table></div>
 <p>Este comando irá colocar os resultados na pasta <code>output</code>.</p>
 <h2 id="3-variaveis-aleatorias-disponiveis">3) Variáveis aleatórias disponíveis</h2>
@@ -2043,6 +1959,18 @@ confiacim tencim run simulation/pos-sal-top-thick
 <tr>
 <td><code>initial_temp</code></td>
 <td>Temperatura inicial em todo o domínio</td>
+</tr>
+<tr>
+<td><code>well_diameter</code></td>
+<td>Diametro do poço</td>
+</tr>
+<tr>
+<td><code>casing_external_diameter</code></td>
+<td>Diametro no externo do <strong>aço</strong></td>
+</tr>
+<tr>
+<td><code>casing_internal_diameter</code></td>
+<td>Diametro do interno do <strong>aço</strong></td>
 </tr>
 </tbody>
 </table>
