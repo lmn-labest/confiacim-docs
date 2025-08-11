@@ -1,0 +1,35 @@
+variables:
+
+  - name: casing_internal_diameter
+    dist:
+      name: lognormal
+      params:
+        mean: 1.0
+        cov : 0.1
+
+  - name: casing_external_diameter
+    dist:
+      name: lognormal
+      params:
+        mean: 1.0
+        cov : 0.1
+
+  - name: well_diameter
+    dist:
+      name: lognormal
+      params:
+        mean: 1.0
+        cov : 0.1
+config:
+  form:
+    beta: 0.0
+    delta: 0.01
+    gamma: 0.0
+    tol:  1e-03
+    maxit: 100
+    Nr: 5
+
+mesh:
+  casing_internal_diameter: 0.22246
+  casing_external_diameter: 0.25082
+  well_diameter: 0.3175
