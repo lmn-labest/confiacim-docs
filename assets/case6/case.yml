@@ -1,6 +1,6 @@
 variables:
 
-  - name: E_c
+  - name: elasticity_modulus_c
     dist:
       name: lognormal
       params:
@@ -21,7 +21,7 @@ variables:
         mean: 1.0
         cov: 0.1
 
-  - name: E_f
+  - name: elasticity_modulus_f
     dist:
       name: lognormal
       params:

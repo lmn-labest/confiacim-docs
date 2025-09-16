@@ -1,6 +1,6 @@
 variables:
 
-  - name: E_c
+  - name: elasticity_modulus_c
     dist:
       name: lognormal
       params:

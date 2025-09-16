@@ -598,6 +598,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#file_folder_handlers.read_case_base_dat" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_case_base_dat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file_folder_handlers.result_folders" class="md-nav__link">
     <span class="md-ellipsis">
       result_folders
@@ -1857,6 +1866,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#file_folder_handlers.read_case_base_dat" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_case_base_dat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file_folder_handlers.result_folders" class="md-nav__link">
     <span class="md-ellipsis">
       result_folders
@@ -2301,8 +2319,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/file_folder_handlers.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">215</span>
-<span class="normal">216</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">216</span>
 <span class="normal">217</span>
 <span class="normal">218</span>
 <span class="normal">219</span>
@@ -2323,7 +2340,8 @@
 <span class="normal">234</span>
 <span class="normal">235</span>
 <span class="normal">236</span>
-<span class="normal">237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clean_temporary_dir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">):</span>
+<span class="normal">237</span>
+<span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clean_temporary_dir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Limpa o diretório temporario</span>
 
 <span class="sd">    Parameters:</span>
@@ -2700,8 +2718,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/file_folder_handlers.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
-<span class="normal">203</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
 <span class="normal">206</span>
@@ -2710,7 +2727,8 @@
 <span class="normal">209</span>
 <span class="normal">210</span>
 <span class="normal">211</span>
-<span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">default_output_dir</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="normal">212</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">default_output_dir</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera o caminho padrão do diretório de saida.</span>
 
@@ -3195,8 +3213,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/file_folder_handlers.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
-<span class="normal">190</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
 <span class="normal">193</span>
@@ -3205,7 +3222,8 @@
 <span class="normal">196</span>
 <span class="normal">197</span>
 <span class="normal">198</span>
-<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">list_only_dirs</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">199</span>
+<span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">list_only_dirs</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lista apenas diretórios.</span>
 
@@ -3216,6 +3234,97 @@
 <span class="sd">        Lista com os caminhos.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="file_folder_handlers.read_case_base_dat" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">read_case_base_dat</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Retorna o conteudo do aqruivo case.dat.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="file_folder_handlers.read_case_base_dat.input_dir">input_dir</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Onde o arquivo case.dat deve estar.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Retorna o conteudo no formato de string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>src/confiacim/file_folder_handlers.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_case_base_dat</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retorna o conteudo do aqruivo case.dat.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        input_dir: Onde o arquivo case.dat deve estar.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Retorna o conteudo no formato de string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">input_dir</span> <span class="o">/</span> <span class="s2">&quot;case.dat&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -3295,8 +3404,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/file_folder_handlers.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
-<span class="normal">241</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
 <span class="normal">244</span>
@@ -3309,7 +3417,8 @@
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
-<span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">result_folders</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">reverse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">254</span>
+<span class="normal">255</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">result_folders</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">reverse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Retorna somente diretorios que começam com `it_` de forma ordenada.</span>
 
@@ -3334,14 +3443,14 @@
 
 
 <h2 id="file_folder_handlers.tmp_workdir" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents ">
 
-        <p>Diretório temporário onde a amastra irá roda.</p>
+        <p>Diretório temporário onde a amostra irá roda.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3376,7 +3485,7 @@
                 <code>sample_name</code>
             </td>
             <td>
-                  <code><span title="str">str</span></code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3384,7 +3493,7 @@
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -3428,9 +3537,10 @@
 <span class="normal">183</span>
 <span class="normal">184</span>
 <span class="normal">185</span>
-<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="normal">186</span>
+<span class="normal">187</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Diretório temporário onde a amastra irá roda.</span>
+<span class="sd">    Diretório temporário onde a amostra irá roda.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        tmpdir: Diretório temporário.</span>
@@ -3439,8 +3549,9 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        Camminho completo do diretório temporário.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_name</span>
+    <span class="k">if</span> <span class="n">sample_name</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_name</span>
+    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

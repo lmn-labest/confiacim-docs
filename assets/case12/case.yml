@@ -1,7 +1,7 @@
 variables:
 
   # Cimento
-  - name: E_c
+  - name: elasticity_modulus_c
     dist:
       name: sgld_lower_t
       params:

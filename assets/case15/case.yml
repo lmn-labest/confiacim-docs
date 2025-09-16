@@ -1,5 +1,5 @@
 variables:
-  - name: E_c
+  - name: elasticity_modulus_c
     initial_point_factor: 1.00
     dist:
       name: sgld_lower_t

@@ -1712,7 +1712,7 @@
 
 
 <h2 id="tencim.iteration.run_samples_iteration_i" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">mesh_infos</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">run_samples_iteration_i</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">mesh_infos</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">case_str_base</span><span class="p">,</span> <span class="n">iteration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rc_criteria</span><span class="o">=</span><span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span> <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunner</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1791,6 +1791,22 @@
             <td>
               <div class="doc-md-description">
                 <p>Diterório do arquivo de saida.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>case_str_base</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Conteudo do case.dat no formato str</p>
               </div>
             </td>
             <td>
@@ -1998,12 +2014,18 @@
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_samples_iteration_i</span><span class="p">(</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_samples_iteration_i</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">mesh_infos</span><span class="p">:</span> <span class="n">MeshConfig</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">case_str_base</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">rc_criteria</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span>
     <span class="n">RunnerClass</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">TencimRunner</span><span class="p">]</span> <span class="o">=</span> <span class="n">TencimRunner</span><span class="p">,</span>
@@ -2018,6 +2040,7 @@
 <span class="sd">        samples: Lista da amostras.</span>
 <span class="sd">        input_dir: Diterório do arquivo de entrada.</span>
 <span class="sd">        output_dir: Diterório do arquivo de saida.</span>
+<span class="sd">        case_str_base: Conteudo do case.dat no formato str</span>
 <span class="sd">        iteration: Número da iteração do **FORM**.</span>
 <span class="sd">        rc_criteria: Critério do **RC**.</span>
 <span class="sd">        RunnerClass: Classe que executa o `tencim`.</span>
@@ -2044,7 +2067,10 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">abs_path_output_dir</span> <span class="o">=</span> <span class="n">original_dir</span> <span class="o">/</span> <span class="n">output_dir</span>
 
-    <span class="n">generator</span> <span class="o">=</span> <span class="n">Genarator</span><span class="p">(</span><span class="n">get_template_dir</span><span class="p">(</span><span class="n">abs_path_input_dir</span><span class="p">))</span>
+    <span class="n">generator</span> <span class="o">=</span> <span class="n">Genarator</span><span class="p">(</span>
+        <span class="n">get_template_dir</span><span class="p">(</span><span class="n">abs_path_input_dir</span><span class="p">),</span>
+        <span class="n">case_str_base</span><span class="o">=</span><span class="n">case_str_base</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># TODO: botar isso na classe TencimRunner</span>
     <span class="n">check_tencim_exec</span><span class="p">(</span><span class="n">src_exec_dir</span><span class="p">)</span>
@@ -2306,20 +2332,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">209</span>
 <span class="normal">210</span>
 <span class="normal">211</span>
 <span class="normal">212</span>
@@ -2370,7 +2383,20 @@
 <span class="normal">257</span>
 <span class="normal">258</span>
 <span class="normal">259</span>
-<span class="normal">260</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_simulations</span><span class="p">(</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_simulations</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
@@ -2412,7 +2438,7 @@
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
                 <span class="n">sample_name</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span>
 
-                <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
+                <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
 
                 <span class="n">future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
                     <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">,</span>
@@ -2431,7 +2457,7 @@
             <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Running Tencim ...&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
             <span class="n">sample_name</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span>
-            <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
+            <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
             <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">sample_name</span><span class="p">,</span> <span class="n">was_generated</span><span class="p">,</span> <span class="n">workdir</span><span class="p">,</span> <span class="n">original_dir</span><span class="p">,</span> <span class="n">save_intermediate_files</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">workers</span>
@@ -2607,12 +2633,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
@@ -2663,7 +2684,20 @@
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
-<span class="normal">193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_iteration</span><span class="p">(</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup_iteration</span><span class="p">(</span>
     <span class="n">mesh_infos</span><span class="p">:</span> <span class="n">MeshConfig</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
@@ -2688,6 +2722,9 @@
 <span class="sd">        Retorna quais arquivos foram gerados.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">tencim_dir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
+    <span class="n">copy_exec_tencim</span><span class="p">(</span><span class="n">src_exec_dir</span><span class="p">,</span> <span class="n">tencim_dir</span><span class="p">)</span>
+
     <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">:</span>
         <span class="n">sample_name</span><span class="p">,</span> <span class="n">averages</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">averages</span>
 
@@ -2696,15 +2733,18 @@
             <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
 
         <span class="c1"># setup</span>
-        <span class="n">workdir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
-
-        <span class="n">copy_exec_tencim</span><span class="p">(</span><span class="n">src_exec_dir</span><span class="p">,</span> <span class="n">workdir</span><span class="p">)</span>
+        <span class="n">sample_dir</span> <span class="o">=</span> <span class="n">tmp_workdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">sample_name</span><span class="p">)</span>
 
         <span class="n">input_files</span> <span class="o">=</span> <span class="n">list_files</span><span class="p">(</span><span class="n">abs_path_input_dir</span><span class="p">,</span> <span class="s2">&quot;*.dat&quot;</span><span class="p">)</span>
-        <span class="n">copy_list_files</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">workdir</span><span class="p">)</span>
+        <span class="n">copy_list_files</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">sample_dir</span><span class="p">)</span>
 
         <span class="c1"># generate files</span>
-        <span class="n">was_generated</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">averages</span><span class="p">,</span> <span class="n">mesh_infos</span><span class="p">,</span> <span class="n">workdir</span><span class="p">)</span>
+        <span class="n">was_generated</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+            <span class="n">averages</span><span class="p">,</span>
+            <span class="n">mesh_infos</span><span class="p">,</span>
+            <span class="n">sample_name</span><span class="p">,</span>
+            <span class="n">sample_dir</span><span class="p">,</span>
+        <span class="p">)</span>
 
         <span class="c1"># TODO: Repensar isso</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
@@ -2718,6 +2758,8 @@
                 <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Generated loads.dat file.&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">was_generated</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mesh&quot;</span><span class="p">):</span>
                 <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Generated mesh.dat file.&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">was_generated</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;case&quot;</span><span class="p">):</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Generated case.dat file.&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="k">return</span> <span class="n">was_generated</span>
 </code></pre></div></td></tr></table></div>
@@ -2856,20 +2898,7 @@
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/iteration.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">263</span>
-<span class="normal">264</span>
-<span class="normal">265</span>
-<span class="normal">266</span>
-<span class="normal">267</span>
-<span class="normal">268</span>
-<span class="normal">269</span>
-<span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
-<span class="normal">276</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">276</span>
 <span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span>
@@ -2884,7 +2913,20 @@
 <span class="normal">288</span>
 <span class="normal">289</span>
 <span class="normal">290</span>
-<span class="normal">291</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">simulation_rcs</span><span class="p">(</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">simulation_rcs</span><span class="p">(</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Sample</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sample</span><span class="p">],</span>
     <span class="n">tmpdir</span><span class="p">:</span> <span class="n">TemporaryDirectory</span><span class="p">,</span>
     <span class="n">rc_criteria</span><span class="p">:</span> <span class="n">RCCriteria</span> <span class="o">=</span> <span class="n">RCCriteria</span><span class="o">.</span><span class="n">MOHR_COULOMB</span><span class="p">,</span>

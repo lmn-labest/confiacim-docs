@@ -1,7 +1,7 @@
 variables:
 
   # Cimento
-  - name: E_c
+  - name: elasticity_modulus_c
     dist:
       name: normal
       params:
@@ -9,7 +9,7 @@ variables:
         cov: 0.1
 
   # Formação
-  - name: E_f
+  - name: elasticity_modulus_f
     dist:
       name: triang
       params:

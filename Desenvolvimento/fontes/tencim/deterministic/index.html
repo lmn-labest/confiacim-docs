@@ -1764,8 +1764,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
-<span class="normal">14</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
@@ -1818,7 +1817,8 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">new_case_with_until_the_step</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">case_data_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_last_step</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gera case truncado no new_last_step</span>
 
@@ -2013,8 +2013,7 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 
             <details class="quote">
               <summary>Source code in <code>src/confiacim/tencim/deterministic.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 70</span>
-<span class="normal"> 71</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 71</span>
 <span class="normal"> 72</span>
 <span class="normal"> 73</span>
 <span class="normal"> 74</span>
@@ -2049,7 +2048,10 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_tencim</span><span class="p">(</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">run_tencim</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -2072,12 +2074,14 @@ será mantido o valor inicial. Não será criado mais blocos <code>loop-next</co
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">avgs</span> <span class="o">=</span> <span class="n">sample_averages</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sample</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;deterministic&quot;</span><span class="p">,</span> <span class="n">averages</span><span class="o">=</span><span class="n">avgs</span><span class="p">)]</span>
+    <span class="n">case_str_base</span> <span class="o">=</span> <span class="n">read_case_base_dat</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
 
     <span class="n">run_samples_iteration_i</span><span class="p">(</span>
         <span class="n">mesh_infos</span><span class="o">=</span><span class="n">mesh_infos</span><span class="p">,</span>
         <span class="n">samples</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span>
         <span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span>
         <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+        <span class="n">case_str_base</span><span class="o">=</span><span class="n">case_str_base</span><span class="p">,</span>
         <span class="n">RunnerClass</span><span class="o">=</span><span class="n">TencimRunnerDeterministic</span><span class="p">,</span>
         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
         <span class="n">save_intermediate_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

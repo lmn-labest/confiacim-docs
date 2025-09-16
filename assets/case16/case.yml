@@ -1,5 +1,5 @@
 variables:
-  - name: E_s
+  - name: elasticity_modulus_s
     dist:
       name: normal
       params:

@@ -1845,17 +1845,17 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>mk_samples<span class="w"> </span>run<span class="w"> </span>simulation/case1a/
 </code></pre></div></td></tr></table></div>
 <p>Para plotar o histograma das amostras de uma distribuição:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>hist<span class="w"> </span>E_c<span class="w"> </span>simulation/case1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>mc<span class="w"> </span>hist<span class="w"> </span>elasticity_modulus_c<span class="w"> </span>simulation/case1
 </code></pre></div></td></tr></table></div>
 <h3 id="24-vizualizando-as-distribuicoes">2.4) Vizualizando as distribuições</h3>
-<p>Vizualizando a curva <code>pdf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>pdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+<p>Vizualizando a curva <code>pdf</code> da variável <code>elasticity_modulus_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>pdf<span class="w"> </span>elasticity_modulus_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
-<p>Vizualizando a curva <code>cdf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>cdf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+<p>Vizualizando a curva <code>cdf</code> da variável <code>elasticity_modulus_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>cdf<span class="w"> </span>elasticity_modulus_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
-<p>Vizualizando a curva <code>ppf</code> da variável <code>E_c</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>ppf<span class="w"> </span>E_c<span class="w"> </span>simulation/case1a
+<p>Vizualizando a curva <code>ppf</code> da variável <code>elasticity_modulus_c</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>confiacim<span class="w"> </span>dist<span class="w"> </span>ppf<span class="w"> </span>elasticity_modulus_c<span class="w"> </span>simulation/case1a
 </code></pre></div></td></tr></table></div>
 <h3 id="25-rodando-uma-analise-do-tencim1d-de-forma-direta">2.5) Rodando uma análise do tencim1D de forma direta</h3>
 <p>Para rodar um análise pura do o <code>tencim1D</code> pode-se usar o comando</p>
@@ -1873,7 +1873,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 </thead>
 <tbody>
 <tr>
-<td><code>E_c</code></td>
+<td><code>elasticity_modulus_c</code></td>
 <td>Módulo de elasticidade do <strong>cimento</strong></td>
 </tr>
 <tr>
@@ -1905,7 +1905,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <td>Coeficiente de retração autógena do <strong>cimento</strong></td>
 </tr>
 <tr>
-<td><code>E_f</code></td>
+<td><code>elasticity_modulus_f</code></td>
 <td>Módulo de elasticidade da <strong>formação</strong></td>
 </tr>
 <tr>
@@ -1925,7 +1925,7 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <td>Capacidade térmica volumétrica da <strong>formação</strong></td>
 </tr>
 <tr>
-<td><code>E_s</code></td>
+<td><code>elasticity_modulus_s</code></td>
 <td>Módulo de elasticidade da <strong>aço</strong></td>
 </tr>
 <tr>
@@ -1989,6 +1989,16 @@ pip<span class="w"> </span>install<span class="w"> </span>confiacim-x.y.z-py3-no
 <td><code>normal</code></td>
 <td>[mean, cov]</td>
 <td>Distribuição Normal (<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">ref</a>)</td>
+</tr>
+<tr>
+<td><code>normal_lower_t</code></td>
+<td>[mean, cov, x_lower_limit, scale_factor]</td>
+<td>Distribuição Normal com limite inferior</td>
+</tr>
+<tr>
+<td><code>normal_lower_upper_t</code></td>
+<td>[mean, cov, x_lower_limit, x_upper_limit, scale_factor]</td>
+<td>Distribuição Normal com limite inferior e superior (<a href="https://docs.scipy.org/doc//scipy/reference/generated/scipy.stats.truncnorm.html">ref</a>)</td>
 </tr>
 <tr>
 <td><code>lognormal</code></td>
